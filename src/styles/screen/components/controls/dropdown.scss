@@ -1,0 +1,38 @@
+.blokks-dropdown {
+	@include font($default-font, $size: rem(15px));
+	color: $darker-text-color;
+	color: var(--darker-text-color, $darker-text-color);
+	text-transform: capitalize;
+
+	position: relative;
+	display: block;
+	max-width: 320px;
+	fill: currentColor;
+
+	&:hover {
+		color: $theme-color;
+		color: var(--theme-color, $theme-color);
+	}
+
+	select {
+		@include reset-dropdown();
+		@include size(100%);
+
+		padding: 10px 15px;
+		font-size: inherit;
+		color: inherit;
+		border: 1px solid $default-stroke-color;
+		border: 1px solid var(--default-stroke-color, $default-stroke-color);
+		cursor: pointer;
+
+		&:focus {
+			outline: 5px auto $theme-color;
+			outline: 5px auto var(--theme-color, $theme-color);
+		}
+	}
+
+	.blokks-icon {
+		@include absolute($top: 13px, $right: 15px);
+		width: 14px;
+	}
+}

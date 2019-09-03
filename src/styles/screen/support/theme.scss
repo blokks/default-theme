@@ -1,0 +1,111 @@
+/* Text styles */
+@mixin h1($size: rem(32px)) {
+	@include reset-title;
+	@include font($default-font, $size, $weight: 500);
+	color: $theme-color;
+	color: var(--theme-color, $theme-color);
+	line-height: 1.25;
+}
+
+@mixin h2($size: rem(22px)) {
+	@include reset-title;
+	@include font($default-font, $size, $weight: 500);
+	color: $darkest-text-color;
+	color: var(--darkest-text-color, $darkest-text-color);
+	line-height: 1.25;
+}
+
+@mixin bodytext {
+	@include font($default-font, $size: rem(15px));
+	color: $darker-text-color;
+	color: var(--darker-text-color, $darker-text-color);
+	line-height: 1.5;
+
+	* {
+		font-family: inherit;
+		color: inherit;
+	}
+
+	h1 {
+		@include reset-title;
+		@include font($default-font, $size: 17px, $weight: 500);
+		color: $darkest-text-color;
+		color: var(--darkest-text-color, $darkest-text-color);
+	}
+
+	h2 {
+		@include reset-title;
+		@include font($default-font, $size: 15px, $weight: 400);
+		color: $darkest-text-color;
+		color: var(--darkest-text-color, $darkest-text-color);
+	}
+
+	a {
+		color: $theme-color;
+		color: var(--theme-color, $theme-color);
+		font-weight: 500;
+		cursor: pointer;
+	}
+
+	a:hover {
+		border-bottom: 1px solid;
+	}
+
+	strong {
+		color: $darkest-text-color;
+		color: var(--darkest-text-color, $darkest-text-color);
+		font-weight: 500;
+	}
+}
+
+/* UI styles */
+@mixin button {
+	@include reset-button;
+	@include font($default-font, $size: rem(15px));
+	color: $lightest-text-color;
+	color: var(--lightest-text-color, $lightest-text-color);
+
+	padding: 10px 20px;
+	background-color: $theme-color;
+	background-color: var(--theme-color, $theme-color);
+}
+
+@mixin button-with-icon {
+	@include button;
+
+	.blokks-icon {
+		margin-right: 7px;
+	}
+}
+
+@mixin close-button {
+	@include reset-button;
+	@include size(35px);
+	color: $darker-text-color;
+	color: var(--darker-text-color, $darker-text-color);
+
+	.blokks-label {
+		display: none;
+	}
+
+	.blokks-icon {
+		@include size(14px);
+	}
+}
+
+@mixin horizontal-list($spacing: 10px) {
+	@include reset-list;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	& > li {
+		margin-right: $spacing;
+	}
+}
+
+@mixin vertical-list {
+	@include reset-list;
+	display: flex;
+	flex-direction: column;
+}

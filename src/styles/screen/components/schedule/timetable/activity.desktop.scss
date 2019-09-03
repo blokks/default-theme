@@ -1,0 +1,67 @@
+@include is-desktop {
+	.blokks-activity {
+		padding: 12px 15px;
+		background-color: $dark-background-color;
+		background-color: var(--dark-background-color, $dark-background-color);
+		outline: none;
+
+		&--favorited {
+			background-color: $theme-color;
+			background-color: var(--theme-color, $theme-color);
+		}
+
+		&--dimmed {
+			background-color: #ddd;
+		}
+
+		&--selected,
+		&:not(&--disabled):focus {
+			outline: 5px auto $theme-color;
+			outline: 5px auto var(--theme-color, $theme-color);
+		}
+
+		@include is-columns {
+			width: 100%;
+			height: calc(100% - 2px);
+		}
+
+		@include is-rows {
+			width: calc(100% - 2px);
+			height: 100%;
+		}
+
+		&__title {
+			color: $lightest-text-color;
+			color: var(--lightest-text-color, $lightest-text-color);
+		}
+
+		&__subtitle {
+			color: $light-text-color;
+			color: var(--light-text-color, $light-text-color);
+		}
+
+		.blokks-time-labels {
+			color: $light-text-color;
+			color: var(--light-text-color, $light-text-color);
+			font-weight: 500;
+			line-height: 1.4;
+		}
+
+		.blokks-poster {
+			@include absolute($top: 0, $left: 0);
+			@include size(100%);
+			opacity: 0.5;
+			z-index: 0;
+			transition: opacity 300ms;
+		}
+
+		&--favorited .blokks-poster {
+			opacity: 0.3;
+		}
+
+		&--dimmed .blokks-poster {
+			opacity: 0.3;
+			filter: grayscale(75%);
+		}
+	}
+}

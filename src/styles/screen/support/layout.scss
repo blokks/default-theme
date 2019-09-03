@@ -1,0 +1,25 @@
+$layout: 'columns' !default;
+
+@mixin is-columns {
+	@if ($layout == 'columns') {
+		@include is-desktop {
+			@content;
+		}
+	}
+}
+
+@mixin is-rows {
+	@if ($layout == 'rows') {
+		@include is-desktop {
+			@content;
+		}
+	}
+}
+
+@mixin is-list {
+	@if ($layout == 'list') {
+		@include is-desktop {
+			@content;
+		}
+	}
+}

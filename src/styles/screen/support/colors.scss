@@ -1,0 +1,25 @@
+$theme-color: #1a73e8 !default;
+$secondary-color: #c83a6f !default;
+
+/* Background colors */
+$default-background-color: #fff !default;
+$light-background-color: #aaa !default;
+$dark-background-color: #1b1b1b !default;
+
+/* Text colors */
+$dark-text-color: rgba(0, 0, 0, 0.3) !default;
+$darker-text-color: rgba(0, 0, 0, 0.5) !default;
+$darkest-text-color: rgba(0, 0, 0, 0.8) !default;
+$light-text-color: rgba(255, 255, 255, 0.75) !default;
+$lightest-text-color: rgb(255, 255, 255) !default;
+
+/* Stroke colors */
+$default-stroke-color: #ccc !default;
+$dark-stroke-color: #999 !default;
+$light-stroke-color: #eee !default;
+
+/* Other */
+$shadow-color: rgba(0, 0, 0, 0.05);
+$text-shadow-color: rgba(0, 0, 0, 0.4);
+$placeholder-background-color: #333 !default;
+$empty-image-background-color: #eee !default;

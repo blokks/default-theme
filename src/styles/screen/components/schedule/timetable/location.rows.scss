@@ -1,0 +1,39 @@
+@include is-rows {
+	.blokks-location {
+		min-height: $location-height;
+		min-height: var(--location-height, $location-height);
+
+		&__header {
+			display: flex;
+			align-items: center;
+			padding: 10px 25px 10px $padding;
+			padding: 10px 25px 10px var(--padding, $padding);
+			border-right: 1px solid $light-stroke-color;
+			border-right: 1px solid var(--light-stroke-color, $light-stroke-color);
+			box-shadow: 4px 0 4px -3px $shadow-color;
+			box-shadow: 4px 0 4px -3px var(--shadow-color, $shadow-color);
+		}
+
+		&__title {
+			white-space: nowrap;
+		}
+
+		&__subtitle {
+			white-space: nowrap;
+		}
+
+		&__timeslots {
+			padding: 5px 0;
+			margin-left: -1px;
+			background: bg-columns(
+				$stroke-color: $light-stroke-color,
+				$column-width: $timeslot-width
+			);
+		}
+
+		&__timeslot {
+			width: $timeslot-width;
+			width: var(--timeslot-width, $timeslot-width);
+		}
+	}
+}

@@ -1,0 +1,36 @@
+.blokks-filters {
+	@include horizontal-list;
+	max-width: 750px;
+
+	button {
+		@include reset-button;
+		@include font($default-font, $size: rem(14px));
+		color: $darker-text-color;
+		color: var(--darker-text-color, $darker-text-color);
+		text-transform: capitalize;
+		margin: 0 5px 5px 0;
+		padding: 7px 15px;
+		border-radius: 15px;
+		background-color: rgba(0, 0, 0, 0.05);
+		transition: background 300ms, color 150ms;
+
+		&:focus,
+		&:hover {
+			color: $darkest-text-color;
+			color: var(--darkest-text-color, $darkest-text-color);
+			transition: background 300ms;
+		}
+
+		&[class*='selected'] {
+			color: $lightest-text-color;
+			color: var(--lightest-text-color, $lightest-text-color);
+			background-color: $theme-color;
+			background-color: var(--theme-color, $theme-color);
+			font-weight: 500;
+		}
+	}
+
+	.blokks-icon {
+		margin-right: 5px;
+	}
+}

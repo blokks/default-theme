@@ -1,0 +1,29 @@
+.blokks-timetable {
+	margin: 20px 0 0;
+}
+
+@include is-mobile {
+	.blokks-timetable {
+		padding: 0 $padding;
+		padding: 0 var(--padding, $padding);
+	}
+}
+
+@include is-rows {
+	.blokks-timetable {
+		padding-right: $padding;
+		padding-right: var(--padding, $padding);
+	}
+}
+
+@include is-columns {
+	.blokks-timetable {
+		padding: 0 $padding;
+		padding: 0 var(--padding, $padding);
+	}
+}
+
+@import 'timetable/activity';
+@import 'timetable/gutter';
+@import 'timetable/location';
+@import 'timetable/time-indicator';

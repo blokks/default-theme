@@ -1,0 +1,23 @@
+@include is-rows {
+	.blokks-gutter {
+		height: $gutter-height;
+
+		&:before {
+			@include sticky($left: 0);
+			border-right: 1px solid $light-stroke-color;
+			box-shadow: 4px 0 4px -3px $shadow-color;
+		}
+
+		&__timeslots {
+			margin-left: -1px;
+			background: bg-columns(
+				$stroke-color: $light-stroke-color,
+				$column-width: $timeslot-width
+			);
+		}
+
+		&__timeslot {
+			width: $timeslot-width;
+		}
+	}
+}

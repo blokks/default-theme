@@ -1,0 +1,25 @@
+@include is-mobile {
+	.blokks-header {
+		display: flex;
+		flex-direction: column;
+
+		&__title {
+			order: 1;
+		}
+
+		.blokks-user-options {
+			margin-top: 15px;
+			order: 2;
+		}
+
+		.blokks-date-selector {
+			margin-top: 20px;
+			order: 3;
+		}
+
+		.blokks-filters {
+			margin-top: 20px;
+			order: 4;
+		}
+	}
+}

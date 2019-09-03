@@ -1,0 +1,28 @@
+@font-face {
+	font-family: 'Public Sans';
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+	src: url('PublicSans-Regular.woff') format('woff'),
+		url('PublicSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Public Sans';
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+	src: url('PublicSans-Medium.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Public Sans';
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+	src: url('PublicSans-SemiBold.woff') format('woff');
+}
+
+/* Font default properties */
+$base-font-size: 16px !default;
+$default-font: 'Public Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;

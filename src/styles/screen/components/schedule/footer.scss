@@ -1,0 +1,28 @@
+.blokks-footer {
+	padding: 20px $padding;
+	padding: 20px var(--padding, $padding);
+
+	@supports (position: sticky) {
+		@include sticky($left: 0);
+		display: flex;
+		justify-content: center;
+		max-width: 100vw;
+	}
+
+	&__blokks-button {
+		@include reset-button;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__powered-by-label {
+		@include font($default-font, $size: 13px);
+		color: $dark-text-color;
+		color: var(--dark-text-color, $dark-text-color);
+	}
+
+	&__logo {
+		width: 180px;
+	}
+}

@@ -1,0 +1,9 @@
+.blokks-time-indicator {
+	border-top: 2px solid;
+	border-color: $secondary-color;
+	border-color: var(--secondary-color, $secondary-color);
+
+	&__time-label {
+		display: none;
+	}
+}

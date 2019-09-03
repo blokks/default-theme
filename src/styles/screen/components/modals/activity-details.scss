@@ -1,0 +1,176 @@
+.blokks-activity-details {
+	width: 100%;
+	max-width: 600px;
+	background-color: $default-background-color;
+	background-color: var(--default-background-color, $default-background-color);
+
+	.blokks-poster {
+		background-color: $placeholder-background-color;
+		background-color: var(--placeholder-background-color, $placeholder-background-color);
+		width: 100%;
+	}
+
+	.blokks-poster:after {
+		display: block;
+		padding-top: 56.25%;
+		content: '';
+	}
+
+	&__close-button {
+		@include close-button;
+		@include absolute($top: 10px, $right: 10px);
+	}
+
+	&--has-poster &__close-button {
+		background-color: rgba($dark-background-color, 30%);
+		border-radius: 50%;
+		color: $lightest-text-color;
+		color: var(--lightest-text-color, $lightest-text-color);
+	}
+
+	&__content {
+		padding: 30px;
+	}
+
+	&__header {
+		max-width: 500px;
+	}
+
+	&__title {
+		@include h1;
+	}
+
+	&__subtitle {
+		@include h2;
+	}
+
+	&__related-info {
+		@include bodytext;
+		color: $darker-text-color;
+		color: var(--darker-text-color, $darker-text-color);
+		margin-top: 20px;
+	}
+
+	&__date-info {
+		display: flex;
+		flex-direction: row;
+	}
+
+	&__location {
+		display: block;
+	}
+
+	&__categories {
+		@include horizontal-list($spacing: 5px);
+		@include font($default-font, $size: rem(15px));
+		color: $darker-text-color;
+		color: var(--darker-text-color, $darker-text-color);
+		text-transform: capitalize;
+	}
+
+	&__categories > li:not(:last-of-type):after {
+		content: ', ';
+	}
+
+	&__description {
+		@include bodytext;
+		margin-top: 20px;
+		max-width: 500px;
+	}
+
+	&__description * {
+		font-family: inherit;
+		color: inherit;
+	}
+
+	&__description img {
+		float: left;
+		margin: 0 10px 10px 0;
+		max-width: 100%;
+		height: 75px;
+
+		@supports (object-fit: cover) {
+			width: 75px;
+			object-fit: cover;
+		}
+	}
+
+	&__description ul {
+		@include reset-list;
+		list-style-type: circle;
+		padding-left: 15px;
+	}
+
+	&__share-button {
+		@include button-with-icon;
+		margin-top: 5px;
+	}
+
+	&__share-button .blokks-icon {
+		margin-right: 5px;
+	}
+
+	&__favorites {
+		margin-top: 20px;
+	}
+
+	&__signin-button {
+		@include button-with-icon;
+	}
+
+	&__favorite-button {
+		@include button-with-icon;
+	}
+
+	&__favorite-button .blokks-icon {
+		margin-right: 5px;
+	}
+
+	&__unfavorite-button {
+		@include button-with-icon;
+	}
+
+	&__unfavorite-button .blokks-icon {
+		margin-right: 5px;
+	}
+
+	&__favorited-by {
+		margin-top: 20px;
+		max-width: 500px;
+
+		&:before {
+			@include font($default-font, $size: rem(15px));
+			content: attr(data-title) ' is favorited by …';
+			color: $darker-text-color;
+			color: var(--darker-text-color, $darker-text-color);
+		}
+	}
+
+	.blokks-userlist {
+		margin-top: 5px;
+	}
+
+	.blokks-embeds {
+		@include reset-list;
+		margin-top: 20px;
+	}
+
+	.blokks-links {
+		@include horizontal-list($spacing: 10px);
+		margin-top: 20px;
+	}
+
+	.blokks-link {
+		@include font($default-font, $size: rem(15px));
+		color: $darker-text-color;
+		color: var(--darker-text-color, $darker-text-color);
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
+
+		&:hover {
+			color: $darkest-text-color;
+			color: var(--darkest-text-color, $darkest-text-color);
+			border-bottom: 1px solid;
+		}
+	}
+}

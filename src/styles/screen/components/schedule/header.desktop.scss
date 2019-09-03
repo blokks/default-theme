@@ -1,0 +1,38 @@
+@include is-desktop {
+	.blokks-header {
+		@include sticky($left: 0);
+		max-width: 100vw;
+
+		display: grid;
+		grid-row-gap: 20px;
+		grid-column-gap: 20px;
+		grid-template-columns: 1fr min-content min-content;
+		grid-template-areas:
+			'title title title'
+			'date-selector user-options search'
+			'filter filter filter';
+
+		&__title {
+			grid-area: title;
+		}
+
+		.blokks-user-options {
+			grid-area: user-options;
+			margin-left: 30px;
+			justify-self: end;
+		}
+
+		.blokks-search {
+			grid-area: search;
+		}
+
+		.blokks-date-selector {
+			grid-area: date-selector;
+			align-self: center;
+		}
+
+		.blokks-filters {
+			grid-area: filter;
+		}
+	}
+}

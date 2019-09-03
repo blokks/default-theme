@@ -1,0 +1,13 @@
+.blokks-statusbar {
+	background-color: $theme-color;
+	background-color: var(--theme-color, $theme-color);
+
+	&__update-link {
+		@include font($default-font, $size: rem(15px));
+		color: $lightest-text-color;
+		color: var(--lightest-text-color, $lightest-text-color);
+		text-align: center;
+		text-decoration: none;
+		line-height: 1.25;
+	}
+}

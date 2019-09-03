@@ -1,0 +1,13 @@
+.blokks-schedule {
+	font-size: $base-font-size;
+	font-size: var(--base-font-size, $base-font-size);
+
+	background-color: $default-background-color;
+	background-color: var(--default-background-color, $default-background-color);
+}
+
+@import 'schedule/header';
+@import 'schedule/dashboards';
+@import 'schedule/timetable';
+@import 'schedule/footer';
+@import 'schedule/statusbar';

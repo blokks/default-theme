@@ -1,0 +1,63 @@
+@include is-mobile {
+	.blokks-activity {
+		align-items: flex-start;
+		margin-top: 10px;
+		transition: opacity 300ms;
+
+		&--dimmed {
+			opacity: 0.3;
+		}
+
+		&__titles {
+			max-width: 320px;
+		}
+
+		&__title {
+			color: $darkest-text-color;
+			color: var(--darkest-text-color, $darkest-text-color);
+			transition: color 300ms;
+		}
+
+		&__subtitle {
+			transition: color 300ms;
+		}
+
+		&--favorited &__title {
+			color: $theme-color;
+			color: var(--theme-color, $theme-color);
+		}
+
+		&__subtitle,
+		.blokks-time-labels {
+			color: $darker-text-color;
+			color: var(--darker-text-color, $darker-text-color);
+		}
+
+		&--selected &__title,
+		&--selected &__subtitle {
+			color: $theme-color;
+			color: var(--theme-color, $theme-color);
+		}
+
+		.blokks-poster {
+			@include size(55px);
+			margin: 2px 10px 0 0;
+			background-color: $placeholder-background-color;
+			background-color: var(--placeholder-background-color, $placeholder-background-color);
+			transition: opacity 300ms;
+		}
+
+		&--dimmed .blokks-poster {
+			opacity: 0.5;
+			filter: grayscale(75%);
+		}
+
+		&:not(&--has-poster):before {
+			@include size(55px);
+			margin-right: 10px;
+			content: '';
+			background-color: $empty-image-background-color;
+			background-color: var(--empty-image-background-color, $empty-image-background-color);
+		}
+	}
+}

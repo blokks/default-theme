@@ -1,0 +1,23 @@
+@include is-mobile {
+	.blokks-location {
+		&__header {
+			padding: 10px 0;
+			border-bottom: 1px solid $light-stroke-color;
+			border-bottom: 1px solid var(--light-stroke-color, $light-stroke-color);
+			box-shadow: 0 4px 4px -3px $shadow-color;
+			box-shadow: 0 4px 4px -3px var(--shadow-color, $shadow-color);
+		}
+
+		&__timeslots:before {
+			display: block;
+			content: '';
+			height: 5px;
+		}
+
+		&__timeslots:after {
+			display: block;
+			content: '';
+			height: 20px;
+		}
+	}
+}

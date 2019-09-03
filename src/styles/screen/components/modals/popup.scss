@@ -1,0 +1,34 @@
+.blokks-popup {
+	padding: 30px;
+	width: 100%;
+	max-width: 480px;
+	background-color: white;
+
+	&__title {
+		@include h1($size: 24px);
+	}
+
+	&__description {
+		@include bodytext;
+		margin: 15px 0 0 0;
+		max-width: 380px;
+	}
+
+	&__footer {
+		@include bodytext;
+		margin-top: 15px;
+		max-width: 380px;
+		color: $dark-text-color;
+		color: var(--dark-text-color, $dark-text-color);
+	}
+
+	&__action-button {
+		@include button;
+		margin-top: 25px;
+	}
+
+	&__close-button {
+		@include close-button;
+		@include absolute($top: 10px, $right: 10px);
+	}
+}

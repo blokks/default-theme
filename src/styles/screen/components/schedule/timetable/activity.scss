@@ -1,0 +1,62 @@
+.blokks-activity {
+	display: flex;
+	flex-direction: row;
+	outline: none;
+	transition: background 300ms;
+
+	&__header {
+		z-index: 1;
+	}
+
+	&__title {
+		@include reset-title;
+		@include font($default-font, $size: rem(15px), $weight: 500);
+		line-height: 1.4;
+	}
+
+	&--headliner &__title {
+		text-decoration: underline;
+	}
+
+	&--canceled &__title {
+		text-decoration: line-through;
+	}
+
+	&__subtitle {
+		@include reset-title;
+		@include font($default-font, $size: rem(14px));
+		line-height: 1.4;
+
+		@supports (-webkit-line-clamp: 2) {
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: var(--maximum-number-lines, $maximmum-number-of-lines);
+			overflow: hidden;
+		}
+	}
+
+	&--canceled &__subtitle {
+		text-decoration: line-through;
+	}
+
+	.blokks-time-labels {
+		@include font($default-font, $size: rem(13px));
+		line-height: 1.4;
+	}
+
+	&--canceled .blokks-time-labels {
+		text-decoration: line-through;
+	}
+
+	.blokks-icon {
+		margin-right: 5px;
+	}
+
+	.blokks-poster {
+		flex: none;
+		order: -1;
+	}
+}
+
+@import 'activity.mobile';
+@import 'activity.desktop';
