@@ -2,7 +2,7 @@ importScripts('{{ themes_url("$theme/blokks-sw.js") }}');
 
 const prefix = '{{ $schedule->slug }}';
 const version = '3.0.0';
-const url = 'https://esns.nl/timetable/eurosonic/';
+const url = '{{ route('embeds.dedicated', ['schedules' => $schedule->slug ]) }}';
 
 const files = [
 	url,

@@ -22,11 +22,11 @@ const files = [
 	'http://themes.blokks.localhost/PublicSans-Bold.woff2',
 ];
 
-enableOffline({
-	prefix,
-	version,
-	files,
-	cdns: [],
-});
+// enableOffline({
+// 	prefix,
+// 	version,
+// 	files,
+// 	cdns: [],
+// });
 
-enablePush({ url });
+// enablePush({ url });

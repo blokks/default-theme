@@ -1,6 +1,11 @@
 .blokks-modal {
 	font-size: $base-font-size;
 	font-size: var(--base-font-size, $base-font-size);
+	background-color: rgba(0, 0, 0, 0.5);
+
+	@supports (backdrop-filter: grayscale(50%)) {
+		backdrop-filter: grayscale(50%);
+	}
 }
 
 @import 'modals/activity-details';

@@ -8,16 +8,10 @@
 			box-shadow: 0 4px 4px -3px var(--shadow-color, $shadow-color);
 		}
 
-		&__timeslots:before {
-			display: block;
-			content: '';
-			height: 5px;
-		}
-
 		&__timeslots:after {
 			display: block;
 			content: '';
-			height: 20px;
+			height: 15px;
 		}
 	}
 }

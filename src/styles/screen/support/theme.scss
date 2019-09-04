@@ -72,6 +72,9 @@
 
 @mixin button-with-icon {
 	@include button;
+	display: flex;
+	align-items: center;
+	text-align: left;
 
 	.blokks-icon {
 		margin-right: 7px;

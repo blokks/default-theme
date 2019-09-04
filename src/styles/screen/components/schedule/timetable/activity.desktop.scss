@@ -36,11 +36,13 @@
 		}
 
 		&__subtitle {
+			margin-top: 2px;
 			color: $light-text-color;
 			color: var(--light-text-color, $light-text-color);
 		}
 
 		.blokks-time-labels {
+			margin-top: 2px;
 			color: $light-text-color;
 			color: var(--light-text-color, $light-text-color);
 			font-weight: 500;

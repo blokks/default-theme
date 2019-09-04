@@ -1,8 +1,8 @@
 @include is-mobile {
 	.blokks-activity {
 		align-items: flex-start;
-		margin-top: 10px;
 		transition: opacity 300ms;
+		margin-top: 15px;
 
 		&--dimmed {
 			opacity: 0.3;

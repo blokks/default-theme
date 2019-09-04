@@ -18,16 +18,16 @@
 		transition: color 200ms, border 150ms;
 
 		&:hover {
-			color: $darker-text-color;
-			color: var($darker-text-color, $darker-text-color);
+			color: $darkest-text-color;
+			color: var($darkest-text-color, $darkest-text-color);
 			border: 1px solid $dark-stroke-color;
 			border: 1px solid var(--dark-stroke-color, $dark-stroke-color);
 			transition: none;
 		}
 
 		&:focus {
-			color: $darker-text-color;
-			color: var($darker-text-color, $darker-text-color);
+			color: $darkest-text-color;
+			color: var($darkest-text-color, $darkest-text-color);
 			outline: 5px auto $theme-color;
 			outline: 5px auto var(--theme-color, $theme-color);
 		}

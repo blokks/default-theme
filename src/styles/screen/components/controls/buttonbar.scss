@@ -4,7 +4,7 @@
 
 	&__option {
 		@include reset-button;
-		@include font($default-font, $size: rem(17px));
+		@include font($default-font, $size: rem(16px));
 		font-weight: 500;
 		color: $darker-text-color;
 		color: var(--darker-text-color, $darker-text-color);
