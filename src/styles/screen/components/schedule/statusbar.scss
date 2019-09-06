@@ -3,7 +3,7 @@
 	background-color: var(--theme-color, $theme-color);
 
 	&__update-link {
-		@include font($default-font, $size: rem(15px));
+		@include font($default-font, $size: rem(13px));
 		color: $lightest-text-color;
 		color: var(--lightest-text-color, $lightest-text-color);
 		text-align: center;

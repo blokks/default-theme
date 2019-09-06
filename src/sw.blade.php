@@ -2,11 +2,11 @@ importScripts('{{ themes_url("$theme/blokks-sw.js") }}');
 
 const prefix = '{{ $schedule->slug }}';
 const version = '3.0.0';
-const url = '{{ route('embeds.dedicated', ['schedules' => $schedule->slug ]) }}';
+const url = '{{ route('embeds.dedicated', ['schedules' => $schedule->slug ]) }}/';
 
 const files = [
 	url,
-	'{{ themes_url("$theme/launch.js") }}',
+	'{{ route('embeds.launcher', ['schedules' => $schedule->slug ]) }}',
 	'{{ themes_url("$theme/modern.js") }}',
 	'{{ themes_url("$theme/legacy.js") }}',
 	'{{ themes_url("$theme/rows.css") }}',
