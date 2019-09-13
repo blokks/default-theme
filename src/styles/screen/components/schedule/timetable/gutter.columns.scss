@@ -1,4 +1,4 @@
-@include is-columns {
+@include layout('columns') {
 	.blokks-gutter {
 		width: $gutter-width;
 

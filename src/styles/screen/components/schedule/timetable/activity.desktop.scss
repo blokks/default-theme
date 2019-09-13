@@ -1,4 +1,4 @@
-@include is-desktop {
+@include layout('columns', 'rows') {
 	.blokks-activity {
 		padding: 12px 15px;
 		background-color: $dark-background-color;
@@ -20,14 +20,18 @@
 			outline: 5px auto var(--theme-color, $theme-color);
 		}
 
-		@include is-columns {
+		@include layout('columns') {
 			width: 100%;
 			height: calc(100% - 2px);
 		}
 
-		@include is-rows {
+		@include layout('rows') {
 			width: calc(100% - 2px);
 			height: 100%;
+		}
+
+		&__header {
+			z-index: 1;
 		}
 
 		&__title {
@@ -41,19 +45,28 @@
 			color: var(--light-text-color, $light-text-color);
 		}
 
+		.blokks-icon {
+			@include relative($top: 1px);
+		}
+
 		.blokks-time-labels {
 			margin-top: 2px;
 			color: $light-text-color;
 			color: var(--light-text-color, $light-text-color);
 			font-weight: 500;
 			line-height: 1.4;
+			z-index: 1;
+		}
+
+		.blokks-categories {
+			display: none;
 		}
 
 		.blokks-poster {
 			@include absolute($top: 0, $left: 0);
 			@include size(100%);
 			opacity: 0.5;
-			z-index: 0;
+			z-index: -1;
 			transition: opacity 300ms;
 		}
 

@@ -1,0 +1,17 @@
+.blokks-categories {
+	@include horizontal-list();
+
+	& > li {
+		@include font($default-font, $size: rem(12px));
+		color: $darker-text-color;
+		color: var(--darker-text-color, $darker-text-color);
+		text-transform: capitalize;
+		white-space: nowrap;
+
+		margin: 0 2px 2px 0;
+		padding: 4px 10px;
+		border-radius: 12px;
+		background-color: rgba(0, 0, 0, 0.05);
+		user-select: none;
+	}
+}

@@ -1,4 +1,4 @@
-@include is-desktop {
+@include device('desktop') {
 	.blokks-header {
 		@include sticky($left: 0);
 		max-width: 100vw;
@@ -33,7 +33,7 @@
 
 		.blokks-filters {
 			grid-area: filter;
-			margin-top: 20px;
+			margin-top: 30px;
 		}
 	}
 }

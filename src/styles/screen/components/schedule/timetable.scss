@@ -2,24 +2,28 @@
 	margin: 20px 0 0;
 }
 
-@include is-mobile {
+@include device('mobile') {
 	.blokks-timetable {
 		padding: 0 $padding;
 		padding: 0 var(--padding, $padding);
 	}
 }
 
-@include is-rows {
-	.blokks-timetable {
-		padding-right: $padding;
-		padding-right: var(--padding, $padding);
+@include device('desktop') {
+	@include layout('rows') {
+		.blokks-timetable {
+			padding-right: $padding;
+			padding-right: var(--padding, $padding);
+		}
 	}
 }
 
-@include is-columns {
-	.blokks-timetable {
-		padding: 0 $padding;
-		padding: 0 var(--padding, $padding);
+@include device('desktop') {
+	@include layout('columns', 'list') {
+		.blokks-timetable {
+			padding: 0 $padding;
+			padding: 0 var(--padding, $padding);
+		}
 	}
 }
 

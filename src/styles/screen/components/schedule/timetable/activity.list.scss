@@ -1,0 +1,94 @@
+@include layout('list') {
+	.blokks-activity {
+		display: grid;
+		grid-template-rows: min-content min-content;
+		grid-template-columns: 120px min-content auto;
+		grid-column-gap: 25px;
+		grid-template-areas:
+			'time-labels poster header'
+			'time-labels poster categories';
+
+		padding: 30px 30px 30px 0;
+		border-bottom: 1px solid $light-stroke-color;
+		transition: opacity 300ms;
+
+		background-position: 120px;
+		background-repeat: no-repeat;
+		background-size: 1px auto;
+		background-image: linear-gradient(
+			180deg,
+			$light-stroke-color,
+			$light-stroke-color,
+			$light-stroke-color
+		);
+
+		&--dimmed {
+			opacity: 0.3;
+		}
+
+		&--selected,
+		&:hover {
+			transition: none;
+			background-color: $hover-background-color;
+		}
+
+		&__header {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			grid-area: header;
+			max-width: 600px;
+		}
+
+		&__title {
+			font-size: rem(17px);
+			color: $darkest-text-color;
+		}
+
+		&--favorited &__title {
+			color: $theme-color;
+			color: var(--theme-color, $theme-color);
+		}
+
+		&__subtitle {
+			font-size: 15px;
+			color: $darker-text-color;
+		}
+
+		.blokks-time-labels {
+			font-size: 17px;
+			color: $darker-text-color;
+			grid-area: time-labels;
+			justify-self: center;
+			align-self: center;
+		}
+
+		.blokks-time-labels__ends-at {
+			display: none;
+		}
+
+		.blokks-categories {
+			grid-area: categories;
+			margin: 5px 0 0 -5px;
+		}
+
+		.blokks-poster {
+			@include size(70px);
+			background-color: $placeholder-background-color;
+			background-color: var(--placeholder-background-color, $placeholder-background-color);
+
+			border-radius: 50%;
+			grid-area: poster;
+			align-self: center;
+		}
+
+		&--dimmed .blokks-poster {
+			opacity: 0.5;
+			filter: grayscale(75%);
+		}
+
+		.blokks-icon {
+			@include relative($top: 2px);
+		}
+	}
+}

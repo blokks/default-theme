@@ -1,4 +1,4 @@
-@include is-mobile {
+@include device('mobile') {
 	.blokks-header {
 		display: flex;
 		flex-direction: column;
@@ -8,7 +8,7 @@
 		}
 
 		.blokks-user-options {
-			margin-top: 15px;
+			margin-top: 10px;
 			order: 2;
 		}
 
@@ -18,7 +18,7 @@
 		}
 
 		.blokks-filters {
-			margin-top: 20px;
+			margin-top: 30px;
 			order: 4;
 		}
 	}

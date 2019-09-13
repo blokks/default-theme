@@ -1,13 +1,15 @@
 $breakpoint: 480px !default;
 
-@mixin is-mobile {
-	@media (max-width: $breakpoint) {
-		@content;
+@mixin device($size) {
+	@if ($size == 'mobile') {
+		@media (max-width: $breakpoint) {
+			@content;
+		}
 	}
-}
 
-@mixin is-desktop {
-	@media (min-width: $breakpoint) {
-		@content;
+	@else if ($size == 'desktop') {
+		@media (min-width: $breakpoint) {
+			@content;
+		}
 	}
 }

@@ -3,8 +3,9 @@ $secondary-color: #c83a6f !default;
 
 /* Background colors */
 $default-background-color: #fff !default;
-$light-background-color: #aaa !default;
 $dark-background-color: #1b1b1b !default;
+$light-background-color: #aaa !default;
+$lightest-background-color: rgba(0, 0, 0, 0.05);
 
 /* Text colors */
 $dark-text-color: rgba(0, 0, 0, 0.3) !default;
@@ -23,3 +24,4 @@ $shadow-color: rgba(0, 0, 0, 0.05);
 $text-shadow-color: rgba(0, 0, 0, 0.4);
 $placeholder-background-color: #333 !default;
 $empty-image-background-color: #eee !default;
+$hover-background-color: rgba(0, 0, 0, 0.02);

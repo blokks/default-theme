@@ -41,11 +41,11 @@
 	@include antialiased;
 	font-family: $name;
 
-	@if $size {
+	@if ($size) {
 		font-size: $size;
 	}
 
-	@if $weight {
+	@if ($weight) {
 		font-weight: $weight;
 	}
 }

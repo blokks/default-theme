@@ -2,7 +2,7 @@ importScripts('http://themes.blokks.localhost/blokks-sw.js');
 
 const prefix = 'blokks-default';
 const version = '3.0.0';
-const url = 'http://embeds.blokks.localhost/';
+const url = 'http://embeds.blokks.localhost';
 
 const files = [
 	url,

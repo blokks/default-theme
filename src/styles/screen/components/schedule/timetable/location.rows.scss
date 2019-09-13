@@ -1,4 +1,4 @@
-@include is-rows {
+@include layout('rows') {
 	.blokks-location {
 		min-height: $location-height;
 		min-height: var(--location-height, $location-height);

@@ -96,14 +96,16 @@
 	}
 }
 
-@mixin horizontal-list($spacing: 10px) {
+@mixin horizontal-list($spacing: null) {
 	@include reset-list;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 
-	& > li {
-		margin-right: $spacing;
+	@if ($spacing) {
+		& > li {
+			margin-right: $spacing;
+		}
 	}
 }
 

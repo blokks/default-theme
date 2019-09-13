@@ -1,12 +1,8 @@
 .blokks-activity {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	outline: none;
 	transition: background 300ms;
-
-	&__header {
-		z-index: 1;
-	}
 
 	&__title {
 		@include reset-title;
@@ -54,9 +50,9 @@
 
 	.blokks-poster {
 		flex: none;
-		order: -1;
 	}
 }
 
 @import 'activity.mobile';
 @import 'activity.desktop';
+@import 'activity.list';

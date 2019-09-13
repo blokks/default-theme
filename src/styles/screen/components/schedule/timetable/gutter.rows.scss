@@ -1,4 +1,4 @@
-@include is-rows {
+@include layout('rows') {
 	.blokks-gutter {
 		height: $gutter-height;
 

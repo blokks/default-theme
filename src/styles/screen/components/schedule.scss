@@ -6,6 +6,12 @@
 	background-color: var(--default-background-color, $default-background-color);
 }
 
+@include layout('list') {
+	.blokks-schedule {
+		max-width: 960px;
+	}
+}
+
 @import 'schedule/header';
 @import 'schedule/dashboards';
 @import 'schedule/timetable';

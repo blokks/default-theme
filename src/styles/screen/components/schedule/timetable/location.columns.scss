@@ -1,4 +1,4 @@
-@include is-columns {
+@include layout('columns') {
 	.blokks-location {
 		min-width: $location-width;
 		min-width: var(--location-width, $location-width);

@@ -7,34 +7,29 @@
 	position: relative;
 	display: block;
 	min-width: 200px;
-	max-width: 320px;
+	max-width: 280px;
 	fill: currentColor;
 
 	&:hover {
 		color: $darkest-text-color;
-		color: var($darkest-text-color, $darkest-text-color);
+		color: var(--darkest-text-color, $darkest-text-color);
 	}
 
 	select {
 		@include reset-dropdown();
 		@include size(100%);
 
-		padding: 10px 12px;
+		padding: 12px 14px;
 		font-size: inherit;
 		color: inherit;
-		border: 1px solid $default-stroke-color;
-		border: 1px solid var(--default-stroke-color, $default-stroke-color);
+		background-color: $lightest-background-color;
+		background-color: var(--lightest-background-color, $lightest-background-color);
 		cursor: pointer;
 
 		&:focus {
 			outline: 5px auto $theme-color;
 			outline: 5px auto var(--theme-color, $theme-color);
 		}
-	}
-
-	&:hover select {
-		border: 1px solid $dark-stroke-color;
-		border: 1px solid var(--dark-stroke-color, $dark-stroke-color);
 	}
 
 	.blokks-icon {
