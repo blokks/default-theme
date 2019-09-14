@@ -37,11 +37,24 @@
 	}
 
 	&__title {
-		@include h1;
+		@include reset-title;
+		@include font($default-font, $size: rem(28px));
+		color: $darkest-text-color;
+		color: var(--darkest-text-color, $darkest-text-color);
+		line-height: 1.4;
+	}
+
+	&--favorited &__title {
+		color: $theme-color;
+		color: var(--theme-color, $theme-color);
 	}
 
 	&__subtitle {
-		@include h2;
+		@include reset-title;
+		@include font($default-font, $size: rem(20px));
+		color: $darker-text-color;
+		color: var(--darker-text-color, $darker-text-color);
+		line-height: 1.4;
 	}
 
 	&__related-info {

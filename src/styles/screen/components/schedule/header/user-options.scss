@@ -1,7 +1,6 @@
 .blokks-user-options {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
 
 	&__option {
 		@include reset-button;
@@ -17,8 +16,8 @@
 		}
 
 		&:hover {
-			color: $darkest-text-color;
-			color: var(--darkest-text-color, $darkest-text-color);
+			color: $hover-text-color;
+			color: var(--hover-text-color, $hover-text-color);
 			border-bottom: 1px solid;
 			transition: none;
 		}

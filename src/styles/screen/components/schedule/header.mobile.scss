@@ -3,23 +3,19 @@
 		display: flex;
 		flex-direction: column;
 
-		&__title {
-			order: 1;
-		}
-
 		.blokks-user-options {
 			margin-top: 10px;
-			order: 2;
+			order: 1;
 		}
 
 		.blokks-date-selector {
 			margin-top: 20px;
-			order: 3;
+			order: 2;
 		}
 
 		.blokks-filters {
 			margin-top: 30px;
-			order: 4;
+			order: 3;
 		}
 	}
 }

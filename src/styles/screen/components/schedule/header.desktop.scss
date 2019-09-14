@@ -6,29 +6,25 @@
 		display: grid;
 		grid-template-columns: 1fr min-content min-content;
 		grid-template-areas:
-			'title user-options search'
-			'date-selector x x'
+			'date-selector user-options search'
 			'filter filter filter';
-
-		&__title {
-			grid-area: title;
-			align-self: center;
-		}
 
 		.blokks-user-options {
 			grid-area: user-options;
 			margin-left: 20px;
 			justify-self: end;
+			align-self: center;
 		}
 
 		.blokks-search {
 			grid-area: search;
+			align-self: center;
 			margin-left: 20px;
 		}
 
 		.blokks-date-selector {
 			grid-area: date-selector;
-			margin-top: 20px;
+			align-self: center;
 		}
 
 		.blokks-filters {

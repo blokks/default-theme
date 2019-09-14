@@ -1,7 +1,7 @@
 @include layout('list') {
 	.blokks-activity {
 		display: grid;
-		grid-template-rows: min-content min-content;
+		grid-template-rows: 1fr min-content;
 		grid-template-columns: 120px min-content auto;
 		grid-column-gap: 25px;
 		grid-template-areas:
@@ -41,7 +41,7 @@
 		}
 
 		&__title {
-			font-size: rem(17px);
+			font-size: rem(15px);
 			color: $darkest-text-color;
 		}
 
@@ -51,20 +51,16 @@
 		}
 
 		&__subtitle {
-			font-size: 15px;
+			font-size: rem(15px);
 			color: $darker-text-color;
 		}
 
 		.blokks-time-labels {
-			font-size: 17px;
+			font-size: rem(14px);
 			color: $darker-text-color;
 			grid-area: time-labels;
 			justify-self: center;
 			align-self: center;
-		}
-
-		.blokks-time-labels__ends-at {
-			display: none;
 		}
 
 		.blokks-categories {
@@ -88,7 +84,7 @@
 		}
 
 		.blokks-icon {
-			@include relative($top: 2px);
+			@include relative($top: 1px);
 		}
 	}
 }

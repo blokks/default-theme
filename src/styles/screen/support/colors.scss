@@ -13,6 +13,7 @@ $darker-text-color: rgba(0, 0, 0, 0.5) !default;
 $darkest-text-color: rgba(0, 0, 0, 0.8) !default;
 $light-text-color: rgba(255, 255, 255, 0.75) !default;
 $lightest-text-color: rgb(255, 255, 255) !default;
+$hover-text-color: #1a73e8;
 
 /* Stroke colors */
 $default-stroke-color: #ccc !default;
@@ -20,8 +21,10 @@ $dark-stroke-color: #999 !default;
 $light-stroke-color: #eee !default;
 
 /* Other */
-$shadow-color: rgba(0, 0, 0, 0.05);
-$text-shadow-color: rgba(0, 0, 0, 0.4);
+$shadow-color: rgba(0, 0, 0, 0.05) !default;
+$text-shadow-color: rgba(0, 0, 0, 0.4) !default;
 $placeholder-background-color: #333 !default;
 $empty-image-background-color: #eee !default;
-$hover-background-color: rgba(0, 0, 0, 0.02);
+$hover-background-color: rgba(0, 0, 0, 0.02) !default;
+
+$poster-opacity: 0.5 !default;

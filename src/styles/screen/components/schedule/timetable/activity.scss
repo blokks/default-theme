@@ -6,7 +6,7 @@
 
 	&__title {
 		@include reset-title;
-		@include font($default-font, $size: rem(15px), $weight: 500);
+		@include font($default-font, $size: rem(14px));
 		line-height: 1.4;
 	}
 
@@ -54,5 +54,5 @@
 }
 
 @import 'activity.mobile';
-@import 'activity.desktop';
+@import 'activity.columns-rows';
 @import 'activity.list';
