@@ -1,26 +1,31 @@
 @include layout('list') {
 	.blokks-activity {
-		display: grid;
-		grid-template-rows: 1fr min-content;
-		grid-template-columns: 120px min-content auto;
-		grid-column-gap: 25px;
-		grid-template-areas:
-			'time-labels poster header'
-			'time-labels poster categories';
+		display: flex;
+		flex-direction: row;
+
+		@supports (display: contents) {
+			display: grid;
+			grid-template-rows: 1fr min-content;
+			grid-template-columns: 120px min-content auto;
+			grid-column-gap: 25px;
+			grid-template-areas:
+				'time-labels poster header'
+				'time-labels poster categories';
+
+			background-position: 120px;
+			background-repeat: no-repeat;
+			background-size: 1px auto;
+			background-image: linear-gradient(
+				180deg,
+				$light-stroke-color,
+				$light-stroke-color,
+				$light-stroke-color
+			);
+		}
 
 		padding: 30px 30px 30px 0;
 		border-bottom: 1px solid $light-stroke-color;
 		transition: opacity 300ms;
-
-		background-position: 120px;
-		background-repeat: no-repeat;
-		background-size: 1px auto;
-		background-image: linear-gradient(
-			180deg,
-			$light-stroke-color,
-			$light-stroke-color,
-			$light-stroke-color
-		);
 
 		&--dimmed {
 			opacity: 0.3;
@@ -35,9 +40,19 @@
 		&__header {
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
-			grid-area: header;
-			max-width: 600px;
+			margin-left: 25px;
+			order: 2;
+
+			@supports (display: contents) {
+				display: contents;
+				grid-area: header;
+				max-width: 600px;
+			}
+		}
+
+		&__titles {
+			margin-top: 5px;
+			order: 2;
 		}
 
 		&__title {
@@ -56,26 +71,38 @@
 		}
 
 		.blokks-time-labels {
-			font-size: rem(14px);
+			font-size: rem(13px);
 			color: $darker-text-color;
-			grid-area: time-labels;
-			justify-self: center;
-			align-self: center;
+			order: 1;
+
+			@supports (display: contents) {
+				font-size: rem(14px);
+				grid-area: time-labels;
+				justify-self: center;
+				align-self: center;
+			}
 		}
 
 		.blokks-categories {
-			grid-area: categories;
 			margin: 5px 0 0 -5px;
+			order: 3;
+
+			@supports (display: contents) {
+				grid-area: categories;
+			}
 		}
 
 		.blokks-poster {
 			@include size(70px);
 			background-color: $placeholder-background-color;
 			background-color: var(--placeholder-background-color, $placeholder-background-color);
-
 			border-radius: 50%;
-			grid-area: poster;
 			align-self: center;
+			order: 1;
+
+			@supports (display: contents) {
+				grid-area: poster;
+			}
 		}
 
 		&--dimmed .blokks-poster {

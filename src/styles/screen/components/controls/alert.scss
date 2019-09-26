@@ -1,0 +1,20 @@
+.blokks-alert {
+	@include font($default-font, $size: rem(14px));
+	display: block;
+	margin: 0;
+	padding: 14px 18px;
+
+	&--warning {
+		color: $alert-text-color;
+		color: var(--alert-text-color, $alert-text-color);
+		background-color: $alert-background-color;
+		background-color: var(--alert-background-color, $alert-background-color);
+	}
+
+	&--danger {
+		color: $danger-text-color;
+		color: var(--danger-text-color, $danger-text-color);
+		background-color: $danger-background-color;
+		background-color: var(--danger-background-color, $danger-background-color);
+	}
+}

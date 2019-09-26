@@ -1,10 +1,7 @@
 @include device('mobile') {
 	.blokks-activity {
-		display: grid;
-		grid-column-gap: 15px;
-		grid-template-columns: min-content auto;
-		grid-template-areas: 'poster header' 'poster time-labels' 'poster categories';
-
+		display: flex;
+		flex-direction: row;
 		margin-top: 15px;
 		transition: opacity 300ms;
 
@@ -13,7 +10,14 @@
 		}
 
 		&__header {
-			grid-area: header;
+			display: flex;
+			flex-direction: column;
+			margin-left: 15px;
+			order: 1;
+		}
+
+		&__titles {
+			order: 1;
 		}
 
 		&__title {
@@ -38,12 +42,12 @@
 		}
 
 		.blokks-time-labels {
-			grid-area: time-labels;
+			order: 1;
 		}
 
 		.blokks-categories {
 			margin: 8px 0 0 -5px;
-			grid-area: categories;
+			order: 3;
 		}
 
 		&--selected &__title,
@@ -55,7 +59,7 @@
 		.blokks-poster {
 			@include size(55px);
 			margin-top: 2px;
-			grid-area: poster;
+			border-radius: 50%;
 
 			background-color: $placeholder-background-color;
 			background-color: var(--placeholder-background-color, $placeholder-background-color);
@@ -65,6 +69,7 @@
 		&--dimmed .blokks-poster {
 			filter: grayscale(75%);
 			opacity: 0.5;
+			order: 1;
 		}
 
 		&:not(&--has-poster):before {
@@ -73,6 +78,7 @@
 			content: '';
 			background-color: $empty-image-background-color;
 			background-color: var(--empty-image-background-color, $empty-image-background-color);
+			order: 1;
 		}
 	}
 }

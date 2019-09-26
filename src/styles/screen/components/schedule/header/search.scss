@@ -11,9 +11,10 @@
 		color: $dark-text-color;
 		color: var(--dark-text-color, $dark-text-color);
 
-		padding: 12px 14px;
+		padding: 12px 16px;
 		background-color: $lightest-background-color;
 		background-color: var(--lightest-background-color, $lightest-background-color);
+		border-radius: 20px;
 		outline: none;
 		transition: color 200ms, border 150ms;
 
@@ -26,13 +27,12 @@
 		&:focus {
 			color: $hover-text-color;
 			color: var(--hover-text-color, $hover-text-color);
-			outline: 5px auto $theme-color;
-			outline: 5px auto var(--theme-color, $theme-color);
 		}
 	}
 
 	&__suggestions {
 		@include reset-list;
+		margin-top: 5px;
 	}
 
 	&__suggestion {
@@ -40,16 +40,16 @@
 		color: $darker-text-color;
 		color: var(--darker-text-color, $darker-text-color);
 
-		padding: 10px 12px;
+		margin-top: -1px;
+		padding: 12px 14px;
 		background-color: $default-background-color;
 		background-color: color($default-background-color, $default-background-color);
 		border: 1px solid $default-stroke-color;
 		border: 1px solid var(--default-stroke-color, $default-stroke-color);
-		border-top: none;
 
 		&:focus {
-			outline: 5px auto $theme-color;
-			outline: 5px auto var(--theme-color, $theme-color);
+			outline: 4px auto $theme-color;
+			outline: 4px auto var(--theme-color, $theme-color);
 			z-index: 1;
 		}
 

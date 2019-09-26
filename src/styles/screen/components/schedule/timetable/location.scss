@@ -12,10 +12,29 @@
 
 	&__title {
 		@include reset-title;
-		@include font($default-font, $size: rem(14px));
+		@include font($default-font, $size: rem(14px), $weight: 500);
 		color: $darkest-text-color;
 		color: var(--darkest-text-color, $darkest-text-color);
 		line-height: 1.4;
+	}
+
+	&--packed &__title:before,
+	&--crowded &__title:before {
+		@include size(10px);
+		display: inline-block;
+		margin-right: 5px;
+		border-radius: 50%;
+		content: '';
+	}
+
+	&--crowded &__title:before {
+		background-color: $alert-text-color;
+		background-color: var(--alert-text-color, $alert-text-color);
+	}
+
+	&--packed &__title:before {
+		background-color: $danger-text-color;
+		background-color: var(--danger-text-color, $danger-text-color);
 	}
 
 	&__subtitle {

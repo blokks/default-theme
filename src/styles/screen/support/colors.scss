@@ -5,7 +5,7 @@ $secondary-color: #c83a6f !default;
 $default-background-color: #fff !default;
 $dark-background-color: #1b1b1b !default;
 $light-background-color: #aaa !default;
-$lightest-background-color: rgba(0, 0, 0, 0.05);
+$lightest-background-color: rgba(0, 0, 0, 0.05) !default;
 
 /* Text colors */
 $dark-text-color: rgba(0, 0, 0, 0.3) !default;
@@ -13,17 +13,23 @@ $darker-text-color: rgba(0, 0, 0, 0.5) !default;
 $darkest-text-color: rgba(0, 0, 0, 0.8) !default;
 $light-text-color: rgba(255, 255, 255, 0.75) !default;
 $lightest-text-color: rgb(255, 255, 255) !default;
-$hover-text-color: #1a73e8;
+$hover-text-color: rgba(0, 0, 0, 0.8) !default;;
 
 /* Stroke colors */
 $default-stroke-color: #ccc !default;
 $dark-stroke-color: #999 !default;
 $light-stroke-color: #eee !default;
 
+/* Alerts */
+$alert-background-color: lighten(#f6b411, 40%) !default;
+$alert-text-color: darken(#f6b411, 20%) !default;
+$danger-background-color: lighten(#c83a6f, 42%) !default;
+$danger-text-color: #c83a6f !default;
+
 /* Other */
 $shadow-color: rgba(0, 0, 0, 0.05) !default;
 $text-shadow-color: rgba(0, 0, 0, 0.4) !default;
-$placeholder-background-color: #333 !default;
+$placeholder-background-color: #eee !default;
 $empty-image-background-color: #eee !default;
 $hover-background-color: rgba(0, 0, 0, 0.02) !default;
 

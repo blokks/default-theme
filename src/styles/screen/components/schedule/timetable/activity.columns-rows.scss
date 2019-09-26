@@ -16,8 +16,8 @@
 
 		&--selected,
 		&:not(&--disabled):focus {
-			outline: 5px auto $theme-color;
-			outline: 5px auto var(--theme-color, $theme-color);
+			outline: 4px auto $theme-color;
+			outline: 4px auto var(--theme-color, $theme-color);
 		}
 
 		@include layout('columns') {
@@ -31,7 +31,13 @@
 		}
 
 		&__header {
-			z-index: 1;
+			display: flex;
+			flex-direction: column;
+			z-index: 2;
+		}
+
+		&__titles {
+			order: 1;
 		}
 
 		&__title {
@@ -53,6 +59,7 @@
 			color: $light-text-color;
 			color: var(--light-text-color, $light-text-color);
 			z-index: 1;
+			order: 1;
 		}
 
 		.blokks-categories {

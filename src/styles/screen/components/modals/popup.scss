@@ -5,7 +5,11 @@
 	background-color: white;
 
 	&__title {
-		@include h1($size: 24px);
+		@include reset-title;
+		@include font($default-font, 24px, $weight: 500);
+		color: $darkest-text-color;
+		color: var(--darkest-text-color, $darkest-text-color);
+		line-height: 1.25;
 	}
 
 	&__description {
@@ -16,15 +20,13 @@
 
 	&__footer {
 		@include bodytext;
-		margin-top: 15px;
+		margin: 15px 0 0 0;
 		max-width: 380px;
-		color: $dark-text-color;
-		color: var(--dark-text-color, $dark-text-color);
 	}
 
 	&__action-button {
 		@include button;
-		margin-top: 25px;
+		margin: 20px 0 0 -5px;
 	}
 
 	&__close-button {

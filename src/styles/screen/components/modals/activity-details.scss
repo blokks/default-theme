@@ -28,8 +28,18 @@
 		color: var(--lightest-text-color, $lightest-text-color);
 	}
 
+	.blokks-alert {
+		margin-bottom: 20px;
+	}
+
 	&__content {
-		padding: 30px;
+		@include device('mobile') {
+			padding: 20px;
+		}
+
+		@include device('desktop') {
+			padding: 30px;
+		}
 	}
 
 	&__header {
@@ -38,10 +48,10 @@
 
 	&__title {
 		@include reset-title;
-		@include font($default-font, $size: rem(28px));
+		@include font($default-font, $size: rem(28px), $weight: 500);
 		color: $darkest-text-color;
 		color: var(--darkest-text-color, $darkest-text-color);
-		line-height: 1.4;
+		line-height: 1.25;
 	}
 
 	&--favorited &__title {
@@ -54,13 +64,14 @@
 		@include font($default-font, $size: rem(20px));
 		color: $darker-text-color;
 		color: var(--darker-text-color, $darker-text-color);
-		line-height: 1.4;
+		line-height: 1.25;
 	}
 
 	&__related-info {
-		@include bodytext;
+		@include font($default-font, $size: rem(15px));
 		color: $darker-text-color;
 		color: var(--darker-text-color, $darker-text-color);
+		line-height: 1.5;
 		margin-top: 20px;
 	}
 
@@ -74,7 +85,7 @@
 	}
 
 	.blokks-categories {
-		margin: 5px 0 0 -3px;
+		margin: 5px 0 0 -5px;
 	}
 
 	&__description {
@@ -108,7 +119,7 @@
 
 	&__share-button {
 		@include button-with-icon;
-		margin-top: 5px;
+		margin: 5px 0 0 -5px;
 	}
 
 	&__share-button .blokks-icon {
@@ -121,10 +132,12 @@
 
 	&__signin-button {
 		@include button-with-icon;
+		margin-left: -5px;
 	}
 
 	&__favorite-button {
 		@include button-with-icon;
+		margin-left: -5px;
 	}
 
 	&__favorite-button .blokks-icon {
@@ -133,6 +146,7 @@
 
 	&__unfavorite-button {
 		@include button-with-icon;
+		margin-left: -5px;
 	}
 
 	&__unfavorite-button .blokks-icon {

@@ -1,20 +1,4 @@
 /* Text styles */
-@mixin h1($size: rem(28px)) {
-	@include reset-title;
-	@include font($default-font, $size);
-	color: $darkest-text-color;
-	color: var(--darkest-text-color, $darkest-text-color);
-	line-height: 1.4;
-}
-
-@mixin h2($size: rem(20px)) {
-	@include reset-title;
-	@include font($default-font, $size);
-	color: $darker-text-color;
-	color: var(--darker-text-color, $darker-text-color);
-	line-height: 1.4;
-}
-
 @mixin bodytext {
 	@include font($default-font, $size: rem(15px));
 	color: $darker-text-color;
@@ -28,14 +12,14 @@
 
 	h1 {
 		@include reset-title;
-		@include font($default-font, $size: 17px);
+		@include font($default-font, $size: 17px, $weight: 500);
 		color: $darkest-text-color;
 		color: var(--darkest-text-color, $darkest-text-color);
 	}
 
 	h2 {
 		@include reset-title;
-		@include font($default-font, $size: 15px);
+		@include font($default-font, $size: 15px, $weight: 500);
 		color: $darkest-text-color;
 		color: var(--darkest-text-color, $darkest-text-color);
 	}
@@ -51,7 +35,7 @@
 	}
 
 	strong {
-		font-weight: 700;
+		font-weight: 500;
 	}
 }
 
@@ -80,7 +64,7 @@
 
 @mixin close-button {
 	@include reset-button;
-	@include size(35px);
+	@include size(34px);
 	color: $darker-text-color;
 	color: var(--darker-text-color, $darker-text-color);
 
