@@ -1,7 +1,14 @@
 .blokks-time-indicator {
-	border-top: 2px solid;
-	border-color: $secondary-color;
-	border-color: var(--secondary-color, $secondary-color);
+	background-color: $secondary-color;
+	background-color: var(--secondary-color, $secondary-color);
+
+	@include layout('columns') {
+		height: 1px;
+	}
+
+	@include layout('rows') {
+		width: 1px;
+	}
 
 	&__time-label {
 		display: none;

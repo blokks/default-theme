@@ -9,6 +9,10 @@
 			opacity: 0.3;
 		}
 
+		&--ended {
+			opacity: 0.3;
+		}
+
 		&__header {
 			display: flex;
 			flex-direction: column;
@@ -27,6 +31,8 @@
 		}
 
 		&__subtitle {
+			color: $darker-text-color;
+			color: var(--darker-text-color, $darker-text-color);
 			transition: color 300ms;
 		}
 
@@ -35,14 +41,10 @@
 			color: var(--theme-color, $theme-color);
 		}
 
-		&__subtitle,
 		.blokks-time-labels {
-			color: $darker-text-color;
-			color: var(--darker-text-color, $darker-text-color);
-		}
-
-		.blokks-time-labels {
-			order: 1;
+			color: $dark-text-color;
+			color: var(--dark-text-color, $dark-text-color);
+			order: 2;
 		}
 
 		.blokks-categories {

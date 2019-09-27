@@ -6,12 +6,18 @@
 		display: grid;
 		grid-template-columns: 1fr min-content min-content;
 		grid-template-areas:
+			'title title title'
 			'date-selector user-options search'
 			'filter filter filter';
 
+		&__title {
+			grid-area: title;
+			margin-bottom: 15px;
+		}
+
 		.blokks-user-options {
 			grid-area: user-options;
-			margin-left: 20px;
+			margin-left: 15px;
 			justify-self: end;
 			align-self: center;
 		}
@@ -19,7 +25,7 @@
 		.blokks-search {
 			grid-area: search;
 			align-self: center;
-			margin-left: 20px;
+			margin-left: 15px;
 		}
 
 		.blokks-date-selector {
@@ -29,7 +35,7 @@
 
 		.blokks-filters {
 			grid-area: filter;
-			margin: 30px 0 0 -5px;
+			margin: 20px 0 0 -5px;
 		}
 	}
 }

@@ -31,6 +31,10 @@
 			opacity: 0.3;
 		}
 
+		&--ended {
+			opacity: 0.3;
+		}
+
 		&--selected,
 		&:hover {
 			transition: none;
@@ -81,6 +85,14 @@
 				justify-self: center;
 				align-self: center;
 			}
+		}
+
+		&--now-playing .blokks-time-labels__ends-at {
+			display: none;
+		}
+
+		&--coming-soon .blokks-time-labels__ends-at {
+			display: none;
 		}
 
 		.blokks-categories {

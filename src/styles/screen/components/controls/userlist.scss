@@ -1,7 +1,10 @@
 .blokks-userlist {
-	@include horizontal-list($spacing: 10px);
+	@include horizontal-list($spacing: -5px);
 }
 
 .blokks-user {
-	@include size(35px);
+	@include size(40px);
+	// border: 2px solid white;
+	box-shadow: 0 0 0 3px white;
+	border-radius: 50%;
 }

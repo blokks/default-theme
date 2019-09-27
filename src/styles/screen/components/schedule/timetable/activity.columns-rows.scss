@@ -11,13 +11,15 @@
 		}
 
 		&--dimmed {
-			background-color: #ddd;
+			background-color: $light-background-color;
+			background-color: var(--light-background-color, $light-background-color);
 		}
 
 		&--selected,
+		&:not(&--disabled):hover,
 		&:not(&--disabled):focus {
-			outline: 4px auto $theme-color;
-			outline: 4px auto var(--theme-color, $theme-color);
+			outline: 3px auto $theme-color;
+			outline: 3px auto var(--theme-color, $theme-color);
 		}
 
 		@include layout('columns') {
@@ -45,9 +47,17 @@
 			color: var(--lightest-text-color, $lightest-text-color);
 		}
 
+		&--ended &__title {
+			opacity: 0.5;
+		}
+
 		&__subtitle {
 			color: $light-text-color;
 			color: var(--light-text-color, $light-text-color);
+		}
+
+		&--ended &__subtitle {
+			opacity: 0.5;
 		}
 
 		.blokks-icon {
@@ -55,11 +65,14 @@
 		}
 
 		.blokks-time-labels {
-			margin-top: 2px;
 			color: $light-text-color;
 			color: var(--light-text-color, $light-text-color);
 			z-index: 1;
 			order: 1;
+		}
+
+		&--ended .blokks-time-labels {
+			opacity: 0.5;
 		}
 
 		.blokks-categories {
@@ -69,19 +82,25 @@
 		.blokks-poster {
 			@include absolute($top: 0, $left: 0);
 			@include size(100%);
+			filter: grayscale(0%);
 			opacity: $poster-opacity;
 			opacity: var(--poster-opacity, $poster-opacity);
 			z-index: -1;
-			transition: opacity 300ms;
+			transition: all 300ms;
 		}
 
 		&--favorited .blokks-poster {
-			opacity: 0.3;
+			opacity: 0.2;
 		}
 
 		&--dimmed .blokks-poster {
-			opacity: 0.3;
-			filter: grayscale(75%);
+			opacity: 0.2;
+			filter: grayscale(50%);
+		}
+
+		&--ended .blokks-poster {
+			opacity: 0.2;
+			filter: grayscale(100%);
 		}
 	}
 }

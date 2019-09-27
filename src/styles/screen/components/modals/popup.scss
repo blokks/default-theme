@@ -2,7 +2,16 @@
 	padding: 30px;
 	width: 100%;
 	max-width: 480px;
-	background-color: white;
+	background-color: $default-background-color;
+	background-color: var(--default-background-color, $default-background-color);
+
+	@include device('mobile') {
+		padding: 20px;
+	}
+
+	@include device('desktop') {
+		padding: 30px;
+	}
 
 	&__title {
 		@include reset-title;

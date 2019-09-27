@@ -51,7 +51,8 @@
 	}
 
 	.blokks-time-labels {
-		@include font($default-font, $size: rem(13px));
+		@include font($default-font, $size: rem(14px));
+		@include truncate-tail();
 		line-height: 1.4;
 	}
 

@@ -26,11 +26,6 @@
 		background-color: var(--lightest-background-color, $lightest-background-color);
 		border-radius: 20px;
 		cursor: pointer;
-
-		&:focus {
-			outline: 4px auto $theme-color;
-			outline: 4px auto var(--theme-color, $theme-color);
-		}
 	}
 
 	.blokks-icon {
