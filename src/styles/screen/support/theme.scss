@@ -46,24 +46,25 @@
 	color: $lightest-text-color;
 	color: var(--lightest-text-color, $lightest-text-color);
 
-	padding: 10px 20px;
+	padding: 10px 20px 12px;
 	border-radius: 20px;
 	background-color: $theme-color;
 	background-color: var(--theme-color, $theme-color);
-
-	// &:hover {
-	// 	background-color: $secondary-color;
-	// 	background-color: var(--secondary-color, $secondary-color);
-	// }
 }
 
-@mixin button-with-icon {
+@mixin button-with-icon($icon-margin: 8px, $hide-label: false) {
 	@include button;
-	text-align: left;
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+
+	.blokks-label {
+		text-align: left;
+	}
 
 	.blokks-icon {
-		@include relative($top: 1px);
-		margin-right: 8px;
+		@include size(18px);
+		margin-right: $icon-margin;
 	}
 }
 
@@ -78,7 +79,7 @@
 	}
 
 	.blokks-icon {
-		@include size(14px);
+		@include size(18px);
 	}
 }
 

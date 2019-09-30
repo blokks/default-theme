@@ -87,4 +87,7 @@
 @mixin reset-input {
 	appearance: none;
 	border: none;
+	outline: none;
+	background: none;
+	box-shadow: none;
 }

@@ -66,12 +66,12 @@
 			background-color: $placeholder-background-color;
 			background-color: var(--placeholder-background-color, $placeholder-background-color);
 			transition: opacity 300ms;
+			order: 0;
 		}
 
 		&--dimmed .blokks-poster {
 			filter: grayscale(75%);
 			opacity: 0.5;
-			order: 1;
 		}
 
 		&:not(&--has-poster):before {
@@ -80,7 +80,7 @@
 			content: '';
 			background-color: $empty-image-background-color;
 			background-color: var(--empty-image-background-color, $empty-image-background-color);
-			order: 1;
+			order: 0;
 		}
 	}
 }

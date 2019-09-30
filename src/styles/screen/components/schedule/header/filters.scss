@@ -2,19 +2,23 @@
 	@include horizontal-list;
 	max-width: 750px;
 
-	button {
+	&__filter {
 		@include reset-button;
-		@include font($default-font, $size: rem(13px));
+		@include font($default-font, $size: rem(14px));
 		color: $darker-text-color;
 		color: var(--darker-text-color, $darker-text-color);
 		text-transform: capitalize;
 		white-space: nowrap;
 
 		margin: 0 4px 4px 0;
-		padding: 6px 15px;
+		padding: 4px 15px 7px;
 		border-radius: 15px;
 		background-color: rgba(0, 0, 0, 0.05);
 		transition: background 300ms, color 150ms;
+
+		@include device('mobile') {
+			font-size: rem(13px);
+		}
 
 		&:hover {
 			color: $hover-text-color;
@@ -30,7 +34,13 @@
 		}
 	}
 
-	.blokks-icon {
-		margin-right: 8px;
+	&__filter .blokks-label {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	&__filter .blokks-icon {
+		@include size(18px);
+		margin-right: 5px;
 	}
 }

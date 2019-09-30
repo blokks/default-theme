@@ -19,7 +19,7 @@
 		@include reset-dropdown();
 		@include size(100%);
 
-		padding: 12px 16px;
+		padding: 11px 16px 12px;
 		font-size: inherit;
 		color: inherit;
 		background-color: $lightest-background-color;
@@ -29,7 +29,7 @@
 	}
 
 	.blokks-icon {
-		@include absolute($top: 13px, $right: 16px);
-		width: 14px;
+		@include absolute($top: 12px, $right: 15px);
+		@include size(18px);
 	}
 }

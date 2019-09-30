@@ -148,17 +148,9 @@
 		margin-left: -5px;
 	}
 
-	&__favorite-button .blokks-icon {
-		margin-right: 5px;
-	}
-
 	&__unfavorite-button {
 		@include button-with-icon;
 		margin-left: -5px;
-	}
-
-	&__unfavorite-button .blokks-icon {
-		margin-right: 5px;
 	}
 
 	&__favorited-by {

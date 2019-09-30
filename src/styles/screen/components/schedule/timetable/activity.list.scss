@@ -121,9 +121,5 @@
 			opacity: 0.5;
 			filter: grayscale(75%);
 		}
-
-		.blokks-icon {
-			@include relative($top: 1px);
-		}
 	}
 }

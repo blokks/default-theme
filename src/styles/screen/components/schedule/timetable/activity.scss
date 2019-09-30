@@ -8,7 +8,6 @@
 		@include reset-title;
 		@include font($default-font, $size: rem(14px), $weight: 500);
 		line-height: 1.4;
-
 		@supports not (-webkit-line-clamp: 2) {
 			@include truncate-tail();
 		}
@@ -21,8 +20,17 @@
 		}
 	}
 
-	&--headliner &__title {
-		text-decoration: underline;
+	&__title .blokks-label {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	&__title .blokks-icon {
+		@include size(18px);
+	}
+
+	&__title .blokks-icon:last-of-type {
+		margin-right: 5px;
 	}
 
 	&--canceled &__title {
@@ -58,10 +66,6 @@
 
 	&--canceled .blokks-time-labels {
 		text-decoration: line-through;
-	}
-
-	.blokks-icon {
-		margin-right: 5px;
 	}
 
 	.blokks-poster {
