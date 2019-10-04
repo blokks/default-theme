@@ -9,7 +9,7 @@
 		color: var(--darker-text-color, $darker-text-color);
 		white-space: nowrap;
 		border-bottom: 1px solid transparent;
-		transition: color 150ms, border 150ms;
+		transition: all 150ms linear;
 
 		&:not(:last-of-type) {
 			margin-right: 15px;

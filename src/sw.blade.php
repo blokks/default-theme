@@ -1,25 +1,19 @@
 importScripts('{{ themes_url("$theme/blokks-sw.js") }}');
 
 const prefix = '{{ $schedule->slug }}';
-const version = '3.0.0';
+const version = '3.0.1';
 const url = '{{ route('embeds.dedicated', ['schedules' => $schedule->slug ]) }}/';
+const updatedAt = '{{ $schedule->updated_at }}';
 
 const files = [
 	url,
 	'{{ route('embeds.launcher', ['schedules' => $schedule->slug ]) }}',
 	'{{ themes_url("$theme/modern.js") }}',
 	'{{ themes_url("$theme/legacy.js") }}',
-	'{{ themes_url("$theme/rows.css") }}',
 	'{{ themes_url("$theme/columns.css") }}',
-	'{{ themes_url("$theme/icons.svg") }}',
-	'{{ themes_url("$theme/PublicSans-Regular.woff") }}',
-	'{{ themes_url("$theme/PublicSans-Regular.woff2") }}',
-	'{{ themes_url("$theme/PublicSans-Medium.woff") }}',
-	'{{ themes_url("$theme/PublicSans-Medium.woff2") }}',
-	'{{ themes_url("$theme/PublicSans-SemiBold.woff") }}',
-	'{{ themes_url("$theme/PublicSans-SemiBold.woff2") }}',
-	'{{ themes_url("$theme/PublicSans-Bold.woff") }}',
-	'{{ themes_url("$theme/PublicSans-Bold.woff2") }}',
+	'{{ themes_url("$theme/rows.css") }}',
+	'{{ themes_url("$theme/list.css") }}',
+	'https://fonts.googleapis.com/icon?family=Material+Icons',
 ];
 
 enableOffline({ 

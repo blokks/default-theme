@@ -8,7 +8,7 @@
 	background-color: $lightest-background-color;
 	background-color: var(--lightest-background-color, $lightest-background-color);
 	border-radius: 20px;
-	transition: color 200ms, border 150ms;
+	transition: all 150ms linear;
 
 	&:hover {
 		color: $hover-text-color;
@@ -28,14 +28,14 @@
 	&__input {
 		@include reset-input();
 		@include size(100%);
-		padding: 11px 16px 12px;
+		padding: 11px 20px 12px;
 		font: inherit;
 		color: inherit;
 	}
 
 	.blokks-icon {
-		@include absolute($top: 12px, $right: 15px);
-		@include size(18px);
+		@include absolute($top: 10px, $right: 15px);
+		font-size: rem(22px);
 	}
 
 	&__suggestions {

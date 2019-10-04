@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	outline: none;
-	transition: background 300ms;
+	transition: background 150ms linear;
 
 	&__title {
 		@include reset-title;
@@ -26,11 +26,11 @@
 	}
 
 	&__title .blokks-icon {
-		@include size(18px);
+		font-size: rem(16px);
 	}
 
 	&__title .blokks-icon:last-of-type {
-		margin-right: 5px;
+		margin-right: 3px;
 	}
 
 	&--canceled &__title {

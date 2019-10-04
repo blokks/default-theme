@@ -4,26 +4,31 @@
 
 	&__filter {
 		@include reset-button;
-		@include font($default-font, $size: rem(14px));
+		@include font($default-font);
 		color: $darker-text-color;
 		color: var(--darker-text-color, $darker-text-color);
 		text-transform: capitalize;
 		white-space: nowrap;
+		line-height: 1;
 
 		margin: 0 4px 4px 0;
-		padding: 4px 15px 7px;
-		border-radius: 15px;
+		padding: 7px 15px 8px;
 		background-color: rgba(0, 0, 0, 0.05);
-		transition: background 300ms, color 150ms;
+		border-radius: 16px;
+		transition: all 150ms linear;
 
 		@include device('mobile') {
 			font-size: rem(13px);
 		}
 
+		@include device('desktop') {
+			font-size: rem(14px);
+		}
+
 		&:hover {
 			color: $hover-text-color;
 			color: var(--hover-text-color, $hover-text-color);
-			transition: background 300ms;
+			transition: background 150ms linear;
 		}
 
 		&[class*='selected'] {
@@ -34,13 +39,8 @@
 		}
 	}
 
-	&__filter .blokks-label {
-		display: inline-block;
-		vertical-align: middle;
-	}
-
 	&__filter .blokks-icon {
-		@include size(18px);
-		margin-right: 5px;
+		margin-right: 3px;
+		font-size: rem(16px);
 	}
 }

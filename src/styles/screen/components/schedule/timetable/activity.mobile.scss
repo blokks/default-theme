@@ -3,7 +3,7 @@
 		display: flex;
 		flex-direction: row;
 		margin-top: 15px;
-		transition: opacity 300ms;
+		transition: opacity 150ms linear;
 
 		&--dimmed {
 			opacity: 0.3;
@@ -16,7 +16,6 @@
 		&__header {
 			display: flex;
 			flex-direction: column;
-			margin-left: 15px;
 			order: 1;
 		}
 
@@ -27,13 +26,13 @@
 		&__title {
 			color: $darkest-text-color;
 			color: var(--darkest-text-color, $darkest-text-color);
-			transition: color 300ms;
+			transition: color 150ms linear;
 		}
 
 		&__subtitle {
 			color: $darker-text-color;
 			color: var(--darker-text-color, $darker-text-color);
-			transition: color 300ms;
+			transition: color 150ms linear;
 		}
 
 		&--favorited &__title {
@@ -60,12 +59,12 @@
 
 		.blokks-poster {
 			@include size(55px);
-			margin-top: 2px;
+			margin: 2px 15px 0 0;
 			border-radius: 50%;
 
 			background-color: $placeholder-background-color;
 			background-color: var(--placeholder-background-color, $placeholder-background-color);
-			transition: opacity 300ms;
+			transition: opacity 150ms linear;
 			order: 0;
 		}
 
