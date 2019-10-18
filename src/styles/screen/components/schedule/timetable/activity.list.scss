@@ -24,7 +24,7 @@
 
 		padding: 30px 30px 30px 0;
 		border-bottom: 1px solid $light-stroke-color;
-		transition: opacity 150ms linear;
+		transition: opacity 100ms linear;
 
 		&--dimmed {
 			opacity: 0.3;
@@ -74,11 +74,13 @@
 		&__subtitle {
 			font-size: rem(15px);
 			color: $darker-text-color;
+			color: var(--darker-text-color, $darker-text-color);
 		}
 
 		.blokks-time-labels {
 			font-size: rem(13px);
 			color: $darker-text-color;
+			color: var(--darker-text-color, $darker-text-color);
 			order: 1;
 
 			@supports (display: contents) {

@@ -16,8 +16,8 @@
 		}
 
 		&:hover {
-			color: $hover-text-color;
-			color: var(--hover-text-color, $hover-text-color);
+			color: $theme-color;
+			color: var(--hover-text-color, var(--theme-color, $theme-color));
 			border-bottom: 1px solid;
 			transition: none;
 		}

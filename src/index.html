@@ -14,31 +14,51 @@
 		/>
 
 		<link href="http://themes.blokks.localhost/list.css" rel="stylesheet" />
-	</head>
-
-	<body>
-		<div blokks-container></div>
-		<!-- <blokks-schedule id="6kga8pkdj432" layout="list"></blokks-schedule> -->
 
 		<script>
 			if ('scrollRestoration' in window.history) {
 				window.history.scrollRestoration = 'manual';
 			}
 		</script>
+	</head>
+
+	<body>
+		<div blokks-container></div>
 
 		<script>
 			var blokks = {};
-			blokks.id = '6kga8pkdj432';
+			blokks.id = 'jg4qo2mwdp97';
 			blokks.options = {
 				layout: 'list',
 				socialProvider: 'facebook',
 				timescale: 3600,
-				showTitles: false,
 			};
 		</script>
 
-		<script src="http://127.0.0.1:35729/livereload.js?ext=Chrome&amp;extver=2.1.0"></script>
 		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/5.0.1/pusher.min.js"></script> -->
+		<script src="http://127.0.0.1:35729/livereload.js?ext=Chrome&amp;extver=2.1.0"></script>
 		<script defer src="http://themes.blokks.localhost/modern.js"></script>
+
+		<!-- <blokks-schedule id="jg4qo2mwdp97" layout="columns"></blokks-schedule>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/5.0.1/pusher.min.js"></script>
+		<script src="http://127.0.0.1:35729/livereload.js?ext=Chrome&amp;extver=2.1.0"></script>
+		<script defer src="http://themes.blokks.localhost/modern.js"></script> -->
+
+		<script>
+			window.addEventListener('message', ({ data }) => {
+				const schedule = document.getElementById('jg4qo2mwdp97');
+
+				switch (data.message) {
+					case 'setVariable':
+						schedule.style.setProperty(data.key, data.value);
+						break;
+
+					case 'setProperty':
+						schedule[data.key] = data.value;
+						break;
+				}
+			});
+		</script>
 	</body>
 </html>

@@ -97,7 +97,11 @@
 	}
 
 	&__description {
-		@include bodytext;
+		@include font($default-font, $size: rem(15px));
+		color: $darker-text-color;
+		color: var(--darker-text-color, $darker-text-color);
+		line-height: 1.5;
+
 		margin-top: 20px;
 		max-width: 500px;
 	}
@@ -105,6 +109,30 @@
 	&__description * {
 		font-family: inherit;
 		color: inherit;
+	}
+
+	&__description h1 {
+		@include reset-title;
+		@include font($default-font, $size: 17px, $weight: 500);
+		color: $darkest-text-color;
+		color: var(--darkest-text-color, $darkest-text-color);
+	}
+
+	&__description h2 {
+		@include reset-title;
+		@include font($default-font, $size: 15px, $weight: 500);
+		color: $darkest-text-color;
+		color: var(--darkest-text-color, $darkest-text-color);
+	}
+
+	&__description a {
+		color: $theme-color;
+		color: var(--hover-text-color, var(--theme-color, $theme-color));
+		cursor: pointer;
+	}
+
+	&__description strong {
+		font-weight: 600;
 	}
 
 	&__description img {
@@ -159,7 +187,7 @@
 
 		&:before {
 			@include font($default-font, $size: rem(15px));
-			content: attr(data-title) ;
+			content: attr(data-title);
 			color: $darker-text-color;
 			color: var(--darker-text-color, $darker-text-color);
 		}

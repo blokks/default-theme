@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1066px" height="167px" viewBox="0 0 1066 167" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="header" fill-rule="nonzero">
+        <rect id="search" fill="#F2F2F2" x="866" y="43" width="200" height="40" rx="20"></rect>
+        <rect id="title" fill="#333333" x="5" y="0" width="150" height="25"></rect>
+
+        <g id="date-selector" transform="translate(5.000000, 57.000000)">
+            <rect fill="#1A73E8" x="0" y="0" width="110" height="15"></rect>
+            <rect fill="#F2F2F2" x="120" y="0" width="110" height="15"></rect>
+        </g>
+
+        <g id="user-options" transform="translate(532.000000, 57.000000)" fill="#F2F2F2">
+            <rect x="0" y="0" width="100" height="15"></rect>
+            <rect x="110" y="0" width="100" height="15"></rect>
+            <rect x="220" y="0" width="100" height="15"></rect>
+        </g>
+
+        <g id="filters" transform="translate(0.000000, 103.000000)" fill="#F2F2F2">
+            <rect x="0" y="0" width="130" height="30" rx="15"></rect>
+            <rect x="134" y="0" width="110" height="30" rx="15"></rect>
+            <rect x="248" y="0" width="130" height="30" rx="15"></rect>
+            <rect x="381" y="0" width="150" height="30" rx="15"></rect>
+            <rect x="533" y="0" width="80" height="30" rx="15"></rect>
+            <rect x="0" y="34" width="110" height="30" rx="15"></rect>
+            <rect x="114" y="34" width="150" height="30" rx="15"></rect>
+            <rect x="268" y="34" width="130" height="30" rx="15"></rect>
+            <rect x="402" y="34" width="80" height="30" rx="15"></rect>
+            <rect x="486" y="34" width="130" height="30" rx="15"></rect>
+            <rect x="619" y="34" width="130" height="30" rx="15"></rect>
+        </g>
+    </g>
+</svg>

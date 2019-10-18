@@ -19,22 +19,34 @@
 	}
 
 	&--packed &__title:before,
-	&--crowded &__title:before {
-		@include size(10px);
+	&--crowded &__title:before,
+	&--full &__title:before {
+		@include font($icon-font);
+		font-size: 1rem;
+		line-height: 1;
+		white-space: nowrap;
+		word-wrap: normal;
+		font-feature-settings: 'liga';
+
 		display: inline-block;
+		vertical-align: text-bottom;
 		margin-right: 5px;
-		border-radius: 50%;
-		content: '';
+		content: 'error';
 	}
 
 	&--crowded &__title:before {
-		background-color: $alert-text-color;
-		background-color: var(--alert-text-color, $alert-text-color);
+		color: $info-text-color;
+		color: var(--info-text-color, $info-text-color);
 	}
 
 	&--packed &__title:before {
-		background-color: $danger-text-color;
-		background-color: var(--danger-text-color, $danger-text-color);
+		color: $warning-text-color;
+		color: var(--warning-text-color, $warning-text-color);
+	}
+
+	&--full &__title:before {
+		color: $danger-text-color;
+		color: var(--danger-text-color, $danger-text-color);
 	}
 
 	&__subtitle {

@@ -11,14 +11,14 @@
 	transition: all 150ms linear;
 
 	&:hover {
-		color: $hover-text-color;
-		color: var(--hover-text-color, $hover-text-color);
+		color: $theme-color;
+		color: var(--hover-text-color, var(--theme-color, $theme-color));
 		transition: none;
 	}
 
 	&:focus {
-		color: $hover-text-color;
-		color: var(--hover-text-color, $hover-text-color);
+		color: $theme-color;
+		color: var(--hover-text-color, var(--theme-color, $theme-color));
 	}
 
 	@include device('mobile') {
@@ -57,7 +57,7 @@
 
 		&:focus {
 			outline: 4px auto $theme-color;
-			outline: 4px auto var(--theme-color, $theme-color);
+			outline: 4px auto var(--outline-color, var(--theme-color, $theme-color));
 			z-index: 1;
 		}
 

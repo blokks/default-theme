@@ -4,11 +4,18 @@
 	margin: 0;
 	padding: 14px 18px;
 
+	&--info {
+		color: $info-text-color;
+		color: var(--info-text-color, $info-text-color);
+		background-color: $info-background-color;
+		background-color: var(--info-background-color, $info-background-color);
+	}
+
 	&--warning {
-		color: $alert-text-color;
-		color: var(--alert-text-color, $alert-text-color);
-		background-color: $alert-background-color;
-		background-color: var(--alert-background-color, $alert-background-color);
+		color: $warning-text-color;
+		color: var(--warning-text-color, $warning-text-color);
+		background-color: $warning-background-color;
+		background-color: var(--warning-background-color, $warning-background-color);
 	}
 
 	&--danger {

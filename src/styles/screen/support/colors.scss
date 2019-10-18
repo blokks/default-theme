@@ -13,24 +13,26 @@ $darker-text-color: rgba(0, 0, 0, 0.5) !default;
 $darkest-text-color: rgba(0, 0, 0, 0.8) !default;
 $light-text-color: rgba(255, 255, 255, 0.75) !default;
 $lightest-text-color: rgb(255, 255, 255) !default;
-$hover-text-color: rgba(0, 0, 0, 0.8) !default;;
 
 /* Stroke colors */
 $default-stroke-color: #ccc !default;
-$dark-stroke-color: #999 !default;
 $light-stroke-color: #eee !default;
 
 /* Alerts */
-$alert-background-color: lighten(#f6b411, 40%) !default;
-$alert-text-color: darken(#f6b411, 20%) !default;
-$danger-background-color: lighten(#c83a6f, 42%) !default;
-$danger-text-color: #c83a6f !default;
+$info-background-color: #cce5ff !default;
+$info-text-color: #004085 !default;
+$warning-background-color: #fff3cd !default;
+$warning-text-color: #856404 !default;
+$danger-background-color: #f8d7da !default;
+$danger-text-color: #721c24 !default;
 
 /* Other */
 $shadow-color: rgba(0, 0, 0, 0.05) !default;
-$text-shadow-color: rgba(0, 0, 0, 0.4) !default;
-$placeholder-background-color: #eee !default;
+$placeholder-background-color: #1b1b1b !default;
 $empty-image-background-color: #eee !default;
 $hover-background-color: rgba(0, 0, 0, 0.02) !default;
+$outline-color: $theme-color;
 
-$poster-opacity: 0.5 !default;
+.blokks {
+	--theme-color: #{$theme-color};
+}

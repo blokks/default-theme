@@ -19,7 +19,7 @@
 		&:not(&--disabled):hover,
 		&:not(&--disabled):focus {
 			outline: 3px auto $theme-color;
-			outline: 3px auto var(--theme-color, $theme-color);
+			outline: 3px auto var(--outline-color, var(--theme-color, $theme-color));
 		}
 
 		@include layout('columns') {
@@ -79,8 +79,7 @@
 			@include absolute($top: 0, $left: 0);
 			@include size(100%);
 			filter: grayscale(0%);
-			opacity: $poster-opacity;
-			opacity: var(--poster-opacity, $poster-opacity);
+			opacity: 0.5;
 			z-index: -1;
 			transition: all 150ms linear;
 		}

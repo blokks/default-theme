@@ -8,6 +8,7 @@
 		@include reset-title;
 		@include font($default-font, $size: rem(14px), $weight: 500);
 		line-height: 1.4;
+
 		@supports not (-webkit-line-clamp: 2) {
 			@include truncate-tail();
 		}
@@ -15,7 +16,7 @@
 		@supports (-webkit-line-clamp: 2) {
 			display: -webkit-box;
 			-webkit-box-orient: vertical;
-			-webkit-line-clamp: var(--maximum-number-lines, $maximmum-number-of-lines);
+			-webkit-line-clamp: 2;
 			overflow: hidden;
 		}
 	}
@@ -49,7 +50,7 @@
 		@supports (-webkit-line-clamp: 2) {
 			display: -webkit-box;
 			-webkit-box-orient: vertical;
-			-webkit-line-clamp: var(--maximum-number-lines, $maximmum-number-of-lines);
+			-webkit-line-clamp: 2;
 			overflow: hidden;
 		}
 	}
