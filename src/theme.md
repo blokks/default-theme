@@ -8,6 +8,7 @@ author:
 layouts:
     - columns
     - rows
+    - list
 properties:
     default-font: Public Sans
     column-width: 300px

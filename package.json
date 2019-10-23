@@ -16,12 +16,12 @@
         "singleQuote": true
     },
     "scripts": {
-        "start": "run-s clean copy sass autoprefixer icons",
+        "start": "run-s clean copy sass autoprefixer skeleton",
         "clean": "rimraf dist",
         "copy": "cpx 'src/fonts/*' dist && cpx 'src/images/*' dist && cpx 'src/*' dist",
         "sass": "node-sass --recursive false --output-style compressed src/styles -o dist",
         "autoprefixer": "postcss --use autoprefixer cssnano --no-map --replace dist/*.css",
-        "icons": "svgo -f src/icons && svg-sprite --symbol --svg-xmldecl=false --shape-transform='' --symbol-dest='.' --symbol-sprite='dist/icons.svg' --symbol-example=false src/icons/*.svg"
+        "skeleton": "svgo -f src/images/*.svg && svg-sprite --symbol --svg-xmldecl=false --shape-transform='' --symbol-dest='.' --symbol-sprite='dist/skeletons.svg' --symbol-example=false src/images/*.svg"
     },
     "browserslist": [
         "defaults",

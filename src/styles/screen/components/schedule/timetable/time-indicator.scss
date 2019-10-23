@@ -3,11 +3,11 @@
 	background-color: var(--secondary-color, $secondary-color);
 
 	@include layout('columns') {
-		height: 1px;
+		height: 2px;
 	}
 
 	@include layout('rows') {
-		width: 1px;
+		width: 2px;
 	}
 
 	&__time-label {
