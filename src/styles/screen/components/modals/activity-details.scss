@@ -2,11 +2,17 @@
 	width: 100%;
 	max-width: 600px;
 	background-color: $default-background-color;
-	background-color: var(--default-background-color, $default-background-color);
+	background-color: var(
+		--default-background-color,
+		$default-background-color
+	);
 
 	.blokks-poster {
 		background-color: $placeholder-background-color;
-		background-color: var(--placeholder-background-color, $placeholder-background-color);
+		background-color: var(
+			--placeholder-background-color,
+			$placeholder-background-color
+		);
 		width: 100%;
 	}
 
@@ -33,13 +39,7 @@
 	}
 
 	&__content {
-		@include device('mobile') {
-			padding: 20px;
-		}
-
-		@include device('desktop') {
-			padding: 30px;
-		}
+		padding: 25px 30px;
 	}
 
 	&__header {
@@ -48,10 +48,10 @@
 
 	&__title {
 		@include reset-title;
-		@include font($default-font, $size: rem(28px), $weight: 500);
+		@include font($default-font, $size: rem(24px), $weight: 500);
 		color: $darkest-text-color;
 		color: var(--darkest-text-color, $darkest-text-color);
-		line-height: 1.25;
+		line-height: 1.4;
 	}
 
 	&--favorited &__title {
@@ -61,18 +61,31 @@
 
 	&__subtitle {
 		@include reset-title;
-		@include font($default-font, $size: rem(20px));
+		@include font($default-font, $size: rem(18px));
 		color: $darker-text-color;
 		color: var(--darker-text-color, $darker-text-color);
-		line-height: 1.25;
+		line-height: 1.4;
 	}
 
 	&__related-info {
-		@include font($default-font, $size: rem(15px));
+		@include font($default-font, $size: rem(14px));
 		color: $darker-text-color;
 		color: var(--darker-text-color, $darker-text-color);
-		line-height: 1.5;
+		line-height: 1.4;
 		margin-top: 20px;
+	}
+
+	.blokks-time-labels {
+		order: 1;
+	}
+
+	.blokks-time-labels:after {
+		content: ', ';
+		white-space: pre-wrap;
+	}
+
+	.blokks-date-label {
+		order: 2;
 	}
 
 	&__date-info {
@@ -80,8 +93,20 @@
 		flex-direction: row;
 	}
 
+	&__date-info:before {
+		display: inline-block;
+		width: 100px;
+		content: 'Date:';
+	}
+
 	&__location {
 		display: block;
+	}
+
+	&__location:before {
+		display: inline-block;
+		width: 100px;
+		content: 'Location:';
 	}
 
 	&--now-playing .blokks-date-label {
@@ -97,10 +122,10 @@
 	}
 
 	&__description {
-		@include font($default-font, $size: rem(15px));
+		@include font($default-font, $size: rem(14px));
 		color: $darker-text-color;
 		color: var(--darker-text-color, $darker-text-color);
-		line-height: 1.5;
+		line-height: 1.4;
 
 		margin-top: 20px;
 		max-width: 500px;
@@ -113,14 +138,14 @@
 
 	&__description h1 {
 		@include reset-title;
-		@include font($default-font, $size: 17px, $weight: 500);
+		@include font($default-font, $size: 14px, $weight: 500);
 		color: $darkest-text-color;
 		color: var(--darkest-text-color, $darkest-text-color);
 	}
 
 	&__description h2 {
 		@include reset-title;
-		@include font($default-font, $size: 15px, $weight: 500);
+		@include font($default-font, $size: 14px, $weight: 500);
 		color: $darkest-text-color;
 		color: var(--darkest-text-color, $darkest-text-color);
 	}
@@ -132,7 +157,7 @@
 	}
 
 	&__description strong {
-		font-weight: 600;
+		font-weight: 500;
 	}
 
 	&__description img {
@@ -182,11 +207,11 @@
 	}
 
 	&__favorited-by {
-		margin-top: 15px;
+		margin-top: 20px;
 		max-width: 500px;
 
 		&:before {
-			@include font($default-font, $size: rem(15px));
+			@include font($default-font, $size: rem(14px));
 			content: attr(data-title);
 			color: $darker-text-color;
 			color: var(--darker-text-color, $darker-text-color);
@@ -208,16 +233,14 @@
 	}
 
 	.blokks-link {
-		@include font($default-font, $size: rem(15px));
+		@include font($default-font, $size: rem(14px));
 		color: $darker-text-color;
 		color: var(--darker-text-color, $darker-text-color);
 		text-decoration: none;
-		border-bottom: 1px solid transparent;
 
 		&:hover {
-			color: $darkest-text-color;
-			color: var(--darkest-text-color, $darkest-text-color);
-			border-bottom: 1px solid;
+			color: $theme-color;
+			color: var(--theme-$theme-color, $theme-color);
 		}
 	}
 }

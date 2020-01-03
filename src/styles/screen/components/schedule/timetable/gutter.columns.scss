@@ -1,21 +1,25 @@
 @include layout('columns') {
 	.blokks-gutter {
 		width: $gutter-width;
+		width: var(--gutter-width, $gutter-width);
 
 		&:before {
 			@include sticky($top: 0);
 			border-bottom: 1px solid $light-stroke-color;
 			border-bottom: 1px solid var(--light-stroke-color, $light-stroke-color);
-			box-shadow: 0 4px 4px -3px $shadow-color;
 		}
 
 		&__timeslots {
 			margin-top: -1px;
-			background: bg-rows($stroke-color: $light-stroke-color, $row-height: $timeslot-height);
+			background: bg-rows(
+				$stroke-color: var(--light-stroke-color, $light-stroke-color),
+				$row-height: var(--timeslot-height, $timeslot-height)
+			);
 		}
 
 		&__timeslot {
 			height: $timeslot-height;
+			height: var(--timeslot-height, $timeslot-height);
 		}
 	}
 }

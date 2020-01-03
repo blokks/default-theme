@@ -1,41 +1,59 @@
 @include device('desktop') {
 	.blokks-header {
 		@include sticky($left: 0);
+
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
 		max-width: 100vw;
 
-		display: grid;
-		grid-template-columns: 1fr min-content min-content;
-		grid-template-areas:
-			'title title title'
-			'date-selector user-options search'
-			'filter filter filter';
-
-		&__title {
-			grid-area: title;
-			margin-bottom: 15px;
+		@supports (display: grid) {
+			display: grid;
+			grid-row-gap: 15px;
+			grid-template-columns: 1fr min-content min-content;
+			grid-template-areas:
+				'date-selector user-options search'
+				'filter filter filter';
 		}
 
 		.blokks-user-options {
-			grid-area: user-options;
-			margin-left: 15px;
-			justify-self: end;
-			align-self: center;
+			margin: 0 0 15px 0;
+
+			@supports (display: grid) {
+				margin: 0 0 0 30px;
+				grid-area: user-options;
+				justify-self: end;
+				align-self: center;
+			}
 		}
 
 		.blokks-search {
-			grid-area: search;
-			align-self: center;
-			margin-left: 15px;
+			margin: 0 0 15px -5px;
+
+			@supports (display: grid) {
+				margin: 0 0 0 15px;
+				grid-area: search;
+				align-self: center;
+			}
 		}
 
 		.blokks-date-selector {
-			grid-area: date-selector;
-			align-self: center;
+			margin: 0 0 15px 0;
+
+			@supports (display: grid) {
+				margin: 0;
+				grid-area: date-selector;
+				align-self: center;
+			}
 		}
 
 		.blokks-filters {
-			grid-area: filter;
-			margin: 20px 0 0 -5px;
+			margin: 0 0 0 -5px;
+
+			@supports (display: grid) {
+				margin: 0 0 0 -5px;
+				grid-area: filter;
+			}
 		}
 	}
 }

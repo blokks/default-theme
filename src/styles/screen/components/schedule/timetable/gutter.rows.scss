@@ -6,14 +6,13 @@
 			@include sticky($left: 0);
 			border-right: 1px solid $light-stroke-color;
 			border-right: 1px solid var(--light-stroke-color, $light-stroke-color);
-			box-shadow: 4px 0 4px -3px $shadow-color;
 		}
 
 		&__timeslots {
 			margin-left: -1px;
 			background: bg-columns(
-				$stroke-color: $light-stroke-color,
-				$column-width: $timeslot-width
+				$stroke-color: var(--light-stroke-color, $light-stroke-color),
+				$column-width: var(--timeslot-width, $timeslot-width)
 			);
 		}
 

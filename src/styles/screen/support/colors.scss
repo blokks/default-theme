@@ -8,10 +8,13 @@ $light-background-color: #eee !default;
 $lightest-background-color: rgba(0, 0, 0, 0.05) !default;
 
 /* Text colors */
+
+
+
 $dark-text-color: rgba(0, 0, 0, 0.3) !default;
 $darker-text-color: rgba(0, 0, 0, 0.5) !default;
 $darkest-text-color: rgba(0, 0, 0, 0.8) !default;
-$light-text-color: rgba(255, 255, 255, 0.75) !default;
+$light-text-color: rgba(255, 255, 255, 0.8) !default;
 $lightest-text-color: rgb(255, 255, 255) !default;
 
 /* Stroke colors */
@@ -32,7 +35,3 @@ $placeholder-background-color: #1b1b1b !default;
 $empty-image-background-color: #eee !default;
 $hover-background-color: rgba(0, 0, 0, 0.02) !default;
 $outline-color: $theme-color;
-
-.blokks {
-	--theme-color: #{$theme-color};
-}

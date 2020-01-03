@@ -1,7 +1,7 @@
 /* UI styles */
 @mixin button {
 	@include reset-button;
-	@include font($default-font, $size: rem(14px));
+	@include font($default-font, $size: rem(14px), $weight: 500);
 	color: $lightest-text-color;
 	color: var(--lightest-text-color, $lightest-text-color);
 

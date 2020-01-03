@@ -64,6 +64,7 @@
 		&__title {
 			font-size: rem(15px);
 			color: $darkest-text-color;
+			line-height: 1.5;;
 		}
 
 		&--favorited &__title {
@@ -73,6 +74,7 @@
 
 		&__subtitle {
 			font-size: rem(15px);
+			line-height: 1.5;;
 			color: $darker-text-color;
 			color: var(--darker-text-color, $darker-text-color);
 		}

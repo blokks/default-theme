@@ -2,7 +2,7 @@
 	@include font($default-font, $size: rem(14px));
 	display: block;
 	margin: 0;
-	padding: 14px 18px;
+	padding: 12px 20px 14px;
 
 	&--info {
 		color: $info-text-color;

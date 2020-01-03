@@ -8,18 +8,14 @@
 		color: $darker-text-color;
 		color: var(--darker-text-color, $darker-text-color);
 		white-space: nowrap;
-		border-bottom: 1px solid transparent;
-		transition: color 150ms, border 150ms;
 
 		&:not(:last-of-type) {
-			margin-right: 15px;
+			margin-right: 10px;
 		}
 
 		&:hover {
 			color: $theme-color;
 			color: var(--hover-text-color, var(--theme-color, $theme-color));
-			border-bottom: 1px solid;
-			transition: none;
 		}
 	}
 }

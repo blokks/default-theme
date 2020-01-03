@@ -1,5 +1,6 @@
 .blokks-filters {
 	@include horizontal-list;
+	display: var(--show-filters, flex);
 	max-width: 750px;
 
 	&__filter {
@@ -12,10 +13,9 @@
 		line-height: 1;
 
 		margin: 0 4px 4px 0;
-		padding: 7px 15px 8px;
+		padding: 8px 15px;
 		background-color: rgba(0, 0, 0, 0.05);
 		border-radius: 16px;
-		transition: all 150ms linear;
 
 		@include device('mobile') {
 			font-size: rem(13px);
@@ -26,9 +26,10 @@
 		}
 
 		&:hover {
-			color: $theme-color;
-			color: var(--hover-text-color, var(--theme-color, $theme-color));
-			transition: background 150ms linear;
+			color: $lightest-text-color;
+			color: var(--lightest-text-color, $lightest-text-color);
+			background-color: $theme-color;
+			background-color: var(--theme-color, $theme-color);
 		}
 
 		&[class*='selected'] {

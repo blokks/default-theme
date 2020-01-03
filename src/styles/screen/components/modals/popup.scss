@@ -1,17 +1,9 @@
 .blokks-popup {
-	padding: 30px;
+	padding: 25px 30px;
 	width: 100%;
 	max-width: 480px;
 	background-color: $default-background-color;
 	background-color: var(--default-background-color, $default-background-color);
-
-	@include device('mobile') {
-		padding: 20px;
-	}
-
-	@include device('desktop') {
-		padding: 30px;
-	}
 
 	&__title {
 		@include reset-title;
@@ -22,20 +14,20 @@
 	}
 
 	&__description {
-		@include font($default-font, $size: rem(15px));
+		@include font($default-font, $size: rem(14px));
 		color: $darker-text-color;
 		color: var(--darker-text-color, $darker-text-color);
-		line-height: 1.5;
+		line-height: 1.4;
 
 		margin: 15px 0 0 0;
 		max-width: 380px;
 	}
 
 	&__footer {
-		@include font($default-font, $size: rem(15px));
+		@include font($default-font, $size: rem(14px));
 		color: $darker-text-color;
 		color: var(--darker-text-color, $darker-text-color);
-		line-height: 1.5;
+		line-height: 1.4;
 
 		margin: 15px 0 0 0;
 		max-width: 380px;

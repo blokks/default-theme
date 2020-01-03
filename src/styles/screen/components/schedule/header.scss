@@ -1,13 +1,6 @@
 .blokks-header {
 	padding: 0 $padding;
 	padding: 0 var(--padding, $padding);
-
-	&__title {
-		@include reset-title;
-		@include font($default-font, $size: rem(30px), $weight: 500);
-		color: $darkest-text-color;
-		color: var(--darkest-text-color, $darkest-text-color);
-	}
 }
 
 @import 'header.mobile';
