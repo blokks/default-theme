@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: row;
 
-	&__option {
+	.blokks-user-option {
 		@include reset-button;
 		@include font($default-font, $size: rem(14px));
 		color: $darker-text-color;
@@ -22,7 +22,7 @@
 
 @include device('mobile') {
 	.blokks-user-options {
-		&__option--calendar {
+		.blokks-user-option--calendar {
 			display: none;
 		}
 	}

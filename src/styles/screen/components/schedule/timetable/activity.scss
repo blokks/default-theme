@@ -26,12 +26,10 @@
 		vertical-align: middle;
 	}
 
-	&__title .blokks-icon {
-		font-size: rem(16px);
-	}
-
-	&__title .blokks-icon:last-of-type {
-		margin-right: 3px;
+	&__title svg {
+		@include size(0.9rem);
+		vertical-align: -0.15rem;
+		margin-right: 4px;
 	}
 
 	&--canceled &__title {

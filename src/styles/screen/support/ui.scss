@@ -27,16 +27,10 @@
 
 @mixin close-button {
 	@include reset-button;
-	@include size(34px);
-	color: $darker-text-color;
-	color: var(--darker-text-color, $darker-text-color);
+	@include size(36px);
 
-	.blokks-label {
-		display: none;
-	}
-
-	.blokks-icon {
-		font-size: rem(20px);
+	svg {
+		@include size(18px);
 	}
 }
 

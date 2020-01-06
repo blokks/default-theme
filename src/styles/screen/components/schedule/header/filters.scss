@@ -3,9 +3,9 @@
 	display: var(--show-filters, flex);
 	max-width: 750px;
 
-	&__filter {
+	.blokks-filter {
 		@include reset-button;
-		@include font($default-font);
+		@include font($default-font, $size: rem(13px));
 		color: $darker-text-color;
 		color: var(--darker-text-color, $darker-text-color);
 		text-transform: capitalize;
@@ -16,14 +16,6 @@
 		padding: 8px 15px;
 		background-color: rgba(0, 0, 0, 0.05);
 		border-radius: 16px;
-
-		@include device('mobile') {
-			font-size: rem(13px);
-		}
-
-		@include device('desktop') {
-			font-size: rem(14px);
-		}
 
 		&:hover {
 			color: $lightest-text-color;
@@ -40,8 +32,9 @@
 		}
 	}
 
-	&__filter .blokks-icon {
-		margin-right: 3px;
-		font-size: rem(16px);
+	.blokks-filter svg {
+		@include size(0.9rem);
+		vertical-align: -0.15rem;
+		margin-right: 4px;
 	}
 }

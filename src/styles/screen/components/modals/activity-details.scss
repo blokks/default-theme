@@ -23,7 +23,7 @@
 	}
 
 	&__close-button {
-		@include close-button;
+		@include close-button();
 		@include absolute($top: 10px, $right: 10px);
 	}
 
@@ -61,7 +61,7 @@
 
 	&__subtitle {
 		@include reset-title;
-		@include font($default-font, $size: rem(18px));
+		@include font($default-font, $size: rem(18px), $weight: 400);
 		color: $darker-text-color;
 		color: var(--darker-text-color, $darker-text-color);
 		line-height: 1.4;
@@ -76,16 +76,16 @@
 	}
 
 	.blokks-time-labels {
-		order: 1;
-	}
-
-	.blokks-time-labels:after {
-		content: ', ';
-		white-space: pre-wrap;
+		order: 2;
 	}
 
 	.blokks-date-label {
-		order: 2;
+		order: 1;
+	}
+
+	.blokks-date-label:after {
+		content: ', ';
+		white-space: pre-wrap;
 	}
 
 	&__date-info {
@@ -95,7 +95,7 @@
 
 	&__date-info:before {
 		display: inline-block;
-		width: 100px;
+		width: 80px;
 		content: 'Date:';
 	}
 
@@ -105,7 +105,7 @@
 
 	&__location:before {
 		display: inline-block;
-		width: 100px;
+		width: 80px;
 		content: 'Location:';
 	}
 

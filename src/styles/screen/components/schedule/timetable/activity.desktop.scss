@@ -16,7 +16,7 @@
 		}
 
 		&--selected,
-		&:not(&--disabled):hover,
+		// &:not(&--disabled):hover,
 		&:not(&--disabled):active {
 			outline: 3px auto $theme-color;
 			outline: 3px auto var(--outline-color, var(--theme-color, $theme-color));
