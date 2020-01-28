@@ -7,6 +7,16 @@
 	z-index: 1;
 }
 
+.blokks-schedule ::-moz-selection {
+	@include var(background-color, --selection-background-color, $theme-color);
+	@include var(color, --selection-text-color, $text-color-100);
+}
+
+.blokks-schedule ::selection {
+	@include var(background-color, --selection-background-color, $theme-color);
+	@include var(color, --selection-text-color, $text-color-100);
+}
+
 @include layout('list') {
 	.blokks-schedule {
 		max-width: 960px;

@@ -6,5 +6,15 @@
 	line-height: 1.5;
 }
 
+.blokks-modal ::-moz-selection {
+	@include var(background-color, --selection-background-color, $theme-color);
+	@include var(color, --selection-text-color, $text-color-100);
+}
+
+.blokks-modal ::selection {
+	@include var(background-color, --selection-background-color, $theme-color);
+	@include var(color, --selection-text-color, $text-color-100);
+}
+
 @import 'modals/activity-details';
 @import 'modals/popup';

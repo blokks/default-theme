@@ -62,6 +62,7 @@
 			@include var(background-color, --activity-padded-text-color, $background-color-700);
 			padding: 1px 5px 1px;
 			order: -1;
+			display: none;
 		}
 
 		.blokks-categories {
