@@ -1,6 +1,5 @@
 .blokks-time-indicator {
-	background-color: $secondary-color;
-	background-color: var(--secondary-color, $secondary-color);
+	@include var(background-color, --time-indicator-color, $secondary-color);
 
 	@include layout('columns') {
 		height: 2px;

@@ -1,7 +1,6 @@
 @include device('mobile') {
 	.blokks-header {
-		display: flex;
-		flex-direction: column;
+		@include column();
 
 		.blokks-user-options {
 			order: 1;

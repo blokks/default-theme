@@ -1,12 +1,14 @@
 .blokks-buttonbar {
-	display: flex;
-	flex-direction: row;
+	@include row();
 
 	&__option {
 		@include reset-button;
+	}
+
+	&__option {
 		@include font($default-font, $size: rem(14px));
-		color: $darkest-text-color;
-		color: var(--darkest-text-color, $darkest-text-color);
+		color: $text-color-800;
+		color: var(--darkest-text-color, $text-color-800);
 		white-space: nowrap;
 		border-bottom: 1px solid transparent;
 

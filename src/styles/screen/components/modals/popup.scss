@@ -1,32 +1,34 @@
 .blokks-popup {
+	@include var(background-color, --modal-background-color, $background-color-100);
+	@include var(max-width, --modal-width, 480px);
 	padding: 25px 30px;
 	width: 100%;
-	max-width: 480px;
-	background-color: $default-background-color;
-	background-color: var(--default-background-color, $default-background-color);
 
 	&__title {
-		@include reset-title;
-		@include font($default-font, 24px, $weight: 500);
-		color: $darkest-text-color;
-		color: var(--darkest-text-color, $darkest-text-color);
+		@include reset-title();
+	}
+
+	&__title {
+		@include font($default-font, 19px, $weight: 600);
+		color: $text-color-900;
+		color: var(--darkest-text-color, $text-color-900);
 		line-height: 1.25;
 	}
 
 	&__description {
-		@include font($default-font, $size: rem(14px));
-		color: $darker-text-color;
-		color: var(--darker-text-color, $darker-text-color);
-		line-height: 1.4;
+		@include font($default-font, $size: rem(13px));
+		color: $text-color-800;
+		color: var(--darker-text-color, $text-color-800);
+		line-height: 1.5;
 
 		margin: 15px 0 0 0;
 		max-width: 380px;
 	}
 
 	&__footer {
-		@include font($default-font, $size: rem(14px));
-		color: $darker-text-color;
-		color: var(--darker-text-color, $darker-text-color);
+		@include font($default-font, $size: rem(13px));
+		color: $text-color-800;
+		color: var(--darker-text-color, $text-color-800);
 		line-height: 1.4;
 
 		margin: 15px 0 0 0;
@@ -34,12 +36,12 @@
 	}
 
 	&__action-button {
-		@include button;
+		@include button();
 		margin: 20px 0 0 -5px;
 	}
 
 	&__close-button {
-		@include close-button;
-		@include absolute($top: 10px, $right: 10px);
+		@include close-button();
+		@include absolute($top: 5px, $right: 5px);
 	}
 }

@@ -1,13 +1,16 @@
 .blokks-filters {
-	@include horizontal-list;
-	display: var(--show-filters, flex);
+	@include horizontal-list();
+	display: flex;;
 	max-width: 750px;
 
 	.blokks-filter {
-		@include reset-button;
-		@include font($default-font, $size: rem(13px));
-		color: $darker-text-color;
-		color: var(--darker-text-color, $darker-text-color);
+		@include reset-button();
+	}
+
+	.blokks-filter {
+		@include var(font-size, --filter-label-size, 13px);
+		@include var(font-weight, --filter-label-weight, 400);
+		@include var(color, --filter-label-color, $text-color-800);
 		text-transform: capitalize;
 		white-space: nowrap;
 		line-height: 1;
@@ -16,19 +19,16 @@
 		padding: 8px 15px;
 		background-color: rgba(0, 0, 0, 0.05);
 		border-radius: 16px;
+		user-select: none;
 
 		&:hover {
-			color: $lightest-text-color;
-			color: var(--lightest-text-color, $lightest-text-color);
-			background-color: $theme-color;
-			background-color: var(--theme-color, $theme-color);
+			@include var(color, --filter-hover-label-color, $text-color-100);
+			@include var(background-color, (--filter-hover-background-color, --theme-color), $theme-color);
 		}
 
 		&[class*='selected'] {
-			color: $lightest-text-color;
-			color: var(--lightest-text-color, $lightest-text-color);
-			background-color: $theme-color;
-			background-color: var(--theme-color, $theme-color);
+			@include var(color, --filter-hover-label-color, $text-color-100);
+			@include var(background-color, (--filter-hover-background-color, --theme-color), $theme-color);
 		}
 	}
 

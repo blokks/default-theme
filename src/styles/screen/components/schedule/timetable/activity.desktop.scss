@@ -1,74 +1,67 @@
 @include layout('columns', 'rows') {
 	.blokks-activity {
-		padding: 12px 15px;
-		background-color: $dark-background-color;
-		background-color: var(--dark-background-color, $dark-background-color);
+		@include var(background-color, --activity-background-color, $background-color-900);
+		padding: 15px 15px;
 		outline: none;
 
-		&--favorited {
-			background-color: $theme-color;
-			background-color: var(--theme-color, $theme-color);
-		}
-
-		&--dimmed {
-			background-color: $light-background-color;
-			background-color: var(--light-background-color, $light-background-color);
-		}
-
-		&--selected,
-		// &:not(&--disabled):hover,
-		&:not(&--disabled):active {
-			outline: 3px auto $theme-color;
-			outline: 3px auto var(--outline-color, var(--theme-color, $theme-color));
-		}
-
 		@include layout('columns') {
-			width: 100%;
+			@include var(width, --activity-width, $activity-width);
 			height: calc(100% - 2px);
 		}
 
 		@include layout('rows') {
+			@include var(height, --activity-height, $activity-height);
 			width: calc(100% - 2px);
-			height: 100%;
+		}
+
+		&--favorited {
+			@include var(background-color, (--activity-favorited-color, --theme-color), $theme-color);
+		}
+
+		&--dimmed {
+			@include var(background-color, --activity-dimmed-color, $background-color-200);
+		}
+
+		&--selected,
+		&:not(&--disabled):active {
+			outline: 3px auto $theme-color;
+			outline: 3px auto v((--activity-selected-color, --theme-color), $theme-color);
 		}
 
 		&__header {
-			display: flex;
-			flex-direction: column;
-			z-index: 2;
+			@include column($align: flex-start);
 		}
 
-		&__titles {
-			order: 1;
+		&--ended &__header,
+		&--dimmed &__header {
+			opacity: 0.5;
 		}
 
 		&__title {
-			color: $lightest-text-color;
-			color: var(--lightest-text-color, $lightest-text-color);
+			@include var(color, --activity-title-color, $text-color-100);
 		}
 
-		&--ended &__title {
-			opacity: 0.5;
+		&__title span {
+			@include var(background-color, --activity-padded-text-color, $background-color-700);
+			box-decoration-break: clone;
+			padding: 1px 5px 2px;
 		}
 
 		&__subtitle {
-			color: $light-text-color;
-			color: var(--light-text-color, $light-text-color);
+			@include var(color, --activity-subtitle-color, $text-color-200);
 		}
 
-		&--ended &__subtitle {
-			opacity: 0.5;
+		&__subtitle span {
+			@include var(background-color, --activity-padded-text-color, $background-color-700);
+			box-decoration-break: clone;
+			padding: 1px 5px 2px;
 		}
 
 		.blokks-time-labels {
-			color: $light-text-color;
-			color: var(--light-text-color, $light-text-color);
-			z-index: 1;
-			order: 1;
-		}
-
-		&--ended .blokks-time-labels {
-			opacity: 0.5;
+			@include var(color, --activity-timelabels-color, $text-color-200);
+			@include var(background-color, --activity-padded-text-color, $background-color-700);
+			padding: 1px 5px 1px;
+			order: -1;
 		}
 
 		.blokks-categories {
@@ -78,23 +71,19 @@
 		.blokks-poster {
 			@include absolute($top: 0, $left: 0);
 			@include size(100%);
-			filter: grayscale(0%);
-			opacity: 0.5;
+			opacity: 0.7;
 			z-index: -1;
 			transition: all 150ms linear;
 		}
 
 		&--favorited .blokks-poster {
-			opacity: 0.2;
+			opacity: 0.3;
+			filter: sepia(1);
 		}
 
+		&--ended .blokks-poster,
 		&--dimmed .blokks-poster {
-			opacity: 0.2;
-			filter: grayscale(50%);
-		}
-
-		&--ended .blokks-poster {
-			opacity: 0.2;
+			opacity: 0.5;
 			filter: grayscale(100%);
 		}
 	}

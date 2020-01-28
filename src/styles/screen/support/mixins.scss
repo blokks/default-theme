@@ -29,6 +29,31 @@
 	height: $height;
 }
 
+/* Flexbox */
+@mixin flex($direction, $justify: null, $align: null) {
+	display: flex;
+
+	@if ($direction) {
+		flex-direction: $direction;
+	}
+
+	@if ($justify) {
+		justify-content: $justify;
+	}
+
+	@if ($align) {
+		align-items: $align;
+	}
+}
+
+@mixin column($justify: null, $align: null) {
+	@include flex(column, $justify, $align);
+}
+
+@mixin row($justify: null, $align: null) {
+	@include flex(row, $justify, $align);
+}
+
 /* Font mixins */
 @mixin text-replacement {
 	text-indent: 101%;
@@ -40,6 +65,45 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+@mixin clamp-line($lines: 2) {
+	@supports not (-webkit-line-clamp: $lines) {
+		@include truncate-tail();
+	}
+
+	@supports (-webkit-line-clamp: $lines) {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: $lines;
+		overflow: hidden;
+	}
+}
+
+/* CSS variables */
+@function cssvar($variables, $default: null) {
+	$result: null;
+	@for $index from -1 through -1 * length($variables) {
+		$variable: nth($variables, $index);
+
+		@if ($result) {
+			$result: var($variable, $result);
+		} @else if ($default) {
+			$result: var($variable, $default);
+		} @else {
+			$result: var($variable);
+		}
+	}
+
+	@return $result;
+}
+
+@mixin var($property, $variables, $default: null) {
+	@if ($legacy and $default) {
+		#{$property}: $default;
+	}
+
+	#{$property}: cssvar($variables, $default);
 }
 
 /* Reset mixins */

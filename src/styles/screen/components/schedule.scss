@@ -1,12 +1,10 @@
 .blokks-schedule {
+	@include var(font-family, --schedule-font, $default-font);
+	@include antialiased();
+	text-rendering: optimizeLegibility;
+	line-height: 1.5;
 	position: relative;
 	z-index: 1;
-
-	font-size: $base-font-size;
-	font-size: var(--base-font-size, $base-font-size);
-
-	background-color: $default-background-color;
-	background-color: var(--default-background-color, $default-background-color);
 }
 
 @include layout('list') {
@@ -16,7 +14,6 @@
 }
 
 @import 'schedule/header';
-@import 'schedule/dashboards';
 @import 'schedule/timetable';
 @import 'schedule/footer';
 @import 'schedule/statusbar';

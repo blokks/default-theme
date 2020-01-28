@@ -1,9 +1,10 @@
 @include layout('list') {
 	.blokks-location {
 		&__header {
+			@include var(border-bottom-width, --border-width, $border-width);
+			@include var(border-bottom-color, --stroke-color, $default-stroke-color);
+			border-bottom-style: solid;
 			padding: 15px 0;
-			border-bottom: 1px solid $light-stroke-color;
-			border-bottom: 1px solid var(--light-stroke-color, $light-stroke-color);
 		}
 
 		&__titles {

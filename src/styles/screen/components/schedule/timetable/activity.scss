@@ -4,67 +4,47 @@
 	outline: none;
 	transition: background 150ms linear;
 
-	&__title {
-		@include reset-title;
-		@include font($default-font, $size: rem(14px), $weight: 500);
-		line-height: 1.4;
-
-		@supports not (-webkit-line-clamp: 2) {
-			@include truncate-tail();
-		}
-
-		@supports (-webkit-line-clamp: 2) {
-			display: -webkit-box;
-			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 2;
-			overflow: hidden;
-		}
-	}
-
-	&__title .blokks-label {
-		display: inline-block;
-		vertical-align: middle;
-	}
-
-	&__title svg {
-		@include size(0.9rem);
-		vertical-align: -0.15rem;
-		margin-right: 4px;
-	}
-
 	&--canceled &__title {
 		text-decoration: line-through;
-	}
-
-	&__subtitle {
-		@include reset-title;
-		@include font($default-font, $size: rem(14px));
-		line-height: 1.4;
-
-		@supports not (-webkit-line-clamp: 2) {
-			@include truncate-tail();
-		}
-
-		@supports (-webkit-line-clamp: 2) {
-			display: -webkit-box;
-			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 2;
-			overflow: hidden;
-		}
 	}
 
 	&--canceled &__subtitle {
 		text-decoration: line-through;
 	}
 
-	.blokks-time-labels {
-		@include font($default-font, $size: rem(14px));
-		@include truncate-tail();
-		line-height: 1.4;
-	}
-
 	&--canceled .blokks-time-labels {
 		text-decoration: line-through;
+	}
+
+	&__title {
+		@include reset-title();
+	}
+
+	&__title {
+		@include var(font-size, --activity-title-size, $default-font-size);
+		@include var(font-weight, --activity-title-weight, 600);
+		@include clamp-line($lines: 2);
+	}
+
+	&__title svg {
+		@include size(0.9rem);
+		vertical-align: -0.15rem;
+	}
+
+	&__subtitle {
+		@include reset-title();
+	}
+
+	&__subtitle {
+		@include var(font-size, --activity-subtitle-size, $default-font-size);
+		@include var(font-weight, --activity-subtitle-weight, 400);
+		@include clamp-line($lines: 2);
+	}
+
+	.blokks-time-labels {
+		@include var(font-size, --activity-timelabels-size, 12px);
+		@include var(font-weight, --activity-subtitle-weight, 400);
+		@include truncate-tail();
 	}
 
 	.blokks-poster {

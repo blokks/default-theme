@@ -1,12 +1,12 @@
 @include layout('columns') {
 	.blokks-location {
-		min-width: $location-width;
-		min-width: var(--location-width, $location-width);
+		@include var(min-width, --location-width, $location-width);
 
 		&__header {
+			@include var(border-bottom-width, --header-width, $border-width);
+			@include var(border-bottom-color, --stroke-color, $default-stroke-color);
+			border-bottom-style: solid;
 			padding: 15px 0;
-			border-bottom: 1px solid $light-stroke-color;
-			border-bottom: 1px solid var(--light-stroke-color, $light-stroke-color);
 		}
 
 		&__titles {
@@ -14,17 +14,21 @@
 		}
 
 		&__timeslots {
-			margin-top: -1px;
-			padding: 0 10px;
+			@include var(padding-left, --cellspacing, $cellspacing);
+			@include var(padding-right, --cellspacing, $cellspacing);
+
 			background: bg-rows(
-				$stroke-color: var(--light-stroke-color, $light-stroke-color),
-				$row-height: var(--timeslot-height, $timeslot-height)
+				$row-height: var(--timeslot-height, $timeslot-height),
+				$border-width: var(--border-width, $border-width),
+				$stroke-color: var(--stroke-color, $default-stroke-color)
 			);
+
+			background-position-y: calc(-1 * var(--border-width, $border-width));
 		}
 
+		// TODO: Rename to tablecells or cells
 		&__timeslot {
-			height: $timeslot-height;
-			height: var(--timeslot-height, $timeslot-height);
+			@include var(height, --timeslot-height, $timeslot-height);
 		}
 	}
 }

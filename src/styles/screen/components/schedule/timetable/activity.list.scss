@@ -1,7 +1,9 @@
 @include layout('list') {
 	.blokks-activity {
-		display: flex;
-		flex-direction: row;
+		@include row();
+		padding: 30px 30px 30px 0;
+		border-bottom: 1px solid $default-stroke-color;
+		transition: opacity 100ms linear;
 
 		@supports (display: contents) {
 			display: grid;
@@ -16,15 +18,11 @@
 			background-size: 1px auto;
 			background-image: linear-gradient(
 				180deg,
-				$light-stroke-color,
-				$light-stroke-color,
-				$light-stroke-color
+				$default-stroke-color,
+				$default-stroke-color,
+				$default-stroke-color
 			);
 		}
-
-		padding: 30px 30px 30px 0;
-		border-bottom: 1px solid $light-stroke-color;
-		transition: opacity 100ms linear;
 
 		&--dimmed {
 			opacity: 0.3;
@@ -41,8 +39,7 @@
 		}
 
 		&__header {
-			display: flex;
-			flex-direction: column;
+			@include column();
 			margin-left: 25px;
 			order: 2;
 
@@ -50,6 +47,10 @@
 				display: contents;
 				max-width: 600px;
 			}
+		}
+
+		&__header {
+			line-height: 1.5;
 		}
 
 		&__titles {
@@ -62,27 +63,19 @@
 		}
 
 		&__title {
-			font-size: rem(15px);
-			color: $darkest-text-color;
-			line-height: 1.5;;
+			@include var(color, --activity-title-color, $text-color-900);
 		}
 
 		&--favorited &__title {
-			color: $theme-color;
-			color: var(--theme-color, $theme-color);
+			@include var(color, (--activity-favorited-color, --theme-color), $theme-color);
 		}
 
 		&__subtitle {
-			font-size: rem(15px);
-			line-height: 1.5;;
-			color: $darker-text-color;
-			color: var(--darker-text-color, $darker-text-color);
+			@include var(color, --activity-subtitle-color, $text-color-800);
 		}
 
 		.blokks-time-labels {
-			font-size: rem(13px);
-			color: $darker-text-color;
-			color: var(--darker-text-color, $darker-text-color);
+			@include var(color, --activity-timelabels-color, $text-color-800);
 			order: 1;
 
 			@supports (display: contents) {
@@ -113,8 +106,6 @@
 		.blokks-poster {
 			@include size(70px);
 			margin-left: 25px;
-			background-color: $placeholder-background-color;
-			background-color: var(--placeholder-background-color, $placeholder-background-color);
 			border-radius: 50%;
 			align-self: center;
 			order: 1;
@@ -122,6 +113,10 @@
 			@supports (display: contents) {
 				grid-area: poster;
 			}
+		}
+
+		.blokks-poster {
+			@include var(background-color, --placeholder-background-color, $background-color-900);
 		}
 
 		&--dimmed .blokks-poster {

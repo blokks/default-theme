@@ -1,32 +1,31 @@
 /* UI styles */
 @mixin button {
 	@include reset-button;
-	@include font($default-font, $size: rem(14px), $weight: 500);
-	color: $lightest-text-color;
-	color: var(--lightest-text-color, $lightest-text-color);
-
+	@include var(font-size, --button-label-size, 13px);
+	@include var(font-weight, --button-label-weight, 500);
+	@include var(color, --button-label-color, $text-color-100);
+	@include var(background-color, (--button-background-color, --theme-color), $theme-color);
 	padding: 11px 20px;
 	border-radius: 20px;
-	background-color: $theme-color;
-	background-color: var(--theme-color, $theme-color);
+	user-select: none;
 }
 
-@mixin button-with-icon($icon-margin: 5px, $hide-label: false) {
-	@include button;
+@mixin button-with-icon($icon-margin: 4px, $hide-label: false) {
+	@include button();
 	display: inline-flex;
 
-	.blokks-label {
+	span {
 		text-align: left;
 	}
 
-	.blokks-icon {
+	svg {
 		font-size: rem(18px);
 		margin-right: $icon-margin;
 	}
 }
 
 @mixin close-button {
-	@include reset-button;
+	@include reset-button();
 	@include size(36px);
 
 	svg {
@@ -35,9 +34,8 @@
 }
 
 @mixin horizontal-list($spacing: null) {
-	@include reset-list;
-	display: flex;
-	flex-direction: row;
+	@include reset-list();
+	@include row();
 	flex-wrap: wrap;
 
 	@if ($spacing) {
@@ -48,9 +46,8 @@
 }
 
 @mixin vertical-list {
-	@include reset-list;
-	display: flex;
-	flex-direction: column;
+	@include reset-list();
+	@include column();
 }
 
 @function bg-columns(

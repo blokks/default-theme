@@ -1,25 +1,26 @@
+$border-width: 1px;
+
 @include layout('columns') {
 	.blokks-gutter {
-		width: $gutter-width;
-		width: var(--gutter-width, $gutter-width);
+		@include var(width, --gutter-width, $gutter-width);
 
 		&:before {
+			@include var(border-bottom-color, --stroke-color, $default-stroke-color);
+			@include var(border-bottom-width, --border-width, $border-width);
 			@include sticky($top: 0);
-			border-bottom: 1px solid $light-stroke-color;
-			border-bottom: 1px solid var(--light-stroke-color, $light-stroke-color);
+			border-bottom-style: solid;
 		}
 
 		&__timeslots {
-			margin-top: -1px;
 			background: bg-rows(
-				$stroke-color: var(--light-stroke-color, $light-stroke-color),
-				$row-height: var(--timeslot-height, $timeslot-height)
+				$row-height: var(--timeslot-height, $timeslot-height),
+				$border-width: var(--border-width, $border-width),
+				$stroke-color: var(--stroke-color, $default-stroke-color)
 			);
 		}
 
 		&__timeslot {
-			height: $timeslot-height;
-			height: var(--timeslot-height, $timeslot-height);
+			@include var(height, --timeslot-height, $timeslot-height);
 		}
 	}
 }

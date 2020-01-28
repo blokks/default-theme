@@ -1,37 +1,35 @@
-$theme-color: #1a73e8 !default;
+/* Primary colors */
+$theme-color: #0091ff !default;
 $secondary-color: #c83a6f !default;
 
 /* Background colors */
-$default-background-color: #fff !default;
-$dark-background-color: #1b1b1b !default;
-$light-background-color: #eee !default;
-$lightest-background-color: rgba(0, 0, 0, 0.05) !default;
+$background-color-100: #ffffff !default;
+$background-color-200: #f2f3f3 !default;
+$background-color-700: rgba(52, 55, 60, 0.4) !default;
+$background-color-800: rgba(20, 20, 20, 0.7) !default;
+$background-color-900: #33363b !default;
 
-/* Text colors */
+/* Light text colors */
+$text-color-100: #fcfcfcff !default;
+$text-color-200: #fcfcfccc !default;
+$text-color-300: #fcfcfc99 !default;
 
-
-
-$dark-text-color: rgba(0, 0, 0, 0.3) !default;
-$darker-text-color: rgba(0, 0, 0, 0.5) !default;
-$darkest-text-color: rgba(0, 0, 0, 0.8) !default;
-$light-text-color: rgba(255, 255, 255, 0.8) !default;
-$lightest-text-color: rgb(255, 255, 255) !default;
+/* Dark text colors */
+$text-color-700: #33363b4d !default;
+$text-color-800: #33363b80 !default;
+$text-color-900: #33363bcc !default;
 
 /* Stroke colors */
-$default-stroke-color: #ccc !default;
-$light-stroke-color: #eee !default;
+$default-stroke-color: #f2f3f3 !default;
 
-/* Alerts */
-$info-background-color: #cce5ff !default;
-$info-text-color: #004085 !default;
-$warning-background-color: #fff3cd !default;
-$warning-text-color: #856404 !default;
-$danger-background-color: #f8d7da !default;
-$danger-text-color: #721c24 !default;
+/* Alerts colors */
+$info-color-100: #3f6288 !default;
+$info-color-300: #004085 !default;
+$warning-color-100: #fff3cd !default;
+$warning-color-300: #856404 !default;
+$danger-color-100: #f8d7da !default;
+$danger-color-300: #721c24 !default;
 
-/* Other */
-$shadow-color: rgba(0, 0, 0, 0.05) !default;
-$placeholder-background-color: #1b1b1b !default;
+/* Misc */
 $empty-image-background-color: #eee !default;
-$hover-background-color: rgba(0, 0, 0, 0.02) !default;
-$outline-color: $theme-color;
+$hover-background-color: #00000005 !default;

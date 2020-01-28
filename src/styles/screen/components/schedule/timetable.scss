@@ -1,26 +1,6 @@
 @include device('mobile') {
 	.blokks-timetable {
 		margin: 10px 0 0;
-		padding: 0 $padding;
-		padding: 0 var(--padding, $padding);
-	}
-}
-
-@include device('desktop') {
-	@include layout('rows') {
-		.blokks-timetable {
-			padding-right: $padding;
-			padding-right: var(--padding, $padding);
-		}
-	}
-}
-
-@include device('desktop') {
-	@include layout('columns', 'list') {
-		.blokks-timetable {
-			padding: 0 $padding;
-			padding: 0 var(--padding, $padding);
-		}
 	}
 }
 

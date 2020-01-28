@@ -1,22 +1,29 @@
 .blokks-location {
+	@include var(background-color, (--location-background-color, --schedule-background-color), $background-color-100);
+
 	&__header {
 		flex-grow: 1;
-		background-color: $default-background-color;
-		background-color: var(--default-background-color, $default-background-color);
-
-		@supports (backdrop-filter: blur(4px)) {
-			backdrop-filter: blur(4px);
-			opacity: 0.97;
-		}
+		background-color: inherit;
 	}
 
 	&__title {
-		@include reset-title;
-		@include font($default-font, $size: rem(14px), $weight: 500);
-		@include antialiased();
-		color: $darkest-text-color;
-		color: var(--title-color, var(--darkest-text-color, $darkest-text-color));
-		line-height: 1.4;
+		@include reset-title();
+	}
+
+	&__title {
+		@include var(font-size, --location-title-size, $default-font-size);
+		@include var(font-weight, --location-title-weight, 600);
+		@include var(color, --location-title-color, $text-color-900);
+	}
+
+	&__subtitle {
+		@include reset-title();
+	}
+
+	&__subtitle {
+		@include var(font-size, --location-subtitle-size, $default-font-size);
+		@include var(font-weight, --location-subtitle-weight, 400);
+		@include var(color, --location-subtitle-color, $text-color-800);
 	}
 
 	&--packed &__title:before,
@@ -36,26 +43,15 @@
 	}
 
 	&--crowded &__title:before {
-		color: $info-text-color;
-		color: var(--info-text-color, $info-text-color);
+		@include var(color, --info-text-color, $info-color-300);
 	}
 
 	&--packed &__title:before {
-		color: $warning-text-color;
-		color: var(--warning-text-color, $warning-text-color);
+		@include var(color, --warning-text-color, $warning-color-300);
 	}
 
 	&--full &__title:before {
-		color: $danger-text-color;
-		color: var(--danger-text-color, $danger-text-color);
-	}
-
-	&__subtitle {
-		@include reset-title;
-		@include font($default-font, $size: rem(14px));
-		color: $darker-text-color;
-		color: var(--darker-text-color, $darker-text-color);
-		line-height: 1.4;
+		@include var(color, --danger-text-color, $danger-color-300);
 	}
 
 	&__timeslots {

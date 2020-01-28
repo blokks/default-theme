@@ -1,7 +1,7 @@
 .blokks-dropdown {
 	@include font($default-font, $size: rem(14px));
-	color: $darker-text-color;
-	color: var(--darker-text-color, $darker-text-color);
+	color: $text-color-800;
+	color: var(--darker-text-color, $text-color-800);
 	text-transform: capitalize;
 
 	position: relative;
@@ -11,19 +11,22 @@
 	fill: currentColor;
 
 	&:hover {
-		color: $darkest-text-color;
-		color: var(--darkest-text-color, $darkest-text-color);
+		color: $text-color-900;
+		color: var(--darkest-text-color, $text-color-900);
 	}
 
 	select {
 		@include reset-dropdown();
+	}
+
+	select {
 		@include size(100%);
 
 		padding: 11px 20px 12px;
 		font: inherit;
 		color: inherit;
-		background-color: $lightest-background-color;
-		background-color: var(--lightest-background-color, $lightest-background-color);
+		background-color: $background-color-200;
+		background-color: var(--lightest-background-color, $background-color-200);
 		border-radius: 20px;
 		cursor: pointer;
 	}
