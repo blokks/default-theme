@@ -6,25 +6,23 @@
 	}
 
 	&__option {
-		@include font($default-font, $size: rem(14px));
-		color: $text-color-800;
-		color: var(--darkest-text-color, $text-color-800);
+		@include var(font-size, --dateselector-label-size, 14px);
+		@include var(font-weight, --dateselector-label-weight, 400);
+		@include var(color, --dateselector-label-color, $text-color-800);
 		white-space: nowrap;
 		border-bottom: 1px solid transparent;
+	}
 
-		&:not(:last-of-type) {
-			margin-right: 10px;
-		}
+	&__option:not(:last-of-type) {
+		margin-right: 10px;
+	}
 
-		&:not(&--selected):hover {
-			color: $theme-color;
-			color: var(--hover-text-color, var(--theme-color, $theme-color));
-		}
+	&__option:not(&--selected):hover {
+		@include var(color, (--dateselector-selected-color, --theme-color), $theme-color);
 	}
 
 	&__option--selected {
-		color: $theme-color;
-		color: var(--theme-color, $theme-color);
+		@include var(color, (--dateselector-selected-color, --theme-color), $theme-color);
 		border-bottom: 1px solid;
 	}
 }

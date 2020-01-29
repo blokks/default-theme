@@ -1,16 +1,18 @@
 @include layout('columns', 'rows') {
 	.blokks-activity {
 		@include var(background-color, --activity-background-color, $background-color-900);
-		padding: 15px 15px;
 		outline: none;
+		transition: background 150ms linear;
 
 		@include layout('columns') {
 			@include var(width, --activity-width, $activity-width);
+			padding: 15px;
 			height: calc(100% - 2px);
 		}
 
 		@include layout('rows') {
 			@include var(height, --activity-height, $activity-height);
+			padding: 10px 12px;
 			width: calc(100% - 2px);
 		}
 
@@ -30,11 +32,11 @@
 
 		&__header {
 			@include column($align: flex-start);
+			height: 100%;
 		}
 
-		&--ended &__header,
 		&--dimmed &__header {
-			opacity: 0.5;
+			opacity: 0.3;
 		}
 
 		&__title {
@@ -42,9 +44,9 @@
 		}
 
 		&__title span {
-			@include var(background-color, --activity-padded-text-color, $background-color-700);
-			box-decoration-break: clone;
-			padding: 1px 5px 2px;
+			// @include var(background-color, --activity-padded-text-color, $background-color-700);
+			// box-decoration-break: clone;
+			// padding: 1px 5px 2px;
 		}
 
 		&__subtitle {
@@ -52,39 +54,49 @@
 		}
 
 		&__subtitle span {
-			@include var(background-color, --activity-padded-text-color, $background-color-700);
-			box-decoration-break: clone;
-			padding: 1px 5px 2px;
+			// @include var(background-color, --activity-padded-text-color, $background-color-700);
+			// box-decoration-break: clone;
+			// padding: 1px 5px 2px;
 		}
 
 		.blokks-time-labels {
 			@include var(color, --activity-timelabels-color, $text-color-200);
-			@include var(background-color, --activity-padded-text-color, $background-color-700);
-			padding: 1px 5px 1px;
+			// @include var(background-color, --activity-padded-text-color, $background-color-700);
+			// padding: 1px 5px 1px;
 			order: -1;
 			display: none;
 		}
 
 		.blokks-categories {
-			display: none;
+			@include layout('rows') {
+				margin: auto 0 0 -5px;
+			}
+
+			@include layout('columns') {
+				margin: 5px 0 0 -3px;
+			}
+
+			&__category {
+				background-color: $background-color-300;
+				color: $text-color-200;
+			}
 		}
 
 		.blokks-poster {
+			@include var(opacity, --activity-poster-opacity, 0.7);
 			@include absolute($top: 0, $left: 0);
 			@include size(100%);
-			opacity: 0.7;
 			z-index: -1;
 			transition: all 150ms linear;
 		}
 
 		&--favorited .blokks-poster {
 			opacity: 0.3;
-			filter: sepia(1);
+			filter: grayscale(100%);
 		}
 
-		&--ended .blokks-poster,
 		&--dimmed .blokks-poster {
-			opacity: 0.5;
+			opacity: 0.3;
 			filter: grayscale(100%);
 		}
 	}

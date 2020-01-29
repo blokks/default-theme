@@ -1,15 +1,12 @@
 @include device('mobile') {
 	.blokks-activity {
 		@include row();
-		margin-top: 15px;
+		padding: 15px 0;
 		transition: opacity 150ms linear;
 
+		&--ended,
 		&--dimmed {
-			opacity: 0.3;
-		}
-
-		&--ended {
-			opacity: 0.3;
+			opacity: 0.2;
 		}
 
 		&__header {
@@ -35,19 +32,22 @@
 			@include var(color, --activity-favorited-color, $theme-color);
 		}
 
+		&--selected &__title {
+			@include var(color, (--activity-selected-color, --theme-color), $theme-color);
+		}
+
+		&--selected &__subtitle {
+			@include var(color, (--activity-selected-color, --theme-color), $theme-color);
+		}
+
 		.blokks-time-labels {
-			@include var(color, --activity-timelabels-color, $text-color-700);
+			@include var(color, --activity-timelabels-color, $text-color-800);
 			order: 2;
 		}
 
 		.blokks-categories {
-			margin: 8px 0 0 -5px;
+			margin: 5px 0 0 -5px;
 			order: 3;
-		}
-
-		&--selected &__title,
-		&--selected &__subtitle {
-			@include var(color, (--activity-selected-color, --theme-color), $theme-color);
 		}
 
 		.blokks-poster {
@@ -59,9 +59,9 @@
 			order: 0;
 		}
 
+		&--ended .blokks-poster,
 		&--dimmed .blokks-poster {
-			filter: grayscale(75%);
-			opacity: 0.5;
+			filter: grayscale(100%);
 		}
 
 		&:not(&--has-poster):before {

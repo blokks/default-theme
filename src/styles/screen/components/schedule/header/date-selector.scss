@@ -1,6 +1,10 @@
 .blokks-date-selector {
 	@include column();
 
+	.blokks-dropdown {
+		margin-left: -5px;
+	}
+
 	&__selected-date {
 		display: none;
 	}

@@ -1,29 +1,15 @@
 .blokks-activity-details {
-	@include var(background-color, --modal-background-color, $background-color-100);
-	width: 100%;
+	@include var(background-color, --activity-details-background-color, $background-color-100);
 	max-width: 600px;
 
 	.blokks-poster {
 		@include var(background-color, --placeholder-color, $background-color-900);
-		width: 100%;
 	}
 
 	.blokks-poster:after {
 		display: block;
 		padding-top: 56.25%;
 		content: '';
-	}
-
-	&__close-button {
-		@include close-button();
-		@include absolute($top: 10px, $right: 10px);
-	}
-
-	&--has-poster &__close-button {
-		background-color: rgba($background-color-900, 30%);
-		border-radius: 50%;
-		color: $text-color-100;
-		color: var(--lightest-text-color, $text-color-100);
 	}
 
 	.blokks-alert {
@@ -43,15 +29,14 @@
 	}
 
 	&__title {
-		@include font($default-font, $size: rem(19px), $weight: 600);
-		color: $text-color-900;
-		color: var(--darkest-text-color, $text-color-900);
-		line-height: 1.4;
+		@include var(font-size, --activity-details-title-size, 19px);
+		@include var(font-weight, --activity-details-title-weight, 600);
+		@include var(color, --activity-details-title-color, $text-color-900);
+		transition: color 150ms linear;
 	}
 
 	&--favorited &__title {
-		color: $theme-color;
-		color: var(--theme-color, $theme-color);
+		@include var(color, (--activity-favorited-color, --theme-color), $theme-color);
 	}
 
 	&__subtitle {
@@ -59,17 +44,19 @@
 	}
 
 	&__subtitle {
-		@include font($default-font, $size: rem(17px), $weight: 400);
-		color: $text-color-800;
-		color: var(--darker-text-color, $text-color-800);
-		line-height: 1.4;
+		@include var(font-size, --activity-details-subtitle-size, 17px);
+		@include var(font-weight, --activity-details-subtitle-weight, 400);
+		@include var(color, --activity-details-subtitle-color, $text-color-800);
+	}
+
+	.blokks-categories {
+		margin: 5px 0 0 -5px;
 	}
 
 	&__related-info {
-		@include font($default-font, $size: rem(13px));
-		color: $text-color-800;
-		color: var(--darker-text-color, $text-color-800);
-		line-height: 1.5;
+		@include var(font-size, --activity-details-description-size, $default-font-size);
+		@include var(font-weight, --activity-details-description-weight, 400);
+		@include var(color, --activity-details-description-color, $text-color-800);
 		margin-top: 20px;
 	}
 
@@ -86,26 +73,6 @@
 		white-space: pre-wrap;
 	}
 
-	&__date-info {
-		@include row();
-	}
-
-	&__date-info:before {
-		display: inline-block;
-		width: 80px;
-		content: 'Date:';
-	}
-
-	&__location {
-		display: block;
-	}
-
-	&__location:before {
-		display: inline-block;
-		width: 80px;
-		content: 'Location:';
-	}
-
 	&--now-playing .blokks-date-label {
 		display: none;
 	}
@@ -114,16 +81,26 @@
 		display: none;
 	}
 
-	.blokks-categories {
-		margin: 5px 0 0 -5px;
+	&__date-info {
+		@include row();
+	}
+
+	&__date-info:before {
+		display: inline-block;
+		white-space: pre-wrap;
+		content: 'Date: ';
+	}
+
+	&__location:before {
+		display: inline-block;
+		white-space: pre-wrap;
+		content: 'Stage: ';
 	}
 
 	&__description {
-		@include font($default-font, $size: rem(13px));
-		color: $text-color-800;
-		color: var(--darker-text-color, $text-color-800);
-		line-height: 1.5;
-
+		@include var(font-size, --activity-details-description-size, $default-font-size);
+		@include var(font-weight, --activity-details-description-weight, 400);
+		@include var(color, --activity-details-description-color, $text-color-800);
 		margin-top: 20px;
 		max-width: 500px;
 	}
@@ -133,34 +110,20 @@
 		color: inherit;
 	}
 
-	&__description h1 {
-		@include reset-title();
-	}
-
-	&__description h1 {
-		@include font($default-font, $size: 13px, $weight: 500);
-		color: $text-color-900;
-		color: var(--darkest-text-color, $text-color-900);
-	}
-
+	&__description h1,
 	&__description h2 {
 		@include reset-title();
 	}
-	
+
+	&__description h1,
 	&__description h2 {
-		@include font($default-font, $size: 13px, $weight: 500);
-		color: $text-color-900;
-		color: var(--darkest-text-color, $text-color-900);
+		@include var(font-weight, --activity-details-title-weight, 600);
+		@include var(color, --activity-details-title-color, $text-color-900);
 	}
 
 	&__description a {
-		color: $theme-color;
-		color: var(--hover-text-color, var(--theme-color, $theme-color));
+		@include var(color, (--activity-details-link-color, --theme-color), $theme-color);
 		cursor: pointer;
-	}
-
-	&__description strong {
-		font-weight: 500;
 	}
 
 	&__description img {
@@ -178,19 +141,10 @@
 	&__description ul {
 		@include reset-list();
 	}
-	
+
 	&__description ul {
 		list-style-type: circle;
 		padding-left: 15px;
-	}
-
-	&__share-button {
-		@include button-with-icon();
-		margin: 5px 0 0 -5px;
-	}
-
-	&__share-button .blokks-icon {
-		margin-right: 5px;
 	}
 
 	&__favorites {
@@ -198,30 +152,29 @@
 	}
 
 	&__signin-button {
-		@include button-with-icon;
+		@include button-with-icon();
 		margin-left: -5px;
 	}
 
 	&__favorite-button {
-		@include button-with-icon;
+		@include button-with-icon();
 		margin-left: -5px;
 	}
 
 	&__unfavorite-button {
-		@include button-with-icon;
+		@include button-with-icon();
 		margin-left: -5px;
 	}
 
 	&__favorited-by {
 		margin-top: 20px;
 		max-width: 500px;
+	}
 
-		&:before {
-			@include font($default-font, $size: rem(13px));
-			content: attr(data-title);
-			color: $text-color-800;
-			color: var(--darker-text-color, $text-color-800);
-		}
+	&__favorited-by:before {
+		@include var(font-size, --activity-details-description-size, $default-font-size);
+		@include var(font-weight, --activity-details-description-weight, 400);
+		@include var(color, --activity-details-description-color, $text-color-800);
 	}
 
 	.blokks-userlist {
@@ -229,7 +182,10 @@
 	}
 
 	.blokks-embeds {
-		@include reset-list;
+		@include reset-list();
+	}
+
+	.blokks-embeds {
 		margin-top: 20px;
 	}
 
@@ -243,16 +199,37 @@
 	}
 
 	.blokks-link {
-		@include font($default-font, $size: rem(14px));
-		color: $text-color-800;
-		color: var(--darker-text-color, $text-color-800);
+		@include var(font-size, --activity-details-link-size, 14px);
+		@include var(font-weight, --activity-details-link-weight, 400);
+		@include var(color, --activity-details-link-color, $text-color-800);
 		text-decoration: none;
 		border-bottom: 1px solid transparent;
+	}
 
-		&:hover {
-			color: $theme-color;
-			color: var(--theme-$theme-color, $theme-color);
-			border-bottom: 1px solid;
-		}
+	.blokks-link:hover {
+		@include var(color, (--activity-details-link-color, --theme-color), $theme-color);
+		border-bottom: 1px solid;
+	}
+
+	&__close-button {
+		@include reset-button();
+	}
+
+	&__close-button {
+		@include size(36px);
+		@include absolute($top: 5px, $right: 5px);
+		color: $background-color-800;
+	}
+
+	&--has-poster &__close-button {
+		color: $background-color-200;
+	}
+
+	&__close-button svg {
+		@include size(50%);
+	}
+
+	&__close-button:hover {
+		@include var(color, (--close-button-hover-color, --theme-color), $theme-color);
 	}
 }

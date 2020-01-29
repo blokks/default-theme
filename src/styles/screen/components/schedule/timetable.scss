@@ -1,6 +1,10 @@
-@include device('mobile') {
-	.blokks-timetable {
+.blokks-timetable {
+	@include device('mobile') {
 		margin: 10px 0 0;
+	}
+
+	@include layout('rows') {
+		margin: 25px 0 0;
 	}
 }
 

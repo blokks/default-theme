@@ -1,18 +1,16 @@
 .blokks-dropdown {
-	@include font($default-font, $size: rem(14px));
-	color: $text-color-800;
-	color: var(--darker-text-color, $text-color-800);
+	@include var(font-size, --dateselector-label-size, $default-font-size);
+	@include var(font-weight, --dateselector-label-weight, 400);
+	@include var(color, --dateselector-label-color, $text-color-700);
 	text-transform: capitalize;
 
 	position: relative;
 	display: block;
-	min-width: 200px;
-	max-width: 280px;
+	width: 200px;
 	fill: currentColor;
 
 	&:hover {
-		color: $text-color-900;
-		color: var(--darkest-text-color, $text-color-900);
+		@include var(color, --dateselector-hover-color, $text-color-900);
 	}
 
 	select {
@@ -20,19 +18,18 @@
 	}
 
 	select {
-		@include size(100%);
+		@include var(background-color, --dateselector-background-color, $background-color-200);
+		padding: 10px 20px;
+		width: 100%;
+		border-radius: 20px;
 
-		padding: 11px 20px 12px;
 		font: inherit;
 		color: inherit;
-		background-color: $background-color-200;
-		background-color: var(--lightest-background-color, $background-color-200);
-		border-radius: 20px;
 		cursor: pointer;
 	}
 
 	.blokks-icon {
-		@include absolute($top: 10px, $right: 15px);
+		@include absolute($top: 9px, $right: 15px);
 		font-size: rem(22px);
 	}
 }

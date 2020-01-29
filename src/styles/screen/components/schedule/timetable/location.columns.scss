@@ -3,7 +3,7 @@
 		@include var(min-width, --location-width, $location-width);
 
 		&__header {
-			@include var(border-bottom-width, --header-width, $border-width);
+			@include var(border-bottom-width, --border-width, $border-width);
 			@include var(border-bottom-color, --stroke-color, $default-stroke-color);
 			border-bottom-style: solid;
 			padding: 15px 0;
@@ -17,13 +17,14 @@
 			@include var(padding-left, --cellspacing, $cellspacing);
 			@include var(padding-right, --cellspacing, $cellspacing);
 
-			background: bg-rows(
+			margin-top: -1 $border-width;
+			margin-top: calc(-1 * var(--border-width, #{$border-width}));
+
+			background-image: bg-rows(
 				$row-height: var(--timeslot-height, $timeslot-height),
 				$border-width: var(--border-width, $border-width),
 				$stroke-color: var(--stroke-color, $default-stroke-color)
 			);
-
-			background-position-y: calc(-1 * var(--border-width, $border-width));
 		}
 
 		// TODO: Rename to tablecells or cells

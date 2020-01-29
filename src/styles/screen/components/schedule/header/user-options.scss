@@ -6,7 +6,7 @@
 	}
 
 	.blokks-user-option {
-		@include var(font-size, --user-option-size, 14px);
+		@include var(font-size, --user-option-size, $default-font-size);
 		@include var(font-weight, --user-option-weight, 400);
 		@include var(color, --user-options-color, $text-color-800);
 		white-space: nowrap;

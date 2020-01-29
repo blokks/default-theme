@@ -29,6 +29,7 @@
 	&__title svg {
 		@include size(0.9rem);
 		vertical-align: -0.15rem;
+		margin-right: 3px;
 	}
 
 	&__subtitle {
@@ -45,6 +46,7 @@
 		@include var(font-size, --activity-timelabels-size, 12px);
 		@include var(font-weight, --activity-subtitle-weight, 400);
 		@include truncate-tail();
+		user-select: none;
 	}
 
 	.blokks-poster {

@@ -1,6 +1,6 @@
 .blokks-popup {
-	@include var(background-color, --modal-background-color, $background-color-100);
-	@include var(max-width, --modal-width, 480px);
+	@include var(background-color, --popup-background-color, $background-color-100);
+	@include var(max-width, --popup-width, 480px);
 	padding: 25px 30px;
 	width: 100%;
 
@@ -9,28 +9,23 @@
 	}
 
 	&__title {
-		@include font($default-font, 19px, $weight: 600);
-		color: $text-color-900;
-		color: var(--darkest-text-color, $text-color-900);
-		line-height: 1.25;
+		@include var(font-size, --popup-title-size, 19px);
+		@include var(font-weight, --popup-title-weight, 600);
+		@include var(color, --popup-title-color, $text-color-900);
 	}
 
 	&__description {
-		@include font($default-font, $size: rem(13px));
-		color: $text-color-800;
-		color: var(--darker-text-color, $text-color-800);
-		line-height: 1.5;
-
+		@include var(font-size, --popup-description-size, $default-font-size);
+		@include var(font-weight, --popup-description-weight, 400);
+		@include var(color, --popup-description-color, $text-color-800);
 		margin: 15px 0 0 0;
 		max-width: 380px;
 	}
 
 	&__footer {
-		@include font($default-font, $size: rem(13px));
-		color: $text-color-800;
-		color: var(--darker-text-color, $text-color-800);
-		line-height: 1.4;
-
+		@include var(font-size, --popup-footer-size, $default-font-size);
+		@include var(font-weight, --popup-footer-weight, 400);
+		@include var(color, --popup-footer-color, $text-color-700);
 		margin: 15px 0 0 0;
 		max-width: 380px;
 	}
@@ -41,7 +36,20 @@
 	}
 
 	&__close-button {
-		@include close-button();
+		@include reset-button();
+	}
+
+	&__close-button {
+		@include size(36px);
 		@include absolute($top: 5px, $right: 5px);
+		color: $background-color-800;
+	}
+
+	&__close-button svg {
+		@include size(50%);
+	}
+
+	&__close-button:hover {
+		@include var(color, (--close-button-hover-color, --theme-color), $theme-color);
 	}
 }

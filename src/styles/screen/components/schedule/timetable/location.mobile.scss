@@ -7,6 +7,10 @@
 			padding: 10px 0;
 		}
 
+		&__titles {
+			text-align: center;
+		}
+
 		&__timeslots:after {
 			display: block;
 			content: '';

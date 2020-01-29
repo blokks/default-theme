@@ -1,11 +1,16 @@
 @include layout('list') {
 	.blokks-activity {
 		@include row();
+		@include var(border-bottom-color, --activity-border-color, $default-stroke-color);
+		@include var(border-bottom-width, --border-width, $border-width);
 		padding: 30px 30px 30px 0;
-		border-bottom: 1px solid $default-stroke-color;
-		transition: opacity 100ms linear;
+		border-bottom-style: solid;
+		transition: opacity 150ms linear;
 
 		@supports (display: contents) {
+			background-size: $border-width auto;
+			background-size: var(--border-width, #{$border-width}) auto;
+
 			display: grid;
 			grid-template-rows: 1fr min-content;
 			grid-template-columns: 120px min-content auto;
@@ -15,7 +20,6 @@
 
 			background-position: 120px;
 			background-repeat: no-repeat;
-			background-size: 1px auto;
 			background-image: linear-gradient(
 				180deg,
 				$default-stroke-color,
@@ -24,18 +28,9 @@
 			);
 		}
 
+		&--ended,
 		&--dimmed {
-			opacity: 0.3;
-		}
-
-		&--ended {
-			opacity: 0.3;
-		}
-
-		&--selected,
-		&:hover {
-			transition: none;
-			background-color: $hover-background-color;
+			opacity: 0.2;
 		}
 
 		&__header {
@@ -45,12 +40,7 @@
 
 			@supports (display: contents) {
 				display: contents;
-				max-width: 600px;
 			}
-		}
-
-		&__header {
-			line-height: 1.5;
 		}
 
 		&__titles {
@@ -59,11 +49,13 @@
 
 			@supports (display: contents) {
 				grid-area: titles;
+				max-width: 500px;
 			}
 		}
 
 		&__title {
 			@include var(color, --activity-title-color, $text-color-900);
+			transition: color 150ms linear;
 		}
 
 		&--favorited &__title {
@@ -79,7 +71,7 @@
 			order: 1;
 
 			@supports (display: contents) {
-				font-size: rem(14px);
+				font-size: 14px;
 				grid-area: time-labels;
 				justify-self: center;
 				align-self: center;
@@ -120,8 +112,7 @@
 		}
 
 		&--dimmed .blokks-poster {
-			opacity: 0.5;
-			filter: grayscale(75%);
+			filter: grayscale(100%);
 		}
 	}
 }

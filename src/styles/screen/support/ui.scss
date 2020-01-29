@@ -29,7 +29,11 @@
 	@include size(36px);
 
 	svg {
-		@include size(18px);
+		@include size(50%);
+	}
+
+	&:hover {
+		fill: $theme-color;
 	}
 }
 

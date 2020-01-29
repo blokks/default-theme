@@ -6,6 +6,7 @@
 			@include var(border-right-width, --border-width, $border-width);
 			@include var(border-right-color, --stroke-color, $default-stroke-color);
 			@include row($align: center);
+			padding: 0 15px;
 			border-right-style: solid;
 		}
 
@@ -20,6 +21,9 @@
 		&__timeslots {
 			@include var(padding-top, --cellspacing, $cellspacing);
 			@include var(padding-bottom, --cellspacing, $cellspacing);
+
+			margin-left: -1 * $border-width;
+			margin-left: calc(-1 * var(--border-width, #{$border-width}));
 
 			background: bg-columns(
 				$column-width: var(--timeslot-width, $timeslot-width),

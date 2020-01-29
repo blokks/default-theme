@@ -1,6 +1,5 @@
 .blokks-filters {
 	@include horizontal-list();
-	display: flex;;
 	max-width: 750px;
 
 	.blokks-filter {
@@ -11,25 +10,25 @@
 		@include var(font-size, --filter-label-size, 13px);
 		@include var(font-weight, --filter-label-weight, 400);
 		@include var(color, --filter-label-color, $text-color-800);
+		@include var(background-color, --filter-background-color, $background-color-200);
 		text-transform: capitalize;
 		white-space: nowrap;
 		line-height: 1;
 
 		margin: 0 4px 4px 0;
 		padding: 8px 15px;
-		background-color: rgba(0, 0, 0, 0.05);
-		border-radius: 16px;
+		border-radius: 15px;
 		user-select: none;
+	}
 
-		&:hover {
-			@include var(color, --filter-hover-label-color, $text-color-100);
-			@include var(background-color, (--filter-hover-background-color, --theme-color), $theme-color);
-		}
+	.blokks-filter:hover {
+		@include var(color, --filter-hover-label-color, $text-color-100);
+		@include var(background-color, (--filter-hover-background-color, --theme-color), $theme-color);
+	}
 
-		&[class*='selected'] {
-			@include var(color, --filter-hover-label-color, $text-color-100);
-			@include var(background-color, (--filter-hover-background-color, --theme-color), $theme-color);
-		}
+	.blokks-filter[class*='selected'] {
+		@include var(color, --filter-hover-label-color, $text-color-100);
+		@include var(background-color, (--filter-hover-background-color, --theme-color), $theme-color);
 	}
 
 	.blokks-filter svg {

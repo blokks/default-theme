@@ -10,6 +10,9 @@
 		}
 
 		&__timeslots {
+			margin-left: -1 * $border-width;
+			margin-left: calc(-1 * var(--border-width, #{$border-width}));
+
 			background: bg-columns(
 				$column-width: var(--timeslot-width, $timeslot-width),
 				$border-width: var(--border-width, $border-width),

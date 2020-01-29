@@ -5,8 +5,11 @@ $secondary-color: #c83a6f !default;
 /* Background colors */
 $background-color-100: #ffffff !default;
 $background-color-200: #f2f3f3 !default;
-$background-color-700: rgba(52, 55, 60, 0.4) !default;
-$background-color-800: rgba(20, 20, 20, 0.7) !default;
+$background-color-300: #ffffff44 !default;
+
+$background-color-600: #00000005 !default;
+$background-color-700: #34373c66 !default;
+$background-color-800: #141414b3 !default;
 $background-color-900: #33363b !default;
 
 /* Light text colors */
@@ -32,4 +35,3 @@ $danger-color-300: #721c24 !default;
 
 /* Misc */
 $empty-image-background-color: #eee !default;
-$hover-background-color: #00000005 !default;
