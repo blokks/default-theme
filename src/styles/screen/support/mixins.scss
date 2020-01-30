@@ -55,6 +55,11 @@
 }
 
 /* Font mixins */
+@mixin antialiased {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 @mixin text-replacement {
 	text-indent: 101%;
 	white-space: nowrap;

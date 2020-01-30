@@ -35,10 +35,9 @@
 		color: inherit;
 	}
 
-
 	svg {
 		@include absolute($top: 12px, $right: 15px);
-		@include size(15px);
+		@include size(0.9rem);
 	}
 }
 

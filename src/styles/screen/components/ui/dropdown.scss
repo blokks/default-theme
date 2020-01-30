@@ -28,8 +28,8 @@
 		cursor: pointer;
 	}
 
-	.blokks-icon {
-		@include absolute($top: 9px, $right: 15px);
-		font-size: rem(22px);
+	svg {
+		@include absolute($top: 11px, $right: 15px);
+		@include size(1.2rem);
 	}
 }
