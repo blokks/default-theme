@@ -1,0 +1,15 @@
+.CloseButton {
+	@include reset-button;
+}
+
+.CloseButton {
+	color: cssvar(--closebutton-color, $background-color-800);
+
+	&:hover {
+		--closebutton-color: #{cssvar(--theme-color, $theme-color)};
+	}
+
+	> .Icon {
+		@include size(50%);
+	}
+}

@@ -1,16 +1,16 @@
 @include device('mobile') {
 	.blokks-activity {
-		@include row();
+		@include row;
 		padding: 15px 0;
 		transition: opacity 150ms linear;
 
 		&--ended,
-		&--dimmed {
+		&--muted {
 			opacity: 0.2;
 		}
 
 		&__header {
-			@include column();
+			@include column;
 			order: 1;
 		}
 
@@ -60,7 +60,7 @@
 		}
 
 		&--ended .blokks-poster,
-		&--dimmed .blokks-poster {
+		&--muted .blokks-poster {
 			filter: grayscale(100%);
 		}
 

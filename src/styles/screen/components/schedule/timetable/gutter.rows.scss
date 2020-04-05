@@ -1,5 +1,5 @@
 @include layout('rows') {
-	.blokks-gutter {
+	.Gutter {
 		@include var(height, --gutter-height, $gutter-height);
 
 		&:before {
@@ -9,7 +9,7 @@
 			border-right-style: solid;
 		}
 
-		&__timeslots {
+		.Timeslots {
 			margin-left: -1 * $border-width;
 			margin-left: calc(-1 * var(--border-width, #{$border-width}));
 
@@ -20,7 +20,7 @@
 			);
 		}
 
-		&__timeslot {
+		.Timeslots li {
 			@include var(width, --timeslot-width, $timeslot-width);
 		}
 	}

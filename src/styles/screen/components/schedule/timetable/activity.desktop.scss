@@ -1,73 +1,78 @@
 @include layout('columns', 'rows') {
-	.blokks-activity {
-		@include var(background-color, --activity-background-color, $background-color-900);
+	.Activity {
 		outline: none;
-		transition: background 150ms linear;
+		transition: background 250ms 300ms;
+		background-color: cssvar(
+			--activity-background-color,
+			$background-color-950
+		);
 
 		@include layout('columns') {
-			@include var(width, --activity-width, $activity-width);
-			padding: 15px;
+			padding: 12px 14px;
+			width: cssvar(--activity-width, $activity-width);
 			height: calc(100% - 2px);
 		}
 
 		@include layout('rows') {
-			@include var(height, --activity-height, $activity-height);
 			padding: 10px 12px;
 			width: calc(100% - 2px);
+			height: cssvar(--activity-height, $activity-height);
 		}
 
 		&--favorited {
-			@include var(background-color, (--activity-favorited-color, --theme-color), $theme-color);
+			--activity-background-color: #{cssvar(--theme-color, $theme-color)};
 		}
 
-		&--dimmed {
-			@include var(background-color, --activity-dimmed-color, $background-color-200);
+		&--muted {
+			--activity-background-color: #{$background-color-200};
 		}
 
 		&--selected,
-		&:not(&--disabled):active {
-			outline: 3px auto $theme-color;
-			outline: 3px auto v((--activity-selected-color, --theme-color), $theme-color);
+		&:not(&--disabled):active,
+		&:not(&--disabled):hover {
+			outline: 3px auto
+				cssvar((--activity-outline-color, --theme-color), $theme-color);
 		}
 
-		&__header {
+		&-Header {
 			@include column($align: flex-start);
 			height: 100%;
+			transition: opacity 300ms 300ms;
 		}
 
-		&--dimmed &__header {
+		&--muted &-Header {
 			opacity: 0.3;
 		}
 
-		&__title {
-			@include var(color, --activity-title-color, $text-color-100);
+		&-Title {
+			color: cssvar((--activity-title-color, --text-color-100), $text-color-100);
 		}
 
-		&__title span {
-			// @include var(background-color, --activity-padded-text-color, $background-color-700);
-			// box-decoration-break: clone;
-			// padding: 1px 5px 2px;
+		// &-Header > hgroup > h1 {
+		// 	@include var(background-color, --activity-padded-text-color, $background-color-700);
+		// 	box-decoration-break: clone;
+		// 	padding: 1px 5px 2px;
+		// }
+
+		&-Subtitle {
+			color: cssvar((--activity-subtitle-color, --text-color-200), $text-color-200);
 		}
 
-		&__subtitle {
-			@include var(color, --activity-subtitle-color, $text-color-200);
-		}
+		// &-Header > hgroup > h2 {
+		// 	@include var(background-color, --activity-padded-text-color, $background-color-700);
+		// 	box-decoration-break: clone;
+		// 	padding: 1px 5px 2px;
+		// }
 
-		&__subtitle span {
-			// @include var(background-color, --activity-padded-text-color, $background-color-700);
-			// box-decoration-break: clone;
-			// padding: 1px 5px 2px;
-		}
-
-		.blokks-time-labels {
-			@include var(color, --activity-timelabels-color, $text-color-200);
+		.Timelabels {
+			color: cssvar((--activity-timelabels-color, --text-color-200), $text-color-200);
 			// @include var(background-color, --activity-padded-text-color, $background-color-700);
 			// padding: 1px 5px 1px;
 			order: -1;
 			display: none;
 		}
 
-		.blokks-categories {
+		.Categories {
 			@include layout('rows') {
 				margin: auto 0 0 -5px;
 			}
@@ -75,28 +80,24 @@
 			@include layout('columns') {
 				margin: 5px 0 0 -3px;
 			}
-
-			&__category {
-				background-color: $background-color-300;
-				color: $text-color-200;
-			}
 		}
 
-		.blokks-poster {
-			@include var(opacity, --activity-poster-opacity, 0.7);
+		.CoverImage {
 			@include absolute($top: 0, $left: 0);
 			@include size(100%);
+			opacity: var(--activity-poster-opacity, 0.7);
 			z-index: -1;
-			transition: all 150ms linear;
+			transition: background 300ms 300ms, opacity 300ms 300ms,
+				filter 300ms 300ms;
 		}
 
-		&--favorited .blokks-poster {
-			opacity: 0.3;
+		&--favorited .CoverImage {
+			--activity-poster-opacity: 0.3;
 			filter: grayscale(100%);
 		}
 
-		&--dimmed .blokks-poster {
-			opacity: 0.3;
+		&--muted .CoverImage {
+			--activity-poster-opacity: 0.3;
 			filter: grayscale(100%);
 		}
 	}

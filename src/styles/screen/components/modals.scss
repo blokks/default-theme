@@ -1,20 +1,20 @@
-.blokks-modal {
-	@include var(background-color, --modal-overlay-color, $background-color-800);
-	@include var(font-family, --schedule-font, $default-font);
-	@include antialiased();
+.Modal {
+	@include antialiased;
+	font-family: cssvar(--schedule-font, $default-font);
+	background-color: cssvar(--modal-overlay-color, $background-color-800);
 	text-rendering: optimizeLegibility;
-	line-height: 1.5;
+	line-height: 1.4;
+
+	::-moz-selection {
+		background-color: cssvar((--selection-background-color, --theme-color), $theme-color);
+		color: cssvar((--selection-text-color, --text-color-100), $text-color-100);
+	}
+
+	::selection {
+		background-color: cssvar((--selection-background-color, --theme-color), $theme-color);
+		color: cssvar((--selection-text-color, --text-color-100), $text-color-100);
+	}
 }
 
-.blokks-modal ::-moz-selection {
-	@include var(background-color, --selection-background-color, $theme-color);
-	@include var(color, --selection-text-color, $text-color-100);
-}
-
-.blokks-modal ::selection {
-	@include var(background-color, --selection-background-color, $theme-color);
-	@include var(color, --selection-text-color, $text-color-100);
-}
-
-@import 'modals/activity-details';
-@import 'modals/popup';
+@import 'modals/ActivityDetails';
+@import 'modals/Popup';

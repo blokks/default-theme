@@ -1,0 +1,12 @@
+.AttendingFriends {
+    margin-top: 20px;
+    max-width: 500px;
+
+    font-size: cssvar(--activitydetails-description-size, $default-font-size);
+    font-weight: cssvar(--activitydetails-description-weight, 400);
+    color: cssvar((--activitydetails-description-color, --text-color-800), $text-color-800);
+
+    .UserList {
+        margin: 4px 0 0 0;
+    }
+}

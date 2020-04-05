@@ -1,58 +1,8 @@
-/* UI styles */
-@mixin button {
-	@include reset-button;
-	@include var(font-size, --button-label-size, 13px);
-	@include var(font-weight, --button-label-weight, 500);
-	@include var(color, --button-label-color, $text-color-100);
-	@include var(background-color, (--button-background-color, --theme-color), $theme-color);
-	padding: 11px 20px;
-	border-radius: 20px;
-	user-select: none;
-}
-
-@mixin button-with-icon($icon-margin: 4px, $hide-label: false) {
-	@include button();
-	display: inline-flex;
-
-	span {
-		text-align: left;
-	}
-
-	svg {
-		@include size(0.9rem);
-		margin-right: 5px;
-		margin-top: 0.05rem;
-	}
-}
-
-@mixin close-button {
-	@include reset-button();
-	@include size(36px);
-
-	svg {
-		@include size(50%);
-	}
-
-	&:hover {
-		fill: $theme-color;
-	}
-}
-
-@mixin horizontal-list($spacing: null) {
-	@include reset-list();
-	@include row();
-	flex-wrap: wrap;
-
-	@if ($spacing) {
-		& > li {
-			margin-right: $spacing;
-		}
-	}
-}
-
-@mixin vertical-list {
-	@include reset-list();
-	@include column();
+@mixin skeleton-text($width: 100px) {
+	@include var(height, --skeleton-text-height, 14px);
+	display: inline-block;
+	width: $width;
+	background-color: $background-color-200;
 }
 
 @function bg-columns(

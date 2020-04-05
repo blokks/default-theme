@@ -1,29 +1,29 @@
-.blokks-schedule {
-	@include var(font-family, --schedule-font, $default-font);
-	@include antialiased();
-	text-rendering: optimizeLegibility;
-	line-height: 1.5;
+.Schedule {
+	@include antialiased;
 	position: relative;
+	font-family: cssvar(--schedule-font, $default-font);
+	text-rendering: optimizeLegibility;
+	line-height: 1.3;
 	z-index: 1;
-}
 
-.blokks-schedule ::-moz-selection {
-	@include var(background-color, --selection-background-color, $theme-color);
-	@include var(color, --selection-text-color, $text-color-100);
-}
+	::-moz-selection {
+		background-color: cssvar((--selection-background-color, --theme-color), $theme-color);
+		color: cssvar((--selection-text-color, --text-color-100), $text-color-100);
+	}
 
-.blokks-schedule ::selection {
-	@include var(background-color, --selection-background-color, $theme-color);
-	@include var(color, --selection-text-color, $text-color-100);
+	::selection {
+		background-color: cssvar((--selection-background-color, --theme-color), $theme-color);
+		color: cssvar((--selection-text-color, --text-color-100), $text-color-100);
+	}
 }
 
 @include layout('list') {
-	.blokks-schedule {
+	.Schedule {
 		max-width: 960px;
 	}
 }
 
-@import 'schedule/header';
-@import 'schedule/timetable';
-@import 'schedule/footer';
-@import 'schedule/statusbar';
+@import 'schedule/Header';
+@import 'schedule/Timetable';
+@import 'schedule/Footer';
+@import 'schedule/Statusbar';

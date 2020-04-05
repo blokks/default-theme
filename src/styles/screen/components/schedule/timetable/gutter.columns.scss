@@ -1,27 +1,25 @@
 @include layout('columns') {
-	.blokks-gutter {
-		@include var(width, --gutter-width, $gutter-width);
+	.Gutter {
+		width: cssvar(--gutter-width, $gutter-width);
 
 		&:before {
-			@include var(border-bottom-color, --stroke-color, $default-stroke-color);
-			@include var(border-bottom-width, --border-width, $border-width);
 			@include sticky($top: 0);
+			border-bottom-color: cssvar(--border-color, $default-stroke-color);
+			border-bottom-width: cssvar(--border-width, $border-width);
 			border-bottom-style: solid;
 		}
 
-		&__timeslots {
-			margin-top: -1 * $border-width;
-			margin-top: calc(-1 * var(--border-width, #{$border-width}));
-
+		.Timeslots {
+			margin-top: calc(-1 * #{cssvar(--border-width, $border-width)});
 			background-image: bg-rows(
-				$row-height: var(--timeslot-height, $timeslot-height),
-				$border-width: var(--border-width, $border-width),
-				$stroke-color: var(--stroke-color, $default-stroke-color)
+				$row-height: cssvar(--timeslot-height, $timeslot-height),
+				$border-width: cssvar(--border-width, $border-width),
+				$stroke-color: cssvar(--stroke-color, $default-stroke-color)
 			);
 		}
 
-		&__timeslot {
-			@include var(height, --timeslot-height, $timeslot-height);
+		.Timeslots > li {
+			height: cssvar(--timeslot-height, $timeslot-height);
 		}
 	}
 }

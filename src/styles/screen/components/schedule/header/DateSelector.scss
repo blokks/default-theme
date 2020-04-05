@@ -1,0 +1,7 @@
+.DateSelector {
+	@include row;
+
+	.Dropdown {
+		margin-left: -5px;
+	}
+}

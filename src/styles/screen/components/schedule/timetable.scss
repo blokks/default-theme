@@ -1,4 +1,4 @@
-.blokks-timetable {
+.Timetable {
 	@include device('mobile') {
 		margin: 10px 0 0;
 	}
@@ -9,6 +9,7 @@
 }
 
 @import 'timetable/activity';
-@import 'timetable/gutter';
-@import 'timetable/location';
-@import 'timetable/time-indicator';
+@import 'timetable/Gutter';
+@import 'timetable/Location';
+@import 'timetable/Skeleton';
+@import 'timetable/TimeIndicator';

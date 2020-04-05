@@ -1,6 +1,6 @@
 @include device('mobile') {
 	.blokks-header {
-		@include column();
+		@include column;
 
 		.blokks-user-options {
 			order: 1;

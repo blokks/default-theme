@@ -1,8 +1,8 @@
-.blokks-gutter {
-	@include var(font-size, --gutter-text-size, 12px);
-	@include var(font-weight, --gutter-text-weight, 400);
-	@include var(color, --gutter-text-color, $text-color-700);
-	@include var(background-color, --gutter-background-color, $background-color-100);
+.Gutter {
+	font-size: cssvar(--gutter-text-size, 13px);
+	font-weight: cssvar(--gutter-text-weight, 400);
+	color: cssvar((--gutter-text-color, --text-color-900), $text-color-700);
+	background-color: cssvar(--gutter-background-color, $background-color-100);
 
 	&:before {
 		display: block;
@@ -12,14 +12,14 @@
 		z-index: 5;
 	}
 
-	&__timeslots {
-		@include reset-list();
+	.Timeslots {
+		@include reset-list;
 	}
 
-	&__timeslot {
+	.Timeslots > li {
 		padding: 5px;
 	}
 }
 
-@import 'gutter.columns';
-@import 'gutter.rows';
+@import 'Gutter.columns';
+@import 'Gutter.rows';

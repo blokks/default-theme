@@ -1,64 +1,40 @@
-.blokks-location {
-	@include var(background-color, (--location-background-color, --schedule-background-color), $background-color-100);
+.Location {
+	background-color: cssvar(
+		(--location-background-color, --schedule-background-color),
+		$background-color-100
+	);
 
-	&__header {
+	&-Header {
 		flex-grow: 1;
 		background-color: inherit;
 	}
 
-	&__title {
-		@include reset-title();
+	&-Title {
+		@include reset-title;
 	}
 
-	&__title {
-		@include var(font-size, --location-title-size, $default-font-size);
-		@include var(font-weight, --location-title-weight, 600);
-		@include var(color, --location-title-color, $text-color-900);
+	&-Title {
+		font-size: cssvar((--location-title-size, --default-font-size), $default-font-size);
+		font-weight: cssvar(--location-title-weight, 500);
+		color: cssvar((--location-title-color, --text-color-900), $text-color-900);
 	}
 
-	&__subtitle {
-		@include reset-title();
+	&-Subtitle {
+		@include reset-title;
 	}
 
-	&__subtitle {
-		@include var(font-size, --location-subtitle-size, $default-font-size);
-		@include var(font-weight, --location-subtitle-weight, 400);
-		@include var(color, --location-subtitle-color, $text-color-800);
+	&-Subtitle {
+		font-size: cssvar(--location-subtitle-size, $default-font-size);
+		font-weight: cssvar(--location-subtitle-weight, 400);
+		color: cssvar((--location-subtitle-color, --text-color-800), $text-color-800);
 	}
 
-	&--packed &__title:before,
-	&--crowded &__title:before,
-	&--full &__title:before {
-		font-size: 1rem;
-		line-height: 1;
-		white-space: nowrap;
-		word-wrap: normal;
-		font-feature-settings: 'liga';
-
-		display: inline-block;
-		vertical-align: text-bottom;
-		margin-right: 5px;
-		content: 'error';
-	}
-
-	&--crowded &__title:before {
-		@include var(color, --info-text-color, $info-color-300);
-	}
-
-	&--packed &__title:before {
-		@include var(color, --warning-text-color, $warning-color-300);
-	}
-
-	&--full &__title:before {
-		@include var(color, --danger-text-color, $danger-color-300);
-	}
-
-	&__timeslots {
+	.Timeslots {
 		@include reset-list;
 	}
 }
 
-@import 'location.mobile';
-@import 'location.columns';
-@import 'location.rows';
-@import 'location.list';
+@import 'Location.mobile';
+@import 'Location.columns';
+@import 'Location.rows';
+@import 'Location.list';

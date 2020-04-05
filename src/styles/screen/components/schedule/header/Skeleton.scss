@@ -1,0 +1,54 @@
+.Skeleton {
+	display: contents;
+
+	.DateSelector {
+		@include size(200px, 20px);
+		background-color: $background-color-200;
+	}
+
+	.Search {
+		@include size(200px, 40px);
+		background-color: $background-color-200;
+	}
+
+	.UserOptions {
+		@include row;
+	}
+
+	.UserOptions > span:not(:last-of-type) {
+		margin-right: 10px;
+	}
+
+	.ExportOption {
+		@include skeleton-text($width: 100px);
+	}
+
+	.PrintOption {
+		@include skeleton-text($width: 60px);
+	}
+
+	.SigninOption {
+		@include skeleton-text($width: 80px);
+	}
+
+	.Filters {
+		font-size: 0;
+	}
+
+	.FilterLink {
+		height: 30px;
+		background-color: $background-color-200;
+	}
+
+	.Filters > li:nth-of-type(1n) .FilterLink {
+		width: 90px;
+	}
+
+	.Filters > li:nth-of-type(2n) .FilterLink {
+		width: 100px;
+	}
+
+	.Filters > li:nth-of-type(3n) .FilterLink {
+		width: 80px;
+	}
+}

@@ -1,0 +1,19 @@
+.Skeleton {
+	display: contents;
+
+	.Location-Title {
+		@include skeleton-text($width: 40%);
+	}
+
+	.Location-Subtitle {
+		@include skeleton-text($width: 75%);
+	}
+
+	.Gutter {
+		align-self: flex-end;
+	}
+
+	.Timeslots {
+		height: 600px;
+	}
+}

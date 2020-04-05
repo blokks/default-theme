@@ -1,6 +1,6 @@
 @include layout('list') {
 	.blokks-activity {
-		@include row();
+		@include row;
 		@include var(border-bottom-color, --activity-border-color, $default-stroke-color);
 		@include var(border-bottom-width, --border-width, $border-width);
 		padding: 30px 30px 30px 0;
@@ -29,12 +29,12 @@
 		}
 
 		&--ended,
-		&--dimmed {
+		&--muted {
 			opacity: 0.2;
 		}
 
 		&__header {
-			@include column();
+			@include column;
 			margin-left: 25px;
 			order: 2;
 
@@ -54,7 +54,7 @@
 		}
 
 		&__title {
-			@include var(color, --activity-title-color, $text-color-900);
+			@include var(color, (--activity-title-color, --dark-text-color), $text-color-900);
 			transition: color 150ms linear;
 		}
 
@@ -111,7 +111,7 @@
 			@include var(background-color, --placeholder-background-color, $background-color-900);
 		}
 
-		&--dimmed .blokks-poster {
+		&--muted .blokks-poster {
 			filter: grayscale(100%);
 		}
 	}

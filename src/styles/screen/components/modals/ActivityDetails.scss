@@ -1,0 +1,76 @@
+.ActivityDetails {
+	@include var(background-color, --activitydetails-background-color, $background-color-100);
+	position: relative;
+	max-width: 600px;
+
+	.Cover {
+		@include var(background-color, --placeholder-color, $background-color-900);
+	}
+
+	.Cover:after {
+		display: block;
+		padding-top: 56.25%;
+		content: '';
+	}
+
+	.blokks-alert {
+		margin-bottom: 20px;
+	}
+
+	&-Content {
+		padding: 25px 30px;
+	}
+
+	&-Header {
+		max-width: 400px;
+	}
+
+	&-Title {
+		@include reset-title;
+	}
+
+	&-Title {
+		@include var(font-size, --activitydetails-title-size, 19px);
+		@include var(font-weight, --activitydetails-title-weight, 600);
+		@include var(color, (--activitydetails-title-color, --text-color-900), $text-color-900);
+		transition: color 150ms linear;
+	}
+
+	&--favorited &-Title {
+		@include var(color, (--activity-favorited-color, --theme-color), $theme-color);
+	}
+
+	&-Subtitle {
+		@include reset-title;
+	}
+
+	&-Subtitle {
+		@include var(font-size, --activitydetails-subtitle-size, 17px);
+		@include var(font-weight, --activitydetails-subtitle-weight, 400);
+		@include var(color, (--activitydetails-subtitle-color, --text-color-800), $text-color-800);
+	}
+
+	.Favorites {
+		margin-top: 20px;
+	}
+
+	.Links {
+		margin-top: 10px;
+	}
+
+	.CloseButton {
+		@include absolute($top: 5px, $right: 5px);
+		@include size(48px);
+	}
+
+	.CloseButton:hover {
+		@include var(color, (--close-button-hover-color, --theme-color), $theme-color);
+	}
+}
+
+@import 'activityDetails/AttendingFriends';
+@import 'activityDetails/Description';
+@import 'activityDetails/Embeds';
+@import 'activityDetails/Favorites';
+@import 'activityDetails/RelatedInfo';
+@import 'activityDetails/TrafficInfo';

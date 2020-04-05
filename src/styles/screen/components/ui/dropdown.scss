@@ -1,26 +1,26 @@
-.blokks-dropdown {
-	@include var(font-size, --dateselector-label-size, $default-font-size);
-	@include var(font-weight, --dateselector-label-weight, 400);
-	@include var(color, --dateselector-label-color, $text-color-700);
-	text-transform: capitalize;
-
-	position: relative;
+.Dropdown {
 	display: block;
+	position: relative;
 	width: 200px;
+
+	font-size: cssvar((--dateselector-text-size, --default-font-size), $default-font-size);
+	font-weight: cssvar(--dateselector-text-weight, 400);
+	color: cssvar(--dateselector-text-color, $text-color-700);
+	text-transform: capitalize;
 	fill: currentColor;
 
 	&:hover {
-		@include var(color, --dateselector-hover-color, $text-color-900);
+		--dateselector-hover-color: #{cssvar(--text-color-900, $text-color-900)};
 	}
 
 	select {
-		@include reset-dropdown();
+		@include reset-dropdown;
 	}
 
 	select {
-		@include var(background-color, --dateselector-background-color, $background-color-200);
 		padding: 10px 20px;
 		width: 100%;
+		background-color: cssvar(--dateselector-background-color, $background-color-200);
 		border-radius: 20px;
 
 		font: inherit;
@@ -28,7 +28,7 @@
 		cursor: pointer;
 	}
 
-	svg {
+	> .Icon {
 		@include absolute($top: 11px, $right: 15px);
 		@include size(1.2rem);
 	}

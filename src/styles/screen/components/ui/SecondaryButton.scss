@@ -1,0 +1,25 @@
+.SecondaryButton {
+	@include reset-button;
+}
+
+.SecondaryButton {
+	font-size: cssvar((--secondarybutton-text-size, --default-font-size), $default-font-size);
+	font-weight: cssvar(--secondarybutton-text-weight, 500);
+	color: cssvar((--secondarybutton-text-color, --text-color-800), $text-color-800);
+	background-color: cssvar((--secondarybutton-background-color, --theme-color), $background-color-200);
+
+	display: inline-flex;
+	padding: 11px 20px;
+	border-radius: 20px;
+
+	&:hover {
+		--secondarybutton-text-color: #{$text-color-100};
+		--secondarybutton-background-color: cssvar((--theme-color), $theme-color);
+	}
+
+	> .Icon {
+		@include size(1.0em);
+		margin-right: 4px;
+		vertical-align: -0.15em;
+	}
+}

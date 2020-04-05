@@ -1,39 +1,45 @@
-.blokks-filters {
-	@include horizontal-list();
+.Filters {
+	@include reset-list;
+}
+
+.Filters {
+	@include row;
+	flex-wrap: wrap;
 	max-width: 750px;
 
-	.blokks-filter {
-		@include reset-button();
-	}
-
-	.blokks-filter {
-		@include var(font-size, --filter-label-size, 13px);
-		@include var(font-weight, --filter-label-weight, 400);
-		@include var(color, --filter-label-color, $text-color-800);
-		@include var(background-color, --filter-background-color, $background-color-200);
-		text-transform: capitalize;
-		white-space: nowrap;
-		line-height: 1;
-
+	> li {
 		margin: 0 4px 4px 0;
-		padding: 8px 15px;
-		border-radius: 15px;
-		user-select: none;
+	}
+}
+
+.FilterLink {
+	@include var(font-size, --filter-label-size, 13px);
+	@include var(font-weight, --filter-label-weight, 400);
+	@include var(color, (--filter-label-color, --text-color-800), $text-color-800);
+	@include var(background-color, --filter-background-color, $background-color-200);
+
+	text-transform: capitalize;
+	text-decoration: none;
+	white-space: nowrap;
+	line-height: 1;
+
+	display: inline-block;
+	padding: 8px 15px;
+	border-radius: 15px;
+
+	&:hover {
+		--filter-label-color: #{$text-color-100};
+		@include var(--filter-background-color, (--theme-color), $theme-color);
 	}
 
-	.blokks-filter:hover {
-		@include var(color, --filter-hover-label-color, $text-color-100);
-		@include var(background-color, (--filter-hover-background-color, --theme-color), $theme-color);
+	&--selected {
+		--filter-label-color: #{$text-color-100};
+		@include var(--filter-background-color, (--theme-color), $theme-color);
 	}
 
-	.blokks-filter[class*='selected'] {
-		@include var(color, --filter-hover-label-color, $text-color-100);
-		@include var(background-color, (--filter-hover-background-color, --theme-color), $theme-color);
-	}
-
-	.blokks-filter svg {
-		@include size(0.9rem);
-		vertical-align: -0.15rem;
+	> .Icon {
+		@include size(1em);
+		vertical-align: -0.15em;
 		margin-right: 4px;
 	}
 }

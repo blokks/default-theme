@@ -1,13 +1,13 @@
-.blokks-header {
-	@include var(background-color, (--header-background-color, --schedule-background-color), $background-color-100);
-	padding: 0 $padding;
-	padding: 0 var(--padding, $padding);
+.Header {
+	padding: 0 cssvar(--padding, $padding);
+	background-color: cssvar((--header-background-color, --schedule-background-color), $background-color-100);
 }
 
-@import 'header.mobile';
-@import 'header.desktop';
+@import 'Header.mobile';
+@import 'Header.desktop';
 
-@import 'header/filters';
-@import 'header/date-selector';
-@import 'header/user-options';
-@import 'header/search';
+@import 'header/Filters';
+@import 'header/DateSelector';
+@import 'header/UserOptions';
+@import 'header/Search';
+@import 'header/Skeleton';

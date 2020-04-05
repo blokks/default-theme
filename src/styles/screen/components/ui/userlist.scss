@@ -1,9 +1,17 @@
-.blokks-userlist {
-	@include horizontal-list($spacing: -5px);
+.UserList {
+	@include reset-list;
 }
 
-.blokks-user {
-	@include size(37px);
-	box-shadow: 0 0 0 2px white;
-	border-radius: 50%;
+.UserList {
+	@include row;
+
+	> li:not(:first-of-type) {
+		margin-left: -5px;
+	}
+
+	> li > img {
+		@include size(32px);
+		box-shadow: 0 0 0 3px white;
+		border-radius: 50%;
+	}
 }

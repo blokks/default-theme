@@ -1,19 +1,24 @@
-.blokks-categories {
-	@include horizontal-list();
+.Categories {
+	@include reset-list;
+}
 
-	&__category {
-		@include var(font-size, --category-size, 11px);
-		@include var(font-weight, --category-weight, 400);
-		@include var(background-color, --category-background-color, $background-color-200);
-		@include var(color, --category-color, $text-color-800);
+.Categories {
+	@include row;
 
+	> li {
+		margin: 0 2px 2px 0;
+		padding: 6px 12px;
+		border-radius: 12px;
+
+		font-size: cssvar(--category-text-size, 12px);
+		font-weight: cssvar(--category-text-weight, 400);
+		color: cssvar((--category-text-color, --text-color-800), $text-color-800);
 		text-transform: capitalize;
 		white-space: nowrap;
 		line-height: 1;
-
-		margin: 0 2px 2px 0;
-		padding: 5px 10px;
-		border-radius: 10px;
-		user-select: none;
+		background-color: cssvar(
+			--category-background-color,
+			$background-color-200
+		);
 	}
 }

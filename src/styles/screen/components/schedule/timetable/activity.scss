@@ -1,59 +1,59 @@
-.blokks-activity {
+.Activity {
 	display: flex;
 	flex-direction: column;
 	outline: none;
 	transition: background 150ms linear;
 
-	&--canceled &__title {
+	&--canceled &-Title {
 		text-decoration: line-through;
 	}
 
-	&--canceled &__subtitle {
+	&--canceled &-Subtitle {
 		text-decoration: line-through;
 	}
 
-	&--canceled .blokks-time-labels {
+	&--canceled .Timelabels {
 		text-decoration: line-through;
 	}
 
-	&__title {
-		@include reset-title();
+	&-Title {
+		@include reset-title;
 	}
 
-	&__title {
-		@include var(font-size, --activity-title-size, $default-font-size);
-		@include var(font-weight, --activity-title-weight, 600);
+	&-Title {
 		@include clamp-line($lines: 2);
+		font-size: cssvar((--activity-title-size, --default-font-size), $default-font-size);
+		font-weight: cssvar(--activity-title-weight, 500);
 	}
 
-	&__title svg {
-		@include size(0.9rem);
-		vertical-align: -0.1rem;
-		margin-right: 3px;
+	&-Title > .Icon {
+		@include size(1em);
+		margin-right: 4px;
+		vertical-align: -0.15rem;
 	}
 
-	&__subtitle {
-		@include reset-title();
+	&-Subtitle {
+		@include reset-title;
 	}
 
-	&__subtitle {
-		@include var(font-size, --activity-subtitle-size, $default-font-size);
-		@include var(font-weight, --activity-subtitle-weight, 400);
+	&-Subtitle {
 		@include clamp-line($lines: 2);
+		font-size: cssvar((--activity-subtitle-size, --default-font-size), $default-font-size);
+		font-weight: cssvar(--activity-subtitle-weight, 400);
 	}
 
-	.blokks-time-labels {
-		@include var(font-size, --activity-timelabels-size, 12px);
-		@include var(font-weight, --activity-subtitle-weight, 400);
-		@include truncate-tail();
+	.Timelabels {
+		@include truncate-tail;
+		font-size: cssvar(--activity-timelabels-size, 12px);
+		font-weight: cssvar(--activity-timelabels-weight, 400);
 		user-select: none;
 	}
 
-	.blokks-poster {
+	.CoverImage {
 		flex: none;
 	}
 }
 
-@import 'activity.mobile';
-@import 'activity.desktop';
-@import 'activity.list';
+@import 'Activity.mobile';
+@import 'Activity.desktop';
+@import 'Activity.list';

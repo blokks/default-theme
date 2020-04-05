@@ -1,21 +1,21 @@
-.blokks-alert {
-	@include var(font-size, --alert-text-size, 13px);
+.Alert {
 	display: block;
 	margin: 0;
 	padding: 12px 20px 14px;
+	font-size: cssvar((--alert-text-size, --default-font-size), $default-font-size);
 
 	&--info {
-		@include var(background-color, --info-background-color, $info-color-100);
-		@include var(color, --info-text-color, $info-color-300);
+		color: cssvar(--info-text-color, $info-color-300);
+		background-color: cssvar(--info-background-color, $info-color-100);
 	}
 
 	&--warning {
-		@include var(background-color, --warning-background-color, $warning-color-100);
-		@include var(color, --warning-text-color, $warning-color-300);
+		color: cssvar(--warning-text-color, $warning-color-300);
+		background-color: cssvar(--warning-background-color, $warning-color-100);
 	}
 
 	&--danger {
-		@include var(background-color, --danger-background-color, $danger-color-100);
-		@include var(color, --danger-text-color, $danger-color-300);
+		color: cssvar(--danger-text-color, $danger-color-300);
+		background-color: cssvar(--danger-background-color, $danger-color-100);
 	}
 }

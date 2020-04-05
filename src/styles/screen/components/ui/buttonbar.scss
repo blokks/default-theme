@@ -1,28 +1,28 @@
-.blokks-buttonbar {
-	@include row();
+.ButtonBar {
+	@include reset-list;
 
-	&__option {
+	> li:not(:last-of-type) {
+		margin-right: 10px;
+	}
+
+	&-Option {
 		@include reset-button;
 	}
 
-	&__option {
-		@include var(font-size, --dateselector-label-size, 14px);
-		@include var(font-weight, --dateselector-label-weight, 400);
-		@include var(color, --dateselector-label-color, $text-color-800);
+	&-Option {
+		font-size: cssvar((--buttonbar-text-size, --default-font-size), $default-font-size);
+		font-weight: cssvar(--buttonbar-text-weight, 400);
+		color: cssvar((--buttonbar-text-color, --text-color-800), $text-color-800);
 		white-space: nowrap;
 		border-bottom: 1px solid transparent;
 	}
 
-	&__option:not(:last-of-type) {
-		margin-right: 10px;
+	&-Option:not(&--selected):hover {
+		--buttonbar-text-color: #{cssvar(--theme-color, $theme-color)};
 	}
 
-	&__option:not(&--selected):hover {
-		@include var(color, (--dateselector-selected-color, --theme-color), $theme-color);
-	}
-
-	&__option--selected {
-		@include var(color, (--dateselector-selected-color, --theme-color), $theme-color);
+	&-Option--selected {
 		border-bottom: 1px solid;
+		--buttonbar-text-color: #{cssvar(--theme-color, $theme-color)};
 	}
 }
