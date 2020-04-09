@@ -1,39 +1,37 @@
 @include layout('rows') {
-	.blokks-location {
-		@include var(min-height, --location-height, $location-height);
+	.Location {
+		min-height: cssvar(--location-height, $location-height);
 
-		&__header {
-			@include var(border-right-width, --border-width, $border-width);
-			@include var(border-right-color, --stroke-color, $default-stroke-color);
+		&-Header {
 			@include row($align: center);
 			padding: 0 15px;
+			border-right-width: cssvar(--border-width, $border-width);
+			border-right-color: cssvar(--stroke-color, $default-stroke-color);
 			border-right-style: solid;
 		}
 
-		&__title {
+		&-Title {
 			white-space: nowrap;
 		}
 
-		&__subtitle {
+		&-Subtitle {
 			white-space: nowrap;
 		}
 
-		&__timeslots {
-			@include var(padding-top, --cellspacing, $cellspacing);
-			@include var(padding-bottom, --cellspacing, $cellspacing);
-
-			margin-left: -1 * $border-width;
-			margin-left: calc(-1 * var(--border-width, #{$border-width}));
+		.Timeslots {
+			margin-left: calc(-1 * #{cssvar(--border-width, $border-width)});
+			padding-top: cssvar(--cellspacing, $cellspacing);
+			padding-bottom: cssvar(--cellspacing, $cellspacing);
 
 			background: bg-columns(
-				$column-width: var(--timeslot-width, $timeslot-width),
-				$border-width: var(--border-width, $border-width),
-				$stroke-color: var(--stroke-color, $default-stroke-color)
+				$column-width: cssvar(--timeslot-width, $timeslot-width),
+				$border-width: cssvar(--border-width, $border-width),
+				$stroke-color: cssvar(--stroke-color, $default-stroke-color)
 			);
 		}
 
-		&__timeslot {
-			@include var(width, --timeslot-width, $timeslot-width);
+		.Timeslots > li {
+			width: cssvar(--timeslot-width, $timeslot-width);
 		}
 	}
 }

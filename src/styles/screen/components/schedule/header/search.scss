@@ -1,17 +1,18 @@
 .Search {
-	@include var(font-size, --search-text-size, $default-font-size);
-	@include var(font-weight, --search-text-weight, 400);
-	@include var(color, --search-text-color, $text-color-700);
-	@include var(background-color, --search-background-color, $background-color-200);
-
 	position: relative;
-	width: 200px;
+	width: 225px;
+
+	font-size: cssvar((--search-text-size, --default-font-size), $default-font-size);
+	font-weight: cssvar(--search-text-weight, 400);
+	color: cssvar(--search-text-color, $text-color-700);
+
+	background-color: cssvar(--search-background-color, $background-color-200);
 	border-radius: 20px;
 
 	&:focus-within,
 	&:focus,
 	&:hover {
-		--search-text-color: #{cssvar(--text-color-900, $text-color-900)};
+		--search-text-color: #{cssvar(--dark-text-color, $text-color-900)};
 	}
 
 	@include device('mobile') {
@@ -42,10 +43,10 @@
 	}
 
 	&-Suggestions > li {
-		@include var(background-color, --suggestion-background-color, $background-color-100);
-		@include var(border-color, --suggestion-border-color, $default-stroke-color);
 		margin-top: -1px;
 		padding: 12px 14px;
+		background-color: cssvar(--suggestion-background-color, $background-color-100);
+		border-color: cssvar(--suggestion-border-color, $default-stroke-color);
 		border-style: solid;
 		border-width: 1px;
 	}
@@ -60,7 +61,7 @@
 
 	&-Suggestions > li > a:hover,
 	&-Suggestions > li > a:active {
-		@include var(color, (--suggestion-active-color, --theme-color), $theme-color);
+		color: cssvar((--suggestion-active-color, --theme-color), $theme-color);
 	}
 
 	> .Icon {

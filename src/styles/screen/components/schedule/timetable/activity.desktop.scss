@@ -1,11 +1,8 @@
 @include layout('columns', 'rows') {
 	.Activity {
 		outline: none;
-		transition: background 250ms 300ms;
-		background-color: cssvar(
-			--activity-background-color,
-			$background-color-950
-		);
+		transition: background 250ms;
+		background-color: cssvar(--activity-background-color, $background-color-900);
 
 		@include layout('columns') {
 			padding: 12px 14px;
@@ -24,28 +21,27 @@
 		}
 
 		&--muted {
-			--activity-background-color: #{$background-color-200};
+			--activity-background-color: #{$background-color-300};
 		}
 
 		&--selected,
 		&:not(&--disabled):active,
 		&:not(&--disabled):hover {
-			outline: 3px auto
-				cssvar((--activity-outline-color, --theme-color), $theme-color);
+			outline: 3px auto #{cssvar((--activity-outline-color, --theme-color), $theme-color)};
 		}
 
 		&-Header {
 			@include column($align: flex-start);
 			height: 100%;
-			transition: opacity 300ms 300ms;
+			transition: opacity 250ms;
 		}
 
 		&--muted &-Header {
-			opacity: 0.3;
+			opacity: 0.5;
 		}
 
 		&-Title {
-			color: cssvar((--activity-title-color, --text-color-100), $text-color-100);
+			color: cssvar((--activity-title-color, --light-text-color), $text-color-100);
 		}
 
 		// &-Header > hgroup > h1 {
@@ -55,7 +51,7 @@
 		// }
 
 		&-Subtitle {
-			color: cssvar((--activity-subtitle-color, --text-color-200), $text-color-200);
+			color: cssvar((--activity-subtitle-color, --dimmed-light-text-color), $text-color-200);
 		}
 
 		// &-Header > hgroup > h2 {
@@ -65,11 +61,7 @@
 		// }
 
 		.Timelabels {
-			color: cssvar((--activity-timelabels-color, --text-color-200), $text-color-200);
-			// @include var(background-color, --activity-padded-text-color, $background-color-700);
-			// padding: 1px 5px 1px;
-			order: -1;
-			display: none;
+			--timelabels-text-color: #{cssvar(--dimmed-light-text-color, $text-color-200)};
 		}
 
 		.Categories {
@@ -78,17 +70,15 @@
 			}
 
 			@include layout('columns') {
-				margin: 5px 0 0 -3px;
+				display: none;
 			}
 		}
 
 		.CoverImage {
-			@include absolute($top: 0, $left: 0);
-			@include size(100%);
-			opacity: var(--activity-poster-opacity, 0.7);
+			@include absolute($top: 0, $left: 0, $bottom: 0, $right: 0);
+			opacity: var(--activity-poster-opacity, 0.6);
 			z-index: -1;
-			transition: background 300ms 300ms, opacity 300ms 300ms,
-				filter 300ms 300ms;
+			transition: background 250ms, opacity 250ms, filter 250ms;
 		}
 
 		&--favorited .CoverImage {

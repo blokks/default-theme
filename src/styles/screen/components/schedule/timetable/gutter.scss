@@ -1,7 +1,7 @@
 .Gutter {
 	font-size: cssvar(--gutter-text-size, 13px);
 	font-weight: cssvar(--gutter-text-weight, 400);
-	color: cssvar((--gutter-text-color, --text-color-900), $text-color-700);
+	color: cssvar((--gutter-text-color, --text-color-700), $text-color-700);
 	background-color: cssvar(--gutter-background-color, $background-color-100);
 
 	&:before {

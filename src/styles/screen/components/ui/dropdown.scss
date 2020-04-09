@@ -10,7 +10,7 @@
 	fill: currentColor;
 
 	&:hover {
-		--dateselector-hover-color: #{cssvar(--text-color-900, $text-color-900)};
+		--dateselector-hover-color: #{cssvar(--dark-text-color, $text-color-900)};
 	}
 
 	select {
@@ -29,7 +29,7 @@
 	}
 
 	> .Icon {
-		@include absolute($top: 11px, $right: 15px);
+		@include absolute($top: 10px, $right: 15px);
 		@include size(1.2rem);
 	}
 }

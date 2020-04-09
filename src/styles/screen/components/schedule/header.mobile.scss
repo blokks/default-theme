@@ -1,17 +1,18 @@
 @include device('mobile') {
-	.blokks-header {
+	.Header {
 		@include column;
 
-		.blokks-user-options {
+		.UserOptions {
+			align-self: flex-end;
 			order: 1;
 		}
 
-		.blokks-date-selector {
+		.DateSelector {
 			margin: 15px 0 0 -5px;
 			order: 2;
 		}
 
-		.blokks-filters {
+		.Filters {
 			margin: 20px 0 0 -5px;
 			order: 3;
 		}

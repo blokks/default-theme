@@ -12,13 +12,10 @@
 
 		font-size: cssvar(--category-text-size, 12px);
 		font-weight: cssvar(--category-text-weight, 400);
-		color: cssvar((--category-text-color, --text-color-800), $text-color-800);
+		color: cssvar((--category-text-color, --dimmed-text-color), $text-color-800);
 		text-transform: capitalize;
 		white-space: nowrap;
 		line-height: 1;
-		background-color: cssvar(
-			--category-background-color,
-			$background-color-200
-		);
+		background-color: cssvar(--category-background-color, $background-color-200);
 	}
 }

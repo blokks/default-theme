@@ -3,7 +3,7 @@
 }
 
 .CloseButton {
-	color: cssvar(--closebutton-color, $background-color-800);
+	color: cssvar(--closebutton-color, $background-color-700);
 
 	&:hover {
 		--closebutton-color: #{cssvar(--theme-color, $theme-color)};

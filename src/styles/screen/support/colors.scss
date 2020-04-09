@@ -2,37 +2,33 @@
 $theme-color: #0091ff !default;
 $secondary-color: #c83a6f !default;
 
-/* Background colors */
+/* Light background colors */
 $background-color-100: #ffffff !default;
 $background-color-200: #f2f3f3 !default;
-$background-color-300: #ffffff44 !default;
+$background-color-300: #e0e3e3 !default;
 
-$background-color-600: #00000005 !default;
-$background-color-700: #34373c66 !default;
-$background-color-800: #141414b3 !default;
-$background-color-900: #33363b !default;
-$background-color-950: #141414 !default;
+/* Dark background colors */
+$background-color-700: #141414b3 !default;
+$background-color-800: #33363b !default;
+$background-color-900: #141414 !default;
 
 /* Light text colors */
-$text-color-100: #fcfcfcff !default;
-$text-color-200: #fcfcfcdd !default;
+$text-color-100: #ffffffee !default;
+$text-color-200: #fcfcfccc !default;
 $text-color-300: #fcfcfc99 !default;
 
 /* Dark text colors */
 $text-color-700: #33363b44 !default;
-$text-color-800: #33363b99 !default;
-$text-color-900: #33363bcc !default;
+$text-color-800: #00000088 !default;
+$text-color-900: #000000bb !default;
 
 /* Stroke colors */
-$default-stroke-color: #f2f3f3 !default;
+$default-stroke-color: #efefef !default;
 
 /* Alerts colors */
 $info-color-100: #3f6288 !default;
-$info-color-300: #004085 !default;
+$info-color-200: #004085 !default;
 $warning-color-100: #fff3cd !default;
-$warning-color-300: #856404 !default;
+$warning-color-200: #856404 !default;
 $danger-color-100: #f8d7da !default;
-$danger-color-300: #721c24 !default;
-
-/* Misc */
-$empty-image-background-color: #eee !default;
+$danger-color-200: #721c24 !default;

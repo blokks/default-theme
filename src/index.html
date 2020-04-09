@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html class="test">
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -18,38 +18,32 @@
 	</head>
 
 	<body>
+		<!-- <blokks-schedule 
+			id="6kga8pkdj432"
+			theme="http://themes.blokks.localhost/columns.css"
+			></blokks-schedule> -->
+
 		<div blokks-container></div>
 
+		<link href="http://themes.blokks.localhost/columns.css" rel="stylesheet" />
+		<script src="http://themes.blokks.localhost/modern.js"></script>
+
 		<script>
-			var blokks = {};
-			blokks.id = '6kga8pkdj432';
-			// blokks.id = 'jg4qo2mwdp97';
-			blokks.options = {
+			blokks.launch('6kga8pkdj432', {
 				layout: 'columns',
 				socialProvider: 'twitter',
 				// dateSelector: 'dropdown',
 				timescale: 3600,
 				useLocalTime: true,
 				showCategories: true,
-			};
+			});
 		</script>
 
 		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/5.0.1/pusher.min.js"></script> -->
-		<link href="http://themes.blokks.localhost/columns.css" rel="stylesheet" />
 		<script src="http://127.0.0.1:35729/livereload.js?ext=Chrome&amp;extver=2.1.0"></script>
-		<script src="http://themes.blokks.localhost/modern.js"></script>
-
-		<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.findIndex,Array.prototype.find,Array.prototype.filter,Array.prototype.forEach,Array.prototype.map,Array.prototype.includes,String.prototype.includes,Object.values,Object.keys,Object.entries,URL,CustomEvent,Event,Promise"></script> -->
-		<!-- <script defer src="http://themes.blokks.localhost/legacy.js"></script> -->
-
-		<!-- <blokks-schedule id="6kga8pkdj432" layout="columns"></blokks-schedule> -->
-
-		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/5.0.1/pusher.min.js"></script> -->
-		<!-- <script src="http://127.0.0.1:35729/livereload.js?ext=Chrome&amp;extver=2.1.0"></script> -->
-		<!-- <script defer src="http://themes.blokks.localhost/modern.js"></script> -->
 
 		<script>
-			window.addEventListener('message', function(event) {
+			window.addEventListener('message', function (event) {
 				switch (event.data.message) {
 					case 'setStyle':
 						setStyle(event.data.name, event.data.value);

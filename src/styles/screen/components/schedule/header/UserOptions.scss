@@ -1,3 +1,7 @@
 .UserOptions {
-	align-self: center;
+	.ButtonBar > li:not(:last-of-type) {
+		@include device('mobile') {
+			display: none;
+		}
+	}
 }

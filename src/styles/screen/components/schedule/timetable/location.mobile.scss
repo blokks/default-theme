@@ -1,17 +1,17 @@
 @include device('mobile') {
-	.blokks-location {
-		&__header {
+	.Location {
+		&-Header {
 			@include var(border-bottom-width, --border-width, $border-width);
 			@include var(border-bottom-color, --stroke-color, $default-stroke-color);
 			border-bottom-style: solid;
 			padding: 10px 0;
 		}
 
-		&__titles {
+		&-Titles {
 			text-align: center;
 		}
 
-		&__timeslots:after {
+		.Timeslots:after {
 			display: block;
 			content: '';
 			height: 15px;

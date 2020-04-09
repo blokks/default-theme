@@ -16,7 +16,17 @@
 	&-Title {
 		font-size: cssvar((--location-title-size, --default-font-size), $default-font-size);
 		font-weight: cssvar(--location-title-weight, 500);
-		color: cssvar((--location-title-color, --text-color-900), $text-color-900);
+		color: cssvar((--location-title-color, --dark-text-color), $text-color-900);
+	}
+
+	&--crowded &-Title {
+		--location-title-color: #{$warning-color-200};
+	}
+
+	&-Title > .Icon {
+		@include size(1em);
+		vertical-align: -0.15em;
+		margin-right: 4px;
 	}
 
 	&-Subtitle {
@@ -24,12 +34,12 @@
 	}
 
 	&-Subtitle {
-		font-size: cssvar(--location-subtitle-size, $default-font-size);
+		font-size: cssvar((--location-subtitle-size, --default-font-size), $default-font-size);
 		font-weight: cssvar(--location-subtitle-weight, 400);
-		color: cssvar((--location-subtitle-color, --text-color-800), $text-color-800);
+		color: cssvar((--location-subtitle-color, --dimmed-text-color), $text-color-800);
 	}
 
-	.Timeslots {
+	> .Timeslots {
 		@include reset-list;
 	}
 }

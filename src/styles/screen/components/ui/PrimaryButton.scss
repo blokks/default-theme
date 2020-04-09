@@ -5,7 +5,7 @@
 .PrimaryButton {
 	font-size: cssvar((--primarybutton-text-size, --default-font-size), $default-font-size);
 	font-weight: cssvar(--primarybutton-text-weight, 500);
-	color: cssvar(--primarybutton-text-color, $text-color-100);
+	color: cssvar((--primarybutton-text-color, --light-text-color), $text-color-100);
 	background-color: cssvar((--primarybutton-background-color, --theme-color), $theme-color);
 
 	display: inline-block;
@@ -13,7 +13,7 @@
 	border-radius: 20px;
 
 	> .Icon {
-		@include size(1.0em);
+		@include size(1em);
 		margin-right: 4px;
 		vertical-align: -0.15em;
 	}

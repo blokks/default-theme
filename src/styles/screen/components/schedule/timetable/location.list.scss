@@ -1,14 +1,11 @@
 @include layout('list') {
-	.blokks-location {
-		&__header {
-			@include var(border-bottom-width, --border-width, $border-width);
-			@include var(border-bottom-color, --stroke-color, $default-stroke-color);
-			border-bottom-style: solid;
+	.Location {
+		&-Header {
 			padding: 15px 0;
-		}
-
-		&__titles {
 			text-align: center;
+			border-bottom-width: cssvar(--border-width, $border-width);
+			border-bottom-color: cssvar(--stroke-color, $default-stroke-color);
+			border-bottom-style: solid;
 		}
 	}
 }

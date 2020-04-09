@@ -13,10 +13,10 @@
 }
 
 .FilterLink {
-	@include var(font-size, --filter-label-size, 13px);
-	@include var(font-weight, --filter-label-weight, 400);
-	@include var(color, (--filter-label-color, --text-color-800), $text-color-800);
-	@include var(background-color, --filter-background-color, $background-color-200);
+	font-size: cssvar(--filter-label-size, 13px);
+	font-weight: cssvar(--filter-label-weight, 400);
+	color: cssvar((--filter-label-color, --dimmed-text-color), $text-color-800);
+	background-color: cssvar(--filter-background-color, $background-color-200);
 
 	text-transform: capitalize;
 	text-decoration: none;
@@ -28,13 +28,13 @@
 	border-radius: 15px;
 
 	&:hover {
-		--filter-label-color: #{$text-color-100};
-		@include var(--filter-background-color, (--theme-color), $theme-color);
+		--filter-label-color: #{cssvar(--light-text-color, $text-color-100)};
+		--filter-background-color: #{cssvar((--theme-color), $theme-color)};
 	}
 
 	&--selected {
-		--filter-label-color: #{$text-color-100};
-		@include var(--filter-background-color, (--theme-color), $theme-color);
+		--filter-label-color: #{cssvar(--light-text-color, $text-color-100)};
+		--filter-background-color: #{cssvar(--theme-color, $theme-color)};
 	}
 
 	> .Icon {

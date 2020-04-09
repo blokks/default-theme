@@ -1,8 +1,8 @@
 .RelatedInfo {
     margin-top: 20px;
-    font-size: cssvar(--activitydetails-description-size, $default-font-size);
+    font-size: cssvar((--activitydetails-description-size, --default-font-size), $default-font-size);
     font-weight: cssvar(--activitydetails-description-weight, 400);
-    color: cssvar((--activitydetails-description-color, --text-color-800), $text-color-800);
+    color: cssvar((--activitydetails-description-color, --dimmed-text-color), $text-color-800);
 
     .RelatedInfo-LocationLabel:before {
         display: inline-block;
@@ -25,6 +25,7 @@
 	}
 
     .Timelabels {
+        --timelabels-text-size: $default-font-size;
         order: 2;
     }
 

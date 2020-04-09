@@ -1,73 +1,64 @@
 @include device('mobile') {
-	.blokks-activity {
+	.Activity {
 		@include row;
 		padding: 15px 0;
 		transition: opacity 150ms linear;
 
-		&--ended,
 		&--muted {
-			opacity: 0.2;
+			opacity: 0.4;
 		}
 
-		&__header {
+		&-Header {
 			@include column;
 			order: 1;
 		}
 
-		&__titles {
+		&-Titles {
 			order: 1;
 		}
 
-		&__title {
-			@include var(color, --activity-title-color, $text-color-900);
+		&-Title {
+			color: cssvar((--activity-title-color, --dark-text-color), $text-color-900);
 			transition: color 150ms linear;
 		}
 
-		&__subtitle {
-			@include var(color, --activity-subtitle-color, $text-color-800);
+		&-Subtitle {
+			color: cssvar((--activity-subtitle-color, --dimmed-text-color), $text-color-800);
 			transition: color 150ms linear;
 		}
 
-		&--favorited &__title {
-			@include var(color, --activity-favorited-color, $theme-color);
+		&--favorited &-Title {
+			--activity-title-color: #{cssvar((--activity-favorited-color, --theme-color), $theme-color)};
 		}
 
-		&--selected &__title {
-			@include var(color, (--activity-selected-color, --theme-color), $theme-color);
-		}
-
-		&--selected &__subtitle {
-			@include var(color, (--activity-selected-color, --theme-color), $theme-color);
-		}
-
-		.blokks-time-labels {
-			@include var(color, --activity-timelabels-color, $text-color-800);
+		.Timelabels {
 			order: 2;
 		}
 
-		.blokks-categories {
+		.Categories {
 			margin: 5px 0 0 -5px;
 			order: 3;
 		}
 
-		.blokks-poster {
+		.CoverImage {
 			@include size(55px);
-			@include var(background-color, --placeholder-color, $background-color-900);
 			margin: 2px 15px 0 0;
 			border-radius: 50%;
+			background-color: cssvar(--placeholder-color, $background-color-800);
 			transition: opacity 150ms linear;
 			order: 0;
 		}
 
-		&--ended .blokks-poster,
-		&--muted .blokks-poster {
+		&--muted .CoverImage {
 			filter: grayscale(100%);
 		}
 
-		&:not(&--has-poster):before {
+		&:not(&--hasPoster):before {
 			@include size(55px);
-			@include var(background-color, --empty-image-background-color, $empty-image-background-color);
+			flex: none;
 			margin-right: 10px;
+			border-radius: 50%;
+			background-color: cssvar(--empty-image-background-color, $background-color-300);
 			content: '';
 			order: 0;
 		}

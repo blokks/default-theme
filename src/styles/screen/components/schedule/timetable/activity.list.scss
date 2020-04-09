@@ -1,15 +1,15 @@
 @include layout('list') {
-	.blokks-activity {
+	.Activity {
 		@include row;
-		@include var(border-bottom-color, --activity-border-color, $default-stroke-color);
-		@include var(border-bottom-width, --border-width, $border-width);
 		padding: 30px 30px 30px 0;
+		border-bottom-color: cssvar(--activity-border-color, $default-stroke-color);
+		border-bottom-width: cssvar(--border-width, $border-width);
 		border-bottom-style: solid;
 		transition: opacity 150ms linear;
 
 		@supports (display: contents) {
 			background-size: $border-width auto;
-			background-size: var(--border-width, #{$border-width}) auto;
+			background-size: #{cssvar(--border-width, $border-width)} auto;
 
 			display: grid;
 			grid-template-rows: 1fr min-content;
@@ -28,12 +28,11 @@
 			);
 		}
 
-		&--ended,
 		&--muted {
-			opacity: 0.2;
+			opacity: 0.4;
 		}
 
-		&__header {
+		&-Header {
 			@include column;
 			margin-left: 25px;
 			order: 2;
@@ -43,8 +42,9 @@
 			}
 		}
 
-		&__titles {
-			margin: 5px 0 0 25px;
+		&-Titles {
+			@include column($justify: center);
+			margin: 0 0 0 25px;
 			order: 2;
 
 			@supports (display: contents) {
@@ -53,40 +53,38 @@
 			}
 		}
 
-		&__title {
-			@include var(color, (--activity-title-color, --dark-text-color), $text-color-900);
+		&-Title {
+			color: cssvar((--activity-title-color, --dark-text-color), $text-color-900);
 			transition: color 150ms linear;
 		}
 
-		&--favorited &__title {
-			@include var(color, (--activity-favorited-color, --theme-color), $theme-color);
+		&--favorited &-Title {
+			--activity-title-color: #{cssvar((--activity-favorited-color, --theme-color), $theme-color)};
 		}
 
-		&__subtitle {
-			@include var(color, --activity-subtitle-color, $text-color-800);
+		&-Subtitle {
+			color: cssvar((--activity-subtitle-color, --dimmed-text-color), $text-color-800);
 		}
 
-		.blokks-time-labels {
-			@include var(color, --activity-timelabels-color, $text-color-800);
+		.Timelabels {
 			order: 1;
 
 			@supports (display: contents) {
-				font-size: 14px;
 				grid-area: time-labels;
 				justify-self: center;
 				align-self: center;
 			}
 		}
 
-		&--now-playing .blokks-time-labels__ends-at {
+		&--now-playing .Timelabels-EndsAt {
 			display: none;
 		}
 
-		&--coming-soon .blokks-time-labels__ends-at {
+		&--coming-soon .Timelabels-EndsAt {
 			display: none;
 		}
 
-		.blokks-categories {
+		.Categories {
 			margin: 5px 0 0 20px;
 			order: 3;
 
@@ -95,11 +93,12 @@
 			}
 		}
 
-		.blokks-poster {
+		.CoverImage {
 			@include size(70px);
 			margin-left: 25px;
-			border-radius: 50%;
 			align-self: center;
+			background-color: cssvar(--placeholder-color, $background-color-800);
+			border-radius: 50%;
 			order: 1;
 
 			@supports (display: contents) {
@@ -107,11 +106,7 @@
 			}
 		}
 
-		.blokks-poster {
-			@include var(background-color, --placeholder-background-color, $background-color-900);
-		}
-
-		&--muted .blokks-poster {
+		&--muted .CoverImage {
 			filter: grayscale(100%);
 		}
 	}

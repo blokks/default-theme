@@ -1,0 +1,7 @@
+.TrafficInfo {
+    > .Icon {
+		@include size(1em);
+		vertical-align: -0.15em;
+		margin-right: 4px;
+	}
+}

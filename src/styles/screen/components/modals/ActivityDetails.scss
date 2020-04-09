@@ -1,10 +1,11 @@
 .ActivityDetails {
-	@include var(background-color, --activitydetails-background-color, $background-color-100);
+	background-color: cssvar(--activitydetails-background-color, $background-color-100);
 	position: relative;
+	width: 100%;
 	max-width: 600px;
 
 	.Cover {
-		@include var(background-color, --placeholder-color, $background-color-900);
+		background-color: cssvar(--placeholder-color, $background-color-800);
 	}
 
 	.Cover:after {
@@ -21,8 +22,13 @@
 		padding: 25px 30px;
 	}
 
+	.TrafficInfo {
+		margin-bottom: 20px;;
+	}
+
 	&-Header {
-		max-width: 400px;
+		max-width: 450px;
+		line-height: 1.3;
 	}
 
 	&-Title {
@@ -30,14 +36,14 @@
 	}
 
 	&-Title {
-		@include var(font-size, --activitydetails-title-size, 19px);
-		@include var(font-weight, --activitydetails-title-weight, 600);
-		@include var(color, (--activitydetails-title-color, --text-color-900), $text-color-900);
-		transition: color 150ms linear;
+		font-size: cssvar(--activitydetails-title-size, 19px);
+		font-weight: cssvar(--activitydetails-title-weight, 600);
+		color: cssvar((--activitydetails-title-color, --dark-text-color), $text-color-900);
+		transition: color 250ms;
 	}
 
 	&--favorited &-Title {
-		@include var(color, (--activity-favorited-color, --theme-color), $theme-color);
+		--activitydetails-background-color: #{cssvar((--activity-favorited-color, --theme-color), $theme-color)}
 	}
 
 	&-Subtitle {
@@ -45,9 +51,9 @@
 	}
 
 	&-Subtitle {
-		@include var(font-size, --activitydetails-subtitle-size, 17px);
-		@include var(font-weight, --activitydetails-subtitle-weight, 400);
-		@include var(color, (--activitydetails-subtitle-color, --text-color-800), $text-color-800);
+		font-size: cssvar(--activitydetails-subtitle-size, 15px);
+		font-weight: cssvar(--activitydetails-subtitle-weight, 400);
+		color: cssvar((--activitydetails-subtitle-color, --dimmed-text-color), $text-color-800);
 	}
 
 	.Favorites {
@@ -61,10 +67,11 @@
 	.CloseButton {
 		@include absolute($top: 5px, $right: 5px);
 		@include size(48px);
+		--closebutton-color: #{$background-color-300};
 	}
 
 	.CloseButton:hover {
-		@include var(color, (--close-button-hover-color, --theme-color), $theme-color);
+		--close-button-color: #{cssvar(--theme-color, $theme-color)};
 	}
 }
 

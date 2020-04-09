@@ -2,18 +2,17 @@
 	@include antialiased;
 	position: relative;
 	font-family: cssvar(--schedule-font, $default-font);
-	text-rendering: optimizeLegibility;
-	line-height: 1.3;
+	line-height: cssvar(--schecule-line-height, $default-line-height);
 	z-index: 1;
 
 	::-moz-selection {
 		background-color: cssvar((--selection-background-color, --theme-color), $theme-color);
-		color: cssvar((--selection-text-color, --text-color-100), $text-color-100);
+		color: cssvar((--selection-text-color, --light-text-color), $text-color-100);
 	}
 
 	::selection {
 		background-color: cssvar((--selection-background-color, --theme-color), $theme-color);
-		color: cssvar((--selection-text-color, --text-color-100), $text-color-100);
+		color: cssvar((--selection-text-color, --light-text-color), $text-color-100);
 	}
 }
 

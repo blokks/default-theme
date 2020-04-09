@@ -12,7 +12,7 @@
 	&-Option {
 		font-size: cssvar((--buttonbar-text-size, --default-font-size), $default-font-size);
 		font-weight: cssvar(--buttonbar-text-weight, 400);
-		color: cssvar((--buttonbar-text-color, --text-color-800), $text-color-800);
+		color: cssvar((--buttonbar-text-color, --dimmed-text-color), $text-color-800);
 		white-space: nowrap;
 		border-bottom: 1px solid transparent;
 	}

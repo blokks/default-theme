@@ -1,0 +1,6 @@
+.Timelabels {
+	@include truncate-tail;
+	font-size: cssvar((--timelabels-text-size, --default-font-size), $default-font-size);
+    font-weight: cssvar(--timelabels-text-weight, 400);
+	color: cssvar((--timelabels-text-color, --dimmed-text-color), $text-color-800);
+}

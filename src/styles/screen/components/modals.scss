@@ -1,18 +1,17 @@
 .Modal {
 	@include antialiased;
 	font-family: cssvar(--schedule-font, $default-font);
-	background-color: cssvar(--modal-overlay-color, $background-color-800);
-	text-rendering: optimizeLegibility;
-	line-height: 1.4;
+	line-height: cssvar(--schecule-line-height, $default-line-height);
+	background-color: cssvar(--modal-overlay-color, $background-color-700);
 
 	::-moz-selection {
 		background-color: cssvar((--selection-background-color, --theme-color), $theme-color);
-		color: cssvar((--selection-text-color, --text-color-100), $text-color-100);
+		color: cssvar((--selection-text-color, --light-text-color), $text-color-100);
 	}
 
 	::selection {
 		background-color: cssvar((--selection-background-color, --theme-color), $theme-color);
-		color: cssvar((--selection-text-color, --text-color-100), $text-color-100);
+		color: cssvar((--selection-text-color, --light-text-color), $text-color-100);
 	}
 }
 

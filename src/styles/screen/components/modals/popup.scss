@@ -12,15 +12,15 @@
 	h1 {
 		font-size: cssvar(--popup-title-size, 19px);
 		font-weight: cssvar(--popup-title-weight, 600);
-		color: cssvar((--popup-title-color, --text-color-900), $text-color-900);
+		color: cssvar((--popup-title-color, ---dark-text-color), $text-color-900);
 	}
 
 	p {
 		margin: 15px 0 0 0;
 		max-width: 380px;
-		font-size: cssvar(--popup-description-size, $default-font-size);
+		font-size: cssvar((--popup-description-size, --default-font-size), $default-font-size);
 		font-weight: cssvar(--popup-description-weight, 400);
-		color: cssvar((--popup-description-color, --text-color-800), $text-color-800);
+		color: cssvar((--popup-description-color, --dimmed-text-color), $text-color-800);
 	}
 
 	.ActionButton {

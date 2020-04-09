@@ -1,21 +1,21 @@
 .Alert {
 	display: block;
 	margin: 0;
-	padding: 12px 20px 14px;
+	padding: 12px 20px 13px;
 	font-size: cssvar((--alert-text-size, --default-font-size), $default-font-size);
 
 	&--info {
-		color: cssvar(--info-text-color, $info-color-300);
+		color: cssvar(--info-text-color, $info-color-200);
 		background-color: cssvar(--info-background-color, $info-color-100);
 	}
 
 	&--warning {
-		color: cssvar(--warning-text-color, $warning-color-300);
+		color: cssvar(--warning-text-color, $warning-color-200);
 		background-color: cssvar(--warning-background-color, $warning-color-100);
 	}
 
 	&--danger {
-		color: cssvar(--danger-text-color, $danger-color-300);
+		color: cssvar(--danger-text-color, $danger-color-200);
 		background-color: cssvar(--danger-background-color, $danger-color-100);
 	}
 }

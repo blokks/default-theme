@@ -1,27 +1,25 @@
 @include layout('rows') {
 	.Gutter {
-		@include var(height, --gutter-height, $gutter-height);
+		height: cssvar(--gutter-height, $gutter-height);
 
 		&:before {
-			@include var(border-right-color, --stroke-color, $default-stroke-color);
-			@include var(border-right-width, --border-width, $border-width);
 			@include sticky($left: 0);
+			border-right-color: cssvar(--stroke-color, $default-stroke-color);
+			border-right-width: cssvar(--border-width, $border-width);
 			border-right-style: solid;
 		}
 
 		.Timeslots {
-			margin-left: -1 * $border-width;
-			margin-left: calc(-1 * var(--border-width, #{$border-width}));
-
-			background: bg-columns(
+			margin-left: calc(-1 * #{cssvar(--border-width, $border-width)});
+			background-image: bg-columns(
 				$column-width: var(--timeslot-width, $timeslot-width),
 				$border-width: var(--border-width, $border-width),
 				$stroke-color: var(--stroke-color, $default-stroke-color)
 			);
 		}
 
-		.Timeslots li {
-			@include var(width, --timeslot-width, $timeslot-width);
+		.Timeslots > li {
+			width: cssvar(--timeslot-width, $timeslot-width);
 		}
 	}
 }
