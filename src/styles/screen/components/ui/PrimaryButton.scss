@@ -6,7 +6,7 @@
 	font-size: cssvar((--primarybutton-text-size, --default-font-size), $default-font-size);
 	font-weight: cssvar(--primarybutton-text-weight, 500);
 	color: cssvar((--primarybutton-text-color, --light-text-color), $text-color-100);
-	background-color: cssvar((--primarybutton-background-color, --theme-color), $theme-color);
+	background-color: cssvar((--primarybutton-background-color, --accent-color), $accent-color);
 
 	display: inline-block;
 	padding: 11px 20px;

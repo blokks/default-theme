@@ -1,5 +1,9 @@
-.Skeleton {
-	display: contents;
+.Header-Skeleton {
+	display: none;
+
+	@supports(display: contents) {
+		display: contents;
+	}
 
 	.DateSelector {
 		@include size(200px, 20px);
@@ -7,7 +11,7 @@
 	}
 
 	.Search {
-		@include size(200px, 40px);
+		@include size(225px, 39px);
 		background-color: $background-color-200;
 	}
 
@@ -36,7 +40,7 @@
 	}
 
 	.FilterLink {
-		height: 30px;
+		height: 29px;
 		background-color: $background-color-200;
 	}
 
@@ -50,5 +54,23 @@
 
 	.Filters > li:nth-of-type(3n) .FilterLink {
 		width: 80px;
+	}
+}
+
+@include layout('mobile') {
+	.Header-Skeleton {
+		.ExportOption {
+			display: none;
+		}
+
+		.PrintOption {
+			display: none;
+		}
+	}
+}
+
+@include layout('rows') {
+	.Header-Skeleton {
+		width: 100vw;
 	}
 }

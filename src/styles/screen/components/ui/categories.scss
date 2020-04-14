@@ -3,19 +3,20 @@
 }
 
 .Categories {
-	@include row;
+	display: cssvar(--categories-display, flex);
+	flex-direction: row;
 
 	> li {
 		margin: 0 2px 2px 0;
 		padding: 6px 12px;
 		border-radius: 12px;
 
-		font-size: cssvar(--category-text-size, 12px);
-		font-weight: cssvar(--category-text-weight, 400);
-		color: cssvar((--category-text-color, --dimmed-text-color), $text-color-800);
+		font-size: cssvar(--categories-text-size, 13px);
+		font-weight: cssvar(--categories-text-weight, 400);
+		color: cssvar((--categories-text-color, --dimmed-text-color), $text-color-800);
 		text-transform: capitalize;
 		white-space: nowrap;
 		line-height: 1;
-		background-color: cssvar(--category-background-color, $background-color-200);
+		background-color: cssvar(--categories-background-color, $background-color-200);
 	}
 }

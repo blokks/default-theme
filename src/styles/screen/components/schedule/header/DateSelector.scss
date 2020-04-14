@@ -1,6 +1,10 @@
 .DateSelector {
 	@include row;
 
+	&-SelectedDate {
+		display: none;
+	}
+
 	.Dropdown {
 		margin-left: -5px;
 	}

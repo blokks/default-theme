@@ -6,7 +6,7 @@
 	color: cssvar(--closebutton-color, $background-color-700);
 
 	&:hover {
-		--closebutton-color: #{cssvar(--theme-color, $theme-color)};
+		--closebutton-color: #{cssvar(--accent-color, $accent-color)};
 	}
 
 	> .Icon {

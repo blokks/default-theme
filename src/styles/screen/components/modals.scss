@@ -5,12 +5,12 @@
 	background-color: cssvar(--modal-overlay-color, $background-color-700);
 
 	::-moz-selection {
-		background-color: cssvar((--selection-background-color, --theme-color), $theme-color);
+		background-color: cssvar((--selection-background-color, --accent-color), $accent-color);
 		color: cssvar((--selection-text-color, --light-text-color), $text-color-100);
 	}
 
 	::selection {
-		background-color: cssvar((--selection-background-color, --theme-color), $theme-color);
+		background-color: cssvar((--selection-background-color, --accent-color), $accent-color);
 		color: cssvar((--selection-text-color, --light-text-color), $text-color-100);
 	}
 }

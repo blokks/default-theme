@@ -18,12 +18,11 @@
 
 	> h1,
 	> h2 {
-		color: cssvar((--activitydetails-title-color, --dark-text-color), $text-color-900);
-		font-weight: cssvar( --activitydetails-title-weight, 600);
+		font-weight: cssvar( --activitydetails-title-weight, 500);
 	}
 
 	> a {
-		color: cssvar((--activitydetails-link-color, --theme-color), $theme-color);
+		color: cssvar((--activitydetails-link-color, --accent-color), $accent-color);
 		cursor: pointer;
 	}
 

@@ -1,5 +1,5 @@
 .TimeIndicator {
-	background-color: cssvar((--time-indicator-color, --secondary-color) $secondary-color);
+	background-color: cssvar((--time-indicator-color, --accent-color) $accent-color);
 
 	@include layout('columns') {
 		height: 2px;

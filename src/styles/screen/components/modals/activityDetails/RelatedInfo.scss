@@ -1,8 +1,10 @@
 .RelatedInfo {
-    margin-top: 20px;
+    @include column;
     font-size: cssvar((--activitydetails-description-size, --default-font-size), $default-font-size);
     font-weight: cssvar(--activitydetails-description-weight, 400);
     color: cssvar((--activitydetails-description-color, --dimmed-text-color), $text-color-800);
+
+    --timelabels-text-size: $default-font-size;
 
     .RelatedInfo-LocationLabel:before {
         display: inline-block;
@@ -10,8 +12,19 @@
         content: 'Stage: ';
     }
 
+    .Categories {
+        margin: 5px 0 0 -5px;
+        order: 1;
+	}
+
     &-DateInfo {
         @include row;
+        margin-top: 20px;
+        order: 2;
+    }
+
+    &-LocationLabel {
+        order: 3;
     }
 
     &-DateInfo:before {
@@ -20,12 +33,7 @@
         content: 'Date: ';
     }
 
-    .Categories {
-		margin: 5px 0 0 -5px;
-	}
-
     .Timelabels {
-        --timelabels-text-size: $default-font-size;
         order: 2;
     }
 

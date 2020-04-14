@@ -1,6 +1,8 @@
 .ButtonBar {
 	@include reset-list;
+}
 
+.ButtonBar {
 	> li:not(:last-of-type) {
 		margin-right: 10px;
 	}
@@ -18,11 +20,11 @@
 	}
 
 	&-Option:not(&--selected):hover {
-		--buttonbar-text-color: #{cssvar(--theme-color, $theme-color)};
+		--buttonbar-text-color: #{cssvar(--accent-color, $accent-color)};
 	}
 
 	&-Option--selected {
 		border-bottom: 1px solid;
-		--buttonbar-text-color: #{cssvar(--theme-color, $theme-color)};
+		--buttonbar-text-color: #{cssvar(--accent-color, $accent-color)};
 	}
 }

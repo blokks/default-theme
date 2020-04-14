@@ -1,8 +1,13 @@
 @include layout('columns', 'rows') {
 	.Activity {
+		@include column($justify: space-between);
 		outline: none;
 		transition: background 250ms;
 		background-color: cssvar(--activity-background-color, $background-color-900);
+
+		--categories-display: none;
+		--categories-background-color: #{$background-color-400};
+		--categories-text-color: #{$text-color-200};
 
 		@include layout('columns') {
 			padding: 12px 14px;
@@ -17,21 +22,23 @@
 		}
 
 		&--favorited {
-			--activity-background-color: #{cssvar(--theme-color, $theme-color)};
+			--activity-background-color: #{cssvar(--accent-color, $accent-color)};
+			--activity-poster-opacity: 0.3;
 		}
 
 		&--muted {
 			--activity-background-color: #{$background-color-300};
+			--activity-poster-opacity: 0.3;
 		}
 
 		&--selected,
 		&:not(&--disabled):active,
 		&:not(&--disabled):hover {
-			outline: 3px auto #{cssvar((--activity-outline-color, --theme-color), $theme-color)};
+			outline: 3px auto #{cssvar((--activity-outline-color, --accent-color), $accent-color)};
 		}
 
 		&-Header {
-			@include column($align: flex-start);
+			@include column($align: flex-start, $justify: space-between);
 			height: 100%;
 			transition: opacity 250ms;
 		}
@@ -60,35 +67,35 @@
 		// 	padding: 1px 5px 2px;
 		// }
 
-		.Timelabels {
-			--timelabels-text-color: #{cssvar(--dimmed-light-text-color, $text-color-200)};
-		}
-
 		.Categories {
-			@include layout('rows') {
-				margin: auto 0 0 -5px;
-			}
-
-			@include layout('columns') {
-				display: none;
-			}
+			margin: 4px 0 0 -5px;
 		}
 
 		.CoverImage {
 			@include absolute($top: 0, $left: 0, $bottom: 0, $right: 0);
-			opacity: var(--activity-poster-opacity, 0.6);
+			opacity: var(--activity-poster-opacity, 0.5);
 			z-index: -1;
 			transition: background 250ms, opacity 250ms, filter 250ms;
 		}
 
 		&--favorited .CoverImage {
-			--activity-poster-opacity: 0.3;
 			filter: grayscale(100%);
 		}
 
 		&--muted .CoverImage {
-			--activity-poster-opacity: 0.3;
 			filter: grayscale(100%);
 		}
+	}
+}
+
+@include layout('columns') {
+	.Activity {
+		--timelabels-display: none;
+	}
+}
+
+@include layout('rows') {
+	.Activity {
+		--timelabels-text-color: #{cssvar(--dimmed-light-text-color, $text-color-200)};
 	}
 }

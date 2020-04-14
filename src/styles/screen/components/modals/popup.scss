@@ -10,8 +10,9 @@
 	}
 
 	h1 {
-		font-size: cssvar(--popup-title-size, 19px);
-		font-weight: cssvar(--popup-title-weight, 600);
+		font-family: cssvar((--popup-title-font, --default-header), $default-header);
+		font-size: cssvar(--popup-title-size, 23px);
+		font-weight: cssvar(--popup-title-weight, 500);
 		color: cssvar((--popup-title-color, ---dark-text-color), $text-color-900);
 	}
 

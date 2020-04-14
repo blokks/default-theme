@@ -2,18 +2,30 @@
 	.Header {
 		@include column;
 
+		@supports (display: grid) {
+			display: grid;
+			row-gap: 20px;
+			column-gap: 20px;
+			grid-template-columns: 1fr min-content;
+			grid-template-areas:
+				'date-selector user-options'
+				'filters filters';
+		}
+
 		.UserOptions {
+			grid-area: user-options;
 			align-self: flex-end;
 			order: 1;
 		}
 
 		.DateSelector {
-			margin: 15px 0 0 -5px;
+			grid-area: date-selector;
 			order: 2;
 		}
 
 		.Filters {
-			margin: 20px 0 0 -5px;
+			grid-area: filters;
+			margin-left: -5px;
 			order: 3;
 		}
 	}

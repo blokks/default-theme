@@ -2,10 +2,14 @@
 	.Activity {
 		@include row;
 		padding: 15px 0;
-		transition: opacity 150ms linear;
+		transition: opacity 250ms;
 
 		&--muted {
 			opacity: 0.4;
+		}
+
+		&--favorited {
+			--activity-title-color: #{cssvar((--activity-favorited-color, --accent-color), $accent-color)};
 		}
 
 		&-Header {
@@ -14,25 +18,21 @@
 		}
 
 		&-Titles {
-			order: 1;
+			order: 2;
 		}
 
 		&-Title {
 			color: cssvar((--activity-title-color, --dark-text-color), $text-color-900);
-			transition: color 150ms linear;
+			transition: color 250ms;
 		}
 
 		&-Subtitle {
 			color: cssvar((--activity-subtitle-color, --dimmed-text-color), $text-color-800);
-			transition: color 150ms linear;
-		}
-
-		&--favorited &-Title {
-			--activity-title-color: #{cssvar((--activity-favorited-color, --theme-color), $theme-color)};
+			transition: color 250ms;
 		}
 
 		.Timelabels {
-			order: 2;
+			order: 1;
 		}
 
 		.Categories {
@@ -45,7 +45,7 @@
 			margin: 2px 15px 0 0;
 			border-radius: 50%;
 			background-color: cssvar(--placeholder-color, $background-color-800);
-			transition: opacity 150ms linear;
+			transition: opacity 250ms;
 			order: 0;
 		}
 

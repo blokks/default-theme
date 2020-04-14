@@ -1,19 +1,66 @@
-.Skeleton {
-	display: contents;
+.Timetable-Skeleton {
+	display: none;
+
+	@supports(display: contents) {
+		display: contents;
+	}
+
+	.Gutter:before {
+		flex: none;
+	}
+
+	.Location-Header {
+		@include column;
+	}
 
 	.Location-Title {
 		@include skeleton-text($width: 40%);
 	}
 
 	.Location-Subtitle {
-		@include skeleton-text($width: 75%);
+		@include skeleton-text($width: 65%);
+		margin-top: 4px;
 	}
 
-	.Gutter {
-		align-self: flex-end;
+	.Location-Header {
+		flex: none;
 	}
 
 	.Timeslots {
-		height: 600px;
+		flex: 1;
+	}
+}
+
+@include layout('columns') {
+	.Timetable-Skeleton {
+		.Gutter:before {
+			height: 69px;
+		}
+
+		.Location {
+			height: 100vh;
+		}
+
+		.Location-Header {
+			align-items: center;
+		}
+	}
+}
+
+@include layout('rows') {
+	.Timetable-Skeleton {
+		.Location {
+			width: 100vw;
+		}
+
+		.Gutter:before,
+		.Location-Header {
+			align-items: flex-start;
+			width: 150px;
+		}
+
+		.Location-Header {
+			justify-content: center;
+		}
 	}
 }

@@ -29,12 +29,12 @@
 
 	&:hover {
 		--filter-label-color: #{cssvar(--light-text-color, $text-color-100)};
-		--filter-background-color: #{cssvar((--theme-color), $theme-color)};
+		--filter-background-color: #{cssvar((--accent-color), $accent-color)};
 	}
 
 	&--selected {
 		--filter-label-color: #{cssvar(--light-text-color, $text-color-100)};
-		--filter-background-color: #{cssvar(--theme-color, $theme-color)};
+		--filter-background-color: #{cssvar(--accent-color, $accent-color)};
 	}
 
 	> .Icon {

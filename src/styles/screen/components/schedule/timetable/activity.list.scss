@@ -5,7 +5,7 @@
 		border-bottom-color: cssvar(--activity-border-color, $default-stroke-color);
 		border-bottom-width: cssvar(--border-width, $border-width);
 		border-bottom-style: solid;
-		transition: opacity 150ms linear;
+		transition: opacity 250ms;
 
 		@supports (display: contents) {
 			background-size: $border-width auto;
@@ -26,6 +26,10 @@
 				$default-stroke-color,
 				$default-stroke-color
 			);
+		}
+
+		&--favorited {
+			--activity-title-color: #{cssvar((--activity-favorited-color, --accent-color), $accent-color)};
 		}
 
 		&--muted {
@@ -49,17 +53,13 @@
 
 			@supports (display: contents) {
 				grid-area: titles;
-				max-width: 500px;
+				max-width: 735px;
 			}
 		}
 
 		&-Title {
 			color: cssvar((--activity-title-color, --dark-text-color), $text-color-900);
-			transition: color 150ms linear;
-		}
-
-		&--favorited &-Title {
-			--activity-title-color: #{cssvar((--activity-favorited-color, --theme-color), $theme-color)};
+			transition: color 250ms;
 		}
 
 		&-Subtitle {

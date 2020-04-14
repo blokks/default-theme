@@ -6,16 +6,16 @@
 
 		@supports (display: grid) {
 			display: grid;
-			row-gap: 15px;
-			column-gap: 15px;
+			row-gap: 20px;
+			column-gap: 20px;
 			grid-template-columns: 1fr min-content min-content;
 			grid-template-areas:
 				'date-selector user-options search'
-				'filter filter filter';
+				'filters filters filters';
 		}
 
 		.UserOptions {
-			margin: 0 0 15px 0;
+			margin-bottom: 15px;
 
 			@supports (display: grid) {
 				grid-area: user-options;
@@ -36,7 +36,7 @@
 		}
 
 		.DateSelector {
-			margin: 0 0 15px 0;
+			margin-bottom: 15px;
 
 			@supports (display: grid) {
 				grid-area: date-selector;
@@ -46,10 +46,8 @@
 		}
 
 		.Filters {
-			margin: 0 0 0 -5px;
-
 			@supports (display: grid) {
-				grid-area: filter;
+				grid-area: filters;
 			}
 		}
 	}

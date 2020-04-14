@@ -61,7 +61,7 @@
 
 	&-Suggestions > li > a:hover,
 	&-Suggestions > li > a:active {
-		color: cssvar((--suggestion-active-color, --theme-color), $theme-color);
+		color: cssvar((--suggestion-active-color, --accent-color), $accent-color);
 	}
 
 	> .Icon {

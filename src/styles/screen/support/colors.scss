@@ -1,11 +1,11 @@
 /* Primary colors */
-$theme-color: #0091ff !default;
-$secondary-color: #c83a6f !default;
+$accent-color: #0091ff !default;
 
 /* Light background colors */
 $background-color-100: #ffffff !default;
 $background-color-200: #f2f3f3 !default;
 $background-color-300: #e0e3e3 !default;
+$background-color-400: #ffffff33 !default;
 
 /* Dark background colors */
 $background-color-700: #141414b3 !default;
@@ -14,12 +14,12 @@ $background-color-900: #141414 !default;
 
 /* Light text colors */
 $text-color-100: #ffffffee !default;
-$text-color-200: #fcfcfccc !default;
+$text-color-200: #fcfcfcbb !default;
 $text-color-300: #fcfcfc99 !default;
 
 /* Dark text colors */
-$text-color-700: #33363b44 !default;
-$text-color-800: #00000088 !default;
+$text-color-700: #00000044 !default;
+$text-color-800: #00000077 !default;
 $text-color-900: #000000bb !default;
 
 /* Stroke colors */

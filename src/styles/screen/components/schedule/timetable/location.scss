@@ -14,6 +14,7 @@
 	}
 
 	&-Title {
+		font-family: cssvar((--location-title-font, --default-header), $default-header);
 		font-size: cssvar((--location-title-size, --default-font-size), $default-font-size);
 		font-weight: cssvar(--location-title-weight, 500);
 		color: cssvar((--location-title-color, --dark-text-color), $text-color-900);
@@ -34,9 +35,14 @@
 	}
 
 	&-Subtitle {
+		font-family: cssvar((--location-subtitle-font, --default-header), $default-header);
 		font-size: cssvar((--location-subtitle-size, --default-font-size), $default-font-size);
 		font-weight: cssvar(--location-subtitle-weight, 400);
 		color: cssvar((--location-subtitle-color, --dimmed-text-color), $text-color-800);
+	}
+
+	&--crowded &-Subtitle {
+		--location-subtitle-color: #{$warning-color-200};
 	}
 
 	> .Timeslots {

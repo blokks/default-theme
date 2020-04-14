@@ -19,7 +19,7 @@
 	&-PoweredByLabel {
 		font-size: cssvar(--branding-text-size, 13px);
 		font-weight: cssvar(--branding-text-weight, 400);
-		color: cssvar((--branding-text-color, --text-color-700), $text-color-700);
+		color: cssvar(--branding-text-color, $text-color-700);
 	}
 
 	&-Logo {

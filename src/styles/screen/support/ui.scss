@@ -1,5 +1,5 @@
 @mixin skeleton-text($width: 100px) {
-	@include var(height, --skeleton-text-height, 14px);
+	@include var(height, --skeleton-text-height, 17px);
 	display: inline-block;
 	width: $width;
 	background-color: $background-color-200;

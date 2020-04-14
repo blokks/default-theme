@@ -20,9 +20,11 @@
 	}
 
 	&-Title {
-		@include clamp-line($lines: 2);
+		// @include clamp-line($lines: 2);
+		display: cssvar(-activity-title-display, block);
+		font-family: cssvar((--activity-title-font, --default-header), $default-header);
 		font-size: cssvar((--activity-title-size, --default-font-size), $default-font-size);
-		font-weight: cssvar(--activity-title-weight, 600);
+		font-weight: cssvar(--activity-title-weight, 500);
 	}
 
 	&-Title > .Icon {
@@ -37,16 +39,14 @@
 
 	&-Subtitle {
 		// @include clamp-line($lines: 2);
-		display: cssvar(--activity-subtitle, block);
+		display: cssvar(-activity-subtitle-display, block);
+		font-family: cssvar((--activity-subtitle-font, --default-header), $default-header);
 		font-size: cssvar((--activity-subtitle-size, --default-font-size), $default-font-size);
 		font-weight: cssvar(--activity-subtitle-weight, 400);
 	}
 
-	.Timelabels {
-		display: cssvar(--activity-timetables, none);
-	}
-
 	.CoverImage {
+		display: cssvar(--activity-poster-display, block);
 		flex: none;
 	}
 }

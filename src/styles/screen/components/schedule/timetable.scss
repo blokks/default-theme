@@ -1,10 +1,19 @@
 .Timetable {
 	@include device('mobile') {
 		margin: 10px 0 0;
+		padding: 0 cssvar(--padding, $padding);
+	}
+
+	@include layout('columns') {
+		margin: 5px 0 0 0;
 	}
 
 	@include layout('rows') {
 		margin: 25px 0 0;
+	}
+
+	@include layout('list') {
+		padding: 0 cssvar(--padding, $padding);
 	}
 }
 
