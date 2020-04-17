@@ -1,7 +1,7 @@
 .Timetable-Skeleton {
 	display: none;
 
-	@supports(display: contents) {
+	@supports (display: contents) {
 		display: contents;
 	}
 
@@ -25,10 +25,6 @@
 	.Location-Header {
 		flex: none;
 	}
-
-	.Timeslots {
-		flex: 1;
-	}
 }
 
 @include layout('columns') {
@@ -43,6 +39,10 @@
 
 		.Location-Header {
 			align-items: center;
+		}
+
+		.Timeslots {
+			flex: 1;
 		}
 	}
 }
@@ -61,6 +61,18 @@
 
 		.Location-Header {
 			justify-content: center;
+		}
+
+		.Timeslots {
+			flex: 1;
+		}
+	}
+}
+
+@include device('mobile') {
+	.Timetable-Skeleton {
+		.Timeslots {
+			height: 150px;
 		}
 	}
 }

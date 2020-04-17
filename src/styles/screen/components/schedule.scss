@@ -3,7 +3,6 @@
 	position: relative;
 	font-family: cssvar(--schedule-font, $default-font);
 	line-height: cssvar(--schecule-line-height, $default-line-height);
-	z-index: 1;
 
 	::-moz-selection {
 		background-color: cssvar((--selection-background-color, --accent-color), $accent-color);

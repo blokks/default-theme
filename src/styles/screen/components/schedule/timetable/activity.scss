@@ -40,7 +40,7 @@
 	&-Subtitle {
 		// @include clamp-line($lines: 2);
 		display: cssvar(-activity-subtitle-display, block);
-		font-family: cssvar((--activity-subtitle-font, --default-header), $default-header);
+		font-family: cssvar((--activity-subtitle-font, --default-font), $default-font);
 		font-size: cssvar((--activity-subtitle-size, --default-font-size), $default-font-size);
 		font-weight: cssvar(--activity-subtitle-weight, 400);
 	}

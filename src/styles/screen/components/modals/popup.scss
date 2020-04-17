@@ -1,4 +1,4 @@
-.SigninPopup {
+.Popup {
 	position: relative;
 	padding: 25px 30px;
 	width: 100%;
@@ -22,6 +22,10 @@
 		font-size: cssvar((--popup-description-size, --default-font-size), $default-font-size);
 		font-weight: cssvar(--popup-description-weight, 400);
 		color: cssvar((--popup-description-color, --dimmed-text-color), $text-color-800);
+	}
+
+	p:not(:first-of-type) {
+		--popup-description-color: #{$text-color-700}
 	}
 
 	.ActionButton {

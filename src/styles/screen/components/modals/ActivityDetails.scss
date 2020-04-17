@@ -51,8 +51,9 @@
 	}
 
 	&-Subtitle {
-		font-family: cssvar((--activitydetails-subtitle-font, --default-header), $default-header);
-		font-size: cssvar(--activitydetails-subtitle-size, 17px);
+		display: cssvar(--activitydetails-display, block);
+		font-family: cssvar((--activitydetails-subtitle-font, --default-font), $default-font);
+		font-size: cssvar(--activitydetails-subtitle-size, 18px);
 		font-weight: cssvar(--activitydetails-subtitle-weight, 400);
 		color: cssvar((--activitydetails-subtitle-color, --dimmed-text-color), $text-color-800);
 	}

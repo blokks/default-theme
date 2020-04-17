@@ -9,6 +9,7 @@
 		}
 
 		&--favorited {
+			--timelabels-text-color: #{cssvar((--activity-favorited-color, --accent-color), $accent-color)};
 			--activity-title-color: #{cssvar((--activity-favorited-color, --accent-color), $accent-color)};
 		}
 

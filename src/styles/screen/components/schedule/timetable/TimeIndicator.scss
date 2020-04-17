@@ -1,15 +1,15 @@
 .TimeIndicator {
-	background-color: cssvar((--time-indicator-color, --accent-color) $accent-color);
+	background-color: cssvar((--timeindicator-color, --accent-color), $accent-color);
 
 	@include layout('columns') {
-		height: 2px;
+		height: 1px;
 	}
 
 	@include layout('rows') {
-		width: 2px;
+		width: 1px;
 	}
 
-	&__time-label {
+	> time {
 		display: none;
 	}
 }

@@ -4,6 +4,17 @@
 		$background-color-100
 	);
 
+	&--crowded,
+	&--packed {
+		--location-title-color: #{$warning-color-200};
+		--location-subtitle-color: #{$warning-color-200};
+	}
+
+	&--full {
+		--location-title-color: #{$danger-color-200};
+		--location-subtitle-color: #{$danger-color-200};
+	}
+
 	&-Header {
 		flex-grow: 1;
 		background-color: inherit;
@@ -20,10 +31,6 @@
 		color: cssvar((--location-title-color, --dark-text-color), $text-color-900);
 	}
 
-	&--crowded &-Title {
-		--location-title-color: #{$warning-color-200};
-	}
-
 	&-Title > .Icon {
 		@include size(1em);
 		vertical-align: -0.15em;
@@ -35,14 +42,11 @@
 	}
 
 	&-Subtitle {
-		font-family: cssvar((--location-subtitle-font, --default-header), $default-header);
+		display: cssvar(--location-subtitle-display, block);
+		font-family: cssvar((--location-subtitle-font, --default-font), $default-font);
 		font-size: cssvar((--location-subtitle-size, --default-font-size), $default-font-size);
 		font-weight: cssvar(--location-subtitle-weight, 400);
 		color: cssvar((--location-subtitle-color, --dimmed-text-color), $text-color-800);
-	}
-
-	&--crowded &-Subtitle {
-		--location-subtitle-color: #{$warning-color-200};
 	}
 
 	> .Timeslots {
