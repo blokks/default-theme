@@ -2,6 +2,7 @@
 	.Activity {
 		@include row;
 		padding: 30px 30px 30px 0;
+		opacity: cssvar(--activity-opacity, 1.0);
 		border-bottom-color: cssvar(--activity-border-color, $default-stroke-color);
 		border-bottom-width: cssvar(--border-width, $border-width);
 		border-bottom-style: solid;
@@ -29,11 +30,12 @@
 		}
 
 		&--favorited {
-			--activity-title-color: #{cssvar((--activity-favorited-color, --accent-color), $accent-color)};
+			--activity-title-color: #{cssvar((--activity-favorited-color, --theme-color), $theme-color)};
 		}
 
+		&--ended,
 		&--muted {
-			opacity: 0.4;
+			--activity-opacity: 0.4;
 		}
 
 		&-Header {
@@ -68,6 +70,7 @@
 
 		.Timelabels {
 			order: 1;
+			text-align: center;
 
 			@supports (display: contents) {
 				grid-area: time-labels;
@@ -76,16 +79,8 @@
 			}
 		}
 
-		&--now-playing .Timelabels-EndsAt {
-			display: none;
-		}
-
-		&--coming-soon .Timelabels-EndsAt {
-			display: none;
-		}
-
 		.Categories {
-			margin: 5px 0 0 20px;
+			margin: 3px 0 0 20px;
 			order: 3;
 
 			@supports (display: contents) {
@@ -106,6 +101,7 @@
 			}
 		}
 
+		&--ended .CoverImage,
 		&--muted .CoverImage {
 			filter: grayscale(100%);
 		}

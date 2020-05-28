@@ -22,7 +22,7 @@
 	}
 
 	> a {
-		color: cssvar((--activitydetails-link-color, --accent-color), $accent-color);
+		color: cssvar((--activitydetails-link-color, --theme-color), $theme-color);
 		cursor: pointer;
 	}
 

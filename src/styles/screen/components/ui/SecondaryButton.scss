@@ -6,7 +6,7 @@
 	font-size: cssvar((--secondarybutton-text-size, --default-font-size), $default-font-size);
 	font-weight: cssvar(--secondarybutton-text-weight, 500);
 	color: cssvar((--secondarybutton-text-color, --dimmed-text-color), $text-color-800);
-	background-color: cssvar((--secondarybutton-background-color, --accent-color), $background-color-200);
+	background-color: cssvar((--secondarybutton-background-color, --theme-color), $background-color-200);
 
 	display: inline-flex;
 	padding: 11px 20px;
@@ -14,7 +14,7 @@
 
 	&:hover {
 		--secondarybutton-text-color: #{cssvar(--light-text-color, $text-color-100)};
-		--secondarybutton-background-color: #{cssvar(--accent-color, $accent-color)};
+		--secondarybutton-background-color: #{cssvar(--theme-color, $theme-color)};
 	}
 
 	> .Icon {

@@ -1,7 +1,7 @@
 .Statusbar {
 	display: none;
 	margin-bottom: 15px;
-	background-color: cssvar(--accent-color, $accent-color);
+	background-color: cssvar(--theme-color, $theme-color);
 
 	> a {
 		color: cssvar(--light-text-color, $text-color-100);

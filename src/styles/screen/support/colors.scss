@@ -1,32 +1,33 @@
 /* Primary colors */
-$accent-color: #0091ff !default;
+$theme-color: #0091ff !default;
 
 /* Light background colors */
 $background-color-100: #ffffff !default;
 $background-color-200: #f2f3f3 !default;
 $background-color-300: #e0e3e3 !default;
-$background-color-400: #ffffff33 !default;
+$background-color-400: rgba(255, 255, 255, 0.2) !default;
 
 /* Dark background colors */
-$background-color-700: #141414b3 !default;
+$background-color-600: rgba(20, 20, 20, 0.4) !default;
+$background-color-700: rgba(20, 20, 20, 0.7) !default;
 $background-color-800: #33363b !default;
 $background-color-900: #141414 !default;
 
 /* Light text colors */
-$text-color-100: #ffffffee !default;
-$text-color-200: #fcfcfcbb !default;
-$text-color-300: #fcfcfc99 !default;
+$text-color-100: rgba(255, 255, 255, 0.933) !default;
+$text-color-200: rgba(252, 252, 252, 0.733) !default;
+$text-color-300: rgba(252, 252, 252, 0.633) !default;
 
 /* Dark text colors */
-$text-color-700: #00000044 !default;
-$text-color-800: #00000077 !default;
-$text-color-900: #000000bb !default;
+$text-color-700: rgba(0, 0, 0, 0.267) !default;
+$text-color-800: rgba(0, 0, 0, 0.467) !default;
+$text-color-900: hsla(0, 0%, 0%, 0.733) !default;
 
 /* Stroke colors */
 $default-stroke-color: #efefef !default;
 
 /* Alerts colors */
-$info-color-100: #3f6288 !default;
+$info-color-100: #a3c1e0 !default;
 $info-color-200: #004085 !default;
 $warning-color-100: #fff3cd !default;
 $warning-color-200: #856404 !default;

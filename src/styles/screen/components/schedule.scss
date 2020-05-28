@@ -2,16 +2,20 @@
 	@include antialiased;
 	position: relative;
 	font-family: cssvar(--schedule-font, $default-font);
-	line-height: cssvar(--schecule-line-height, $default-line-height);
+	line-height: cssvar(--schedule-line-height, $default-line-height);
 
+	// FIXME: Edge 15 bugs when using cssvars in selection https://codepen.io/fvsch/pen/GEejBo
+	// Therefor it's hardcoded and cannot be themed
 	::-moz-selection {
-		background-color: cssvar((--selection-background-color, --accent-color), $accent-color);
-		color: cssvar((--selection-text-color, --light-text-color), $text-color-100);
+		background-color: #abb1bc;
+		color: #fff;
+		text-shadow: none;
 	}
 
 	::selection {
-		background-color: cssvar((--selection-background-color, --accent-color), $accent-color);
-		color: cssvar((--selection-text-color, --light-text-color), $text-color-100);
+		background-color: #abb1bc;
+		color: #fff;
+		text-shadow: none;
 	}
 }
 

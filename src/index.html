@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="test">
+<html>
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,6 +10,8 @@
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
 
+		<link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+		
 		<script>
 			if ('scrollRestoration' in window.history) {
 				window.history.scrollRestoration = 'manual';
@@ -18,54 +20,12 @@
 	</head>
 
 	<body>
-		<!-- <blokks-schedule 
-			id="6kga8pkdj432"
-			theme="http://themes.blokks.localhost/columns.css"
-			></blokks-schedule> -->
-
-		<div blokks-container></div>
-
-		<link href="http://themes.blokks.localhost/rows.css" rel="stylesheet" />
-		<script src="http://themes.blokks.localhost/modern.js"></script>
-
-		<script>
-			loadSchedule('6kga8pkdj432', {
-				layout: 'rows',
-				socialProvider: 'twitter',
-				timescale: 3600,
-				useLocalTime: true,
-				testflight: true,
-			});
-		</script>
+		<div id='blokks-container' data-testflight="true"></div>
 
 		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/5.0.1/pusher.min.js"></script> -->
 		<script src="http://127.0.0.1:35729/livereload.js?ext=Chrome&amp;extver=2.1.0"></script>
-
-		<script>
-			window.addEventListener('message', function (event) {
-				switch (event.data.message) {
-					case 'setStyle':
-						setStyle(event.data.name, event.data.value);
-						break;
-
-					case 'setOption':
-						setOption(event.data.name, event.data.value);
-						break;
-				}
-			});
-
-			function setStyle(name, value) {
-				if (value) {
-					document.documentElement.style.setProperty(name, value);
-				} else {
-					document.documentElement.style.removeProperty(name);
-				}
-			}
-
-			function setOption(name, value) {
-				var schedule = document.getElementById('6kga8pkdj432');
-				schedule[name] = value;
-			}
-		</script>
+		<!-- <script src="http://blokks.localhost/schedules/spacecon.js" data-layout="rows" data-testflight="true"></script> -->
+		<script src="./launch.js" data-layout="rows" data-testflight="true"></script>
+		<!-- <script src="updater.js"></script> -->
 	</body>
 </html>

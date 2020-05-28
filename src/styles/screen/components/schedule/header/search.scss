@@ -1,5 +1,4 @@
 .Search {
-	position: relative;
 	width: 225px;
 
 	font-size: cssvar((--search-text-size, --default-font-size), $default-font-size);
@@ -26,7 +25,7 @@
 	&-Input {
 		padding: 10px 20px;
 		font: inherit;
-		color: inherit;	
+		color: inherit;
 	}
 
 	&-Input::placeholder {
@@ -61,11 +60,11 @@
 
 	&-Suggestions > li > a:hover,
 	&-Suggestions > li > a:active {
-		color: cssvar((--suggestion-active-color, --accent-color), $accent-color);
+		color: cssvar((--suggestion-active-color, --theme-color), $theme-color);
 	}
 
 	> .Icon {
 		@include absolute($top: 12px, $right: 15px);
-		@include size(1.0em);
+		@include size(1em);
 	}
 }

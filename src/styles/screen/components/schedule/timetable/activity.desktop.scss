@@ -8,21 +8,10 @@
 		--categories-display: none;
 		--categories-background-color: #{$background-color-400};
 		--categories-text-color: #{$text-color-200};
-
-		@include layout('columns') {
-			padding: 12px 14px;
-			width: cssvar(--activity-width, $activity-width);
-			height: calc(100% - 2px);
-		}
-
-		@include layout('rows') {
-			padding: 10px 12px;
-			width: calc(100% - 2px);
-			height: cssvar(--activity-height, $activity-height);
-		}
+		--timelabels-text-color: #{cssvar(--dimmed-light-text-color, $text-color-200)};
 
 		&--favorited {
-			--activity-background-color: #{cssvar(--accent-color, $accent-color)};
+			--activity-background-color: #{cssvar(--theme-color, $theme-color)};
 			--activity-poster-opacity: 0.3;
 		}
 
@@ -31,10 +20,13 @@
 			--activity-poster-opacity: 0.3;
 		}
 
-		&--selected,
-		&:not(&--disabled):active,
-		&:not(&--disabled):hover {
-			outline: 3px auto #{cssvar((--activity-outline-color, --accent-color), $accent-color)};
+		&--ended {
+			--activity-background-color: #{$background-color-300};
+			--activity-poster-opacity: 0.3;
+		}
+
+		&--selected {
+			outline: 2px solid #{cssvar((--activity-outline-color, --theme-color), $theme-color)};
 		}
 
 		&-Header {
@@ -47,24 +39,30 @@
 			opacity: 0.5;
 		}
 
+		&--ended &-Header {
+			opacity: 0.5;
+		}
+
 		&-Title {
+			@include clamp-line(cssvar(--activity-title-clamp, 2));
 			color: cssvar((--activity-title-color, --light-text-color), $text-color-100);
 		}
 
-		// &-Header > hgroup > h1 {
-		// 	@include var(background-color, --activity-padded-text-color, $background-color-700);
+		// &-Title > span {
+		// 	@include var(background-color, --activity-text-background-color, $background-color-600);
 		// 	box-decoration-break: clone;
 		// 	padding: 1px 5px 2px;
 		// }
 
 		&-Subtitle {
+			@include clamp-line(cssvar(--activity-subtitle-clamp, 2));
 			color: cssvar((--activity-subtitle-color, --dimmed-light-text-color), $text-color-200);
 		}
 
-		// &-Header > hgroup > h2 {
-		// 	@include var(background-color, --activity-padded-text-color, $background-color-700);
+		// &-Subtitle > span {
+		// 	@include var(background-color, --activity-text-background-color, $background-color-600);
 		// 	box-decoration-break: clone;
-		// 	padding: 1px 5px 2px;
+		// 	padding: 1px 5px 1px;
 		// }
 
 		.Categories {
@@ -85,17 +83,27 @@
 		&--muted .CoverImage {
 			filter: grayscale(100%);
 		}
+
+		&--ended .CoverImage {
+			filter: grayscale(100%);
+		}
 	}
 }
 
 @include layout('columns') {
 	.Activity {
+		padding: 12px 14px;
+		width: cssvar(--activity-width, $activity-width);
+		height: calc(100% - 2px);
+
 		--timelabels-display: none;
 	}
 }
 
 @include layout('rows') {
 	.Activity {
-		--timelabels-text-color: #{cssvar(--dimmed-light-text-color, $text-color-200)};
+		padding: 10px 12px;
+		width: calc(100% - 2px);
+		height: cssvar(--activity-height, $activity-height);
 	}
 }

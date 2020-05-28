@@ -20,11 +20,11 @@
 	}
 
 	&-Option:not(&--selected):hover {
-		--buttonbar-text-color: #{cssvar(--accent-color, $accent-color)};
+		--buttonbar-text-color: #{cssvar(--theme-color, $theme-color)};
 	}
 
 	&-Option--selected {
 		border-bottom: 1px solid;
-		--buttonbar-text-color: #{cssvar(--accent-color, $accent-color)};
+		--buttonbar-text-color: #{cssvar(--theme-color, $theme-color)};
 	}
 }

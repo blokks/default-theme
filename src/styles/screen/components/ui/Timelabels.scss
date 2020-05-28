@@ -1,7 +1,14 @@
 .Timelabels {
-	@include truncate-tail;
 	display: cssvar(--timelabels-display, block);
 	font-size: cssvar(--timelabels-text-size, 12px);
-    font-weight: cssvar(--timelabels-text-weight, 400);
+	font-weight: cssvar(--timelabels-text-weight, 400);
 	color: cssvar((--timelabels-text-color, --dimmed-text-color), $text-color-800);
+
+	&-StartsAt {
+		display: inline-block;
+	}
+
+	&-EndsAt {
+		display: inline-block;
+	}
 }

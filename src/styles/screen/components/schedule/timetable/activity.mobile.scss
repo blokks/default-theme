@@ -2,15 +2,17 @@
 	.Activity {
 		@include row;
 		padding: 15px 0;
+		opacity: cssvar(--activity-opacity, 1.0);
 		transition: opacity 250ms;
 
+		&--ended,
 		&--muted {
-			opacity: 0.4;
+			--activity-opacity: 0.4;
 		}
 
 		&--favorited {
-			--timelabels-text-color: #{cssvar((--activity-favorited-color, --accent-color), $accent-color)};
-			--activity-title-color: #{cssvar((--activity-favorited-color, --accent-color), $accent-color)};
+			--timelabels-text-color: #{cssvar((--activity-favorited-color, --theme-color), $theme-color)};
+			--activity-title-color: #{cssvar((--activity-favorited-color, --theme-color), $theme-color)};
 		}
 
 		&-Header {
@@ -50,6 +52,7 @@
 			order: 0;
 		}
 
+		&--ended .CoverImage,
 		&--muted .CoverImage {
 			filter: grayscale(100%);
 		}
