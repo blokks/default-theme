@@ -3,6 +3,9 @@
 	font-family: cssvar(--schedule-font, $default-font);
 	line-height: cssvar(--schedule-line-height, $default-line-height);
 	background-color: cssvar(--modal-overlay-color, $background-color-700);
+	
+	will-change: backdrop-filter;
+	backdrop-filter: contrast(70%);
 
 	::-moz-selection {
 		background-color: cssvar((--selection-background-color, --theme-color), $theme-color);
