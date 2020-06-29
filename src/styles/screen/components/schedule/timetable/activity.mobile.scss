@@ -35,17 +35,22 @@
 		}
 
 		.Timelabels {
-			order: 1;
+			margin-top: 4px;
+			padding-top: 4px;
+			border-top: 1px solid $default-stroke-color;
+			align-self: flex-start;
+			order: 2;
 		}
 
 		.Categories {
-			margin: 5px 0 0 -5px;
+			// display: none;
+			margin: 4px 0 0 0;
 			order: 3;
 		}
 
 		.CoverImage {
-			@include size(55px);
-			margin: 2px 15px 0 0;
+			@include size(52px);
+			margin: 2px 16px 0 0;
 			border-radius: 50%;
 			background-color: cssvar(--placeholder-color, $background-color-800);
 			transition: opacity 250ms;
@@ -58,9 +63,9 @@
 		}
 
 		&:not(&--hasPoster):before {
-			@include size(55px);
+			@include size(52px);
 			flex: none;
-			margin-right: 10px;
+			margin-right: 16px;
 			border-radius: 50%;
 			background-color: cssvar(--empty-image-background-color, $background-color-300);
 			content: '';

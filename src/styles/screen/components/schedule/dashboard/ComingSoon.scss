@@ -1,0 +1,30 @@
+.ComingSoon {
+	&:after {
+		display: block;
+		content: '';
+		height: 15px;
+    }
+
+	&-Header {
+		@include var(border-bottom-width, --border-width, $border-width);
+		@include var(border-bottom-color, --dark-stroke-color, $dark-stroke-color);
+		padding: 10px 0;
+		background-color: inherit;
+		border-bottom-style: solid;
+	}
+
+	&-Title {
+		@include reset-title;
+	}
+
+	&-Title {
+		font-family: cssvar((--dashboard-title-font, --default-header), $default-header);
+		font-size: cssvar((--dashboard-title-size, --default-font-size), $default-font-size);
+		font-weight: cssvar(--dashboard-title-weight, 500);
+		color: cssvar((--dashboard-title-color, --light-text-color), $text-color-100);
+	}
+
+	.DashboardActivity .Timelabels-EndsAt {
+		display: none;
+	}
+}

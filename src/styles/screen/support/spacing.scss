@@ -1,15 +1,15 @@
-$padding: 10px !default;
-$cellspacing: 10px !default;
+$padding: 8px !default;
+$cellspacing: 4px !default;
 $border-width: 1px !default;
 
 /* Column layout cars */
-$location-width: 270px !default;
+$location-width: 244px !default;
 $activity-width: $location-width - $cellspacing * 2;
-$timeslot-height: 150px !default;
-$gutter-width: 60px !default;
+$timeslot-height: 140px !default;
+$gutter-width: 64px !default;
 
 /* Row layout variables */
-$location-height: 140px !default;
+$location-height: 128px !default;
 $activity-height: $location-height - $cellspacing * 2;
-$timeslot-width: 175px !default;
-$gutter-height: 30px !default;
+$timeslot-width: 160px !default;
+$gutter-height: 32px !default;

@@ -9,7 +9,7 @@
 	background-color: cssvar((--secondarybutton-background-color, --theme-color), $background-color-200);
 
 	display: inline-flex;
-	padding: 11px 20px;
+	padding: 12px 20px;
 	border-radius: 20px;
 
 	&:hover {
@@ -18,7 +18,7 @@
 	}
 
 	> .Icon {
-		@include size(1.0em);
+		@include size(1em);
 		margin-right: 4px;
 		vertical-align: -0.15em;
 	}

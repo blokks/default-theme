@@ -1,7 +1,7 @@
 .Alert {
 	display: block;
 	margin: 0;
-	padding: 12px 20px 13px;
+	padding: 12px 20px 12px;
 	font-size: cssvar((--alert-text-size, --default-font-size), $default-font-size);
 
 	&--info {

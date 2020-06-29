@@ -4,7 +4,7 @@
 
 		&-Header {
 			@include row($align: center);
-			padding: 0 15px;
+			padding: 0 8px;
 			border-right-width: cssvar(--border-width, $border-width);
 			border-right-color: cssvar(--stroke-color, $default-stroke-color);
 			border-right-style: solid;

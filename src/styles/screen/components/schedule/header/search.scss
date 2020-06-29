@@ -1,12 +1,12 @@
 .Search {
-	width: 225px;
+	width: 220px;
 
 	font-size: cssvar((--search-text-size, --default-font-size), $default-font-size);
 	font-weight: cssvar(--search-text-weight, 400);
 	color: cssvar(--search-text-color, $text-color-700);
 
 	background-color: cssvar(--search-background-color, $background-color-200);
-	border-radius: 20px;
+	border-radius: 16px;
 
 	&:focus-within,
 	&:focus,
@@ -23,7 +23,7 @@
 	}
 
 	&-Input {
-		padding: 10px 20px;
+		padding: 8px 16px;
 		font: inherit;
 		color: inherit;
 	}
@@ -38,12 +38,12 @@
 
 	&-Suggestions {
 		@include column;
-		margin-top: 5px;
+		margin-top: 4px;
 	}
 
 	&-Suggestions > li {
 		margin-top: -1px;
-		padding: 12px 14px;
+		padding: 8px 12px;
 		background-color: cssvar(--suggestion-background-color, $background-color-100);
 		border-color: cssvar(--suggestion-border-color, $default-stroke-color);
 		border-style: solid;
@@ -64,7 +64,7 @@
 	}
 
 	> .Icon {
-		@include absolute($top: 12px, $right: 15px);
+		@include absolute($top: 10px, $right: 16px);
 		@include size(1em);
 	}
 }

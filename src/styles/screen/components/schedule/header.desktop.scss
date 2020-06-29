@@ -15,7 +15,7 @@
 		}
 
 		.UserOptions {
-			margin-bottom: 15px;
+			margin-bottom: 20px;
 
 			@supports (display: grid) {
 				grid-area: user-options;
@@ -26,7 +26,7 @@
 		}
 
 		.Search {
-			margin: 0 0 15px -5px;
+			margin: 0 0 20px -4px;
 
 			@supports (display: grid) {
 				grid-area: search;
@@ -36,7 +36,7 @@
 		}
 
 		.DateSelector {
-			margin-bottom: 15px;
+			margin-bottom: 20px;
 
 			@supports (display: grid) {
 				grid-area: date-selector;

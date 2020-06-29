@@ -1,0 +1,8 @@
+.Dashboard {
+	padding: 0 cssvar(--padding, $padding);
+	background-color: #2a2a2a;
+}
+
+@import 'dashboard/DashboardActivity';
+@import 'dashboard/ComingSoon';
+@import 'dashboard/NowPlaying';

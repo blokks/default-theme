@@ -1,0 +1,36 @@
+.DashboardActivity {
+	@include row($align: center);
+	padding: 5px 0;
+    cursor: pointer;
+    
+	--timelabels-text-size: #{$default-font-size};
+	--timelabels-text-color: #{$text-color-300};
+
+	&-Title {
+		@include reset-title;
+	}
+
+	&-Title {
+		display: cssvar(--dashboard-activity-title-display, block);
+		font-family: cssvar((--dashboard-activity-subtitle-font, --default-font), $default-header);
+		font-size: cssvar((--dashboard-activity-title-size, --default-font-size), $default-font-size);
+		font-weight: cssvar(--dashboard-activity-title-weight, 500);
+		color: cssvar((--dashboard-activity-title-color, --light-text-color), $text-color-100);
+	}
+
+	&-Location {
+		display: inline;
+		font-size: cssvar(--timelabels-text-size, 12px);
+		font-weight: cssvar(--timelabels-text-weight, 400);
+		color: cssvar((--timelabels-text-color, --dimmed-text-color), $text-color-800);
+		}
+
+	
+	.CoverImage {
+		@include size(55px);
+		margin: 2px 15px 0 0;
+		border-radius: 50%;
+		background-color: cssvar(--placeholder-color, $background-color-800);
+		order: -1;
+	}
+}

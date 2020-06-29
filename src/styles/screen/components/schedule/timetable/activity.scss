@@ -21,7 +21,7 @@
 
 	&-Title {
 		// @include clamp-line($lines: 2);
-		display: cssvar(-activity-title-display, block);
+		display: cssvar(--activity-title-display, block);
 		font-family: cssvar((--activity-title-font, --default-header), $default-header);
 		font-size: cssvar((--activity-title-size, --default-font-size), $default-font-size);
 		font-weight: cssvar(--activity-title-weight, 500);

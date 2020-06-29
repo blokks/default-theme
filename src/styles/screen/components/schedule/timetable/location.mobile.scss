@@ -1,20 +1,13 @@
 @include device('mobile') {
 	.Location {
+		padding: 0 cssvar(--padding, $padding);
+
 		&-Header {
 			@include var(border-bottom-width, --border-width, $border-width);
 			@include var(border-bottom-color, --stroke-color, $default-stroke-color);
+			flex-grow: 1;
+			background-color: inherit;
 			border-bottom-style: solid;
-			padding: 10px 0;
-		}
-
-		&-Titles {
-			// text-align: center;
-		}
-
-		.Timeslots:after {
-			display: block;
-			content: '';
-			height: 15px;
 		}
 	}
 }

@@ -1,7 +1,5 @@
-.UserOptions {
-	.ButtonBar > li:not(:last-of-type) {
-		@include device('mobile') {
-			display: none;
-		}
+@include device('mobile') {
+	.UserOptions {
+		display: none;
 	}
 }

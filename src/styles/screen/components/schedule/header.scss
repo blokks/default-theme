@@ -1,6 +1,10 @@
 .Header {
-	padding: 0 cssvar(--padding, $padding);
+	padding: cssvar(--padding, $padding) cssvar(--padding, $padding) 0;
 	background-color: cssvar((--header-background-color, --schedule-background-color), $background-color-100);
+
+	.Filters {
+		margin-left: -4px;
+	}
 }
 
 @import 'Header.mobile';
