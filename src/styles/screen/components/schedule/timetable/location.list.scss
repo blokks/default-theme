@@ -1,7 +1,7 @@
 @include layout('list') {
 	.Location {
 		&-Header {
-			padding: 15px 0;
+			padding: 16px 0;
 			text-align: center;
 			border-bottom-width: cssvar(--border-width, $border-width);
 			border-bottom-color: cssvar(--stroke-color, $default-stroke-color);

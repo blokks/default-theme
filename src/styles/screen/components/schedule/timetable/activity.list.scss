@@ -1,12 +1,14 @@
 @include layout('list') {
 	.Activity {
 		@include row;
-		padding: 30px 30px 30px 0;
+		padding: 28px 28px 28px 0;
 		opacity: cssvar(--activity-opacity, 1.0);
 		border-bottom-color: cssvar(--activity-border-color, $default-stroke-color);
 		border-bottom-width: cssvar(--border-width, $border-width);
 		border-bottom-style: solid;
 		transition: opacity 250ms;
+		
+		--timelabels-text-size: 14px;
 
 		@supports (display: contents) {
 			background-size: $border-width auto;
@@ -14,12 +16,12 @@
 
 			display: grid;
 			grid-template-rows: 1fr min-content;
-			grid-template-columns: 120px min-content auto;
+			grid-template-columns: 128px min-content auto;
 			grid-template-areas:
 				'time-labels poster titles'
 				'time-labels poster categories';
 
-			background-position: 120px;
+			background-position: 128px;
 			background-repeat: no-repeat;
 			background-image: linear-gradient(
 				180deg,
@@ -40,7 +42,7 @@
 
 		&-Header {
 			@include column;
-			margin-left: 25px;
+			margin-left: 28px;
 			order: 2;
 
 			@supports (display: contents) {
@@ -50,12 +52,12 @@
 
 		&-Titles {
 			@include column($justify: center);
-			margin: 0 0 0 25px;
+			margin: 0 0 0 28px;
 			order: 2;
 
 			@supports (display: contents) {
 				grid-area: titles;
-				max-width: 735px;
+				max-width: 740px;
 			}
 		}
 
@@ -80,7 +82,7 @@
 		}
 
 		.Categories {
-			margin: 3px 0 0 20px;
+			margin: 0 0 0 20px;
 			order: 3;
 
 			@supports (display: contents) {
@@ -90,7 +92,7 @@
 
 		.CoverImage {
 			@include size(70px);
-			margin-left: 25px;
+			margin-left: 24px;
 			align-self: center;
 			background-color: cssvar(--placeholder-color, $background-color-800);
 			border-radius: 50%;

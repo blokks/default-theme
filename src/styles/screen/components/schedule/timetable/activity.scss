@@ -24,11 +24,11 @@
 		display: cssvar(--activity-title-display, block);
 		font-family: cssvar((--activity-title-font, --default-header), $default-header);
 		font-size: cssvar((--activity-title-size, --default-font-size), $default-font-size);
-		font-weight: cssvar(--activity-title-weight, 500);
+		font-weight: cssvar(--activity-title-weight, 600);
 	}
 
 	&-Title > .Icon {
-		@include size(1em);
+		@include size(1.0em);
 		margin-right: 4px;
 		vertical-align: -0.15rem;
 	}

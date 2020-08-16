@@ -102,7 +102,7 @@
 
 @include layout('rows') {
 	.Activity {
-		padding: 12px;
+		padding: 8px 10px;
 		width: calc(100% - 2px);
 		height: cssvar(--activity-height, $activity-height);
 	}

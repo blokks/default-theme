@@ -30,7 +30,7 @@
 	&-Title {
 		font-family: cssvar((--location-title-font, --default-header), $default-header);
 		font-size: cssvar((--location-title-size, --default-font-size), $default-font-size);
-		font-weight: cssvar(--location-title-weight, 500);
+		font-weight: cssvar(--location-title-weight, 600);
 		color: cssvar((--location-title-color, --dark-text-color), $text-color-900);
 	}
 

@@ -2,7 +2,7 @@
 	background-color: cssvar(--activitydetails-background-color, $background-color-100);
 	position: relative;
 	width: 100%;
-	max-width: 600px;
+	max-width: 560px;
 
 	&--favorited {
 		--activitydetails-title-color: #{cssvar(
@@ -44,7 +44,7 @@
 	&-Title {
 		font-family: cssvar((--activitydetails-title-font, --default-header), $default-header);
 		font-size: cssvar(--activitydetails-title-size, 23px);
-		font-weight: cssvar(--activitydetails-title-weight, 500);
+		font-weight: cssvar(--activitydetails-title-weight, 600);
 		color: cssvar((--activitydetails-title-color, --dark-text-color), $text-color-900);
 		transition: color 250ms;
 	}

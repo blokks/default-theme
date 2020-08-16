@@ -12,7 +12,7 @@
 	h1 {
 		font-family: cssvar((--popup-title-font, --default-header), $default-header);
 		font-size: cssvar(--popup-title-size, 23px);
-		font-weight: cssvar(--popup-title-weight, 500);
+		font-weight: cssvar(--popup-title-weight, 600);
 		color: cssvar((--popup-title-color, ---dark-text-color), $text-color-900);
 	}
 
@@ -34,6 +34,6 @@
 
 	.CloseButton {
 		@include absolute($top: 4px, $right: 4px);
-		@include size(32px);
+		@include size(40px);
 	}
 }

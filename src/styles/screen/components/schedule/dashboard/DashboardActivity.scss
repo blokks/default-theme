@@ -1,6 +1,6 @@
 .DashboardActivity {
 	@include row($align: center);
-	padding: 5px 0;
+	padding: 8px 0;
     cursor: pointer;
     
 	--timelabels-text-size: #{$default-font-size};
@@ -14,7 +14,7 @@
 		display: cssvar(--dashboard-activity-title-display, block);
 		font-family: cssvar((--dashboard-activity-subtitle-font, --default-font), $default-header);
 		font-size: cssvar((--dashboard-activity-title-size, --default-font-size), $default-font-size);
-		font-weight: cssvar(--dashboard-activity-title-weight, 500);
+		font-weight: cssvar(--dashboard-activity-title-weight, 600);
 		color: cssvar((--dashboard-activity-title-color, --light-text-color), $text-color-100);
 	}
 

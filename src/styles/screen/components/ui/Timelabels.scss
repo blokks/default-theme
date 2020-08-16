@@ -1,6 +1,6 @@
 .Timelabels {
 	display: cssvar(--timelabels-display, inline);
-	font-size: cssvar(--timelabels-text-size, 12px);
+	font-size: cssvar(--timelabels-text-size, 13px);
 	font-weight: cssvar(--timelabels-text-weight, 400);
 	color: cssvar((--timelabels-text-color, --dimmed-text-color), $text-color-800);
 
