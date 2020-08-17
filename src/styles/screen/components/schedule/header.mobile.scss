@@ -2,15 +2,15 @@
 	.Header {
 		@include column;
 
-		@supports (display: grid) {
-			display: grid;
-			row-gap: 20px;
-			column-gap: 20px;
-			grid-template-columns: 1fr min-content;
-			grid-template-areas:
-				'date-selector user-options'
-				'filters filters';
-		}
+		// @supports (display: grid) {
+		// 	display: grid;
+		// 	row-gap: 20px;
+		// 	column-gap: 20px;
+		// 	grid-template-columns: 1fr min-content;
+		// 	grid-template-areas:
+		// 		'date-selector user-options'
+		// 		'filters filters';
+		// }
 
 		.UserOptions {
 			grid-area: user-options;
@@ -24,7 +24,7 @@
 		}
 
 		.Filters {
-			grid-area: filters;
+			margin-top: cssvar(--header-spacing, 20px);
 			order: 3;
 		}
 	}

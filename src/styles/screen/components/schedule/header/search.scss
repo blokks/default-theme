@@ -6,7 +6,7 @@
 	color: cssvar(--search-text-color, $text-color-700);
 
 	background-color: cssvar(--search-background-color, $background-color-200);
-	border-radius: 16px;
+	border-radius: 17px;
 
 	&:focus-within,
 	&:focus,
@@ -64,7 +64,7 @@
 	}
 
 	> .Icon {
-		@include absolute($top: 7px, $right: 12px);
+		@include absolute($top: 8px, $right: 12px);
 		// @include size(20px);
 		@include size(1.2em);
 	}

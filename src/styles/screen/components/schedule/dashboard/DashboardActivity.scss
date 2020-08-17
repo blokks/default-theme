@@ -1,9 +1,11 @@
 .DashboardActivity {
 	@include row($align: center);
 	padding: 8px 0;
+	font-family: cssvar((--dashboard-activity-font, --default-font), $default-header);
+	font-size: cssvar((--dashboard-activity-size, --default-font-size), $default-font-size);
     cursor: pointer;
-    
-	--timelabels-text-size: #{$default-font-size};
+
+	--timelabels-text-size: inherit;
 	--timelabels-text-color: #{$text-color-300};
 
 	&-Title {
@@ -11,20 +13,19 @@
 	}
 
 	&-Title {
-		display: cssvar(--dashboard-activity-title-display, block);
-		font-family: cssvar((--dashboard-activity-subtitle-font, --default-font), $default-header);
-		font-size: cssvar((--dashboard-activity-title-size, --default-font-size), $default-font-size);
+		font-size: inherit;
 		font-weight: cssvar(--dashboard-activity-title-weight, 600);
 		color: cssvar((--dashboard-activity-title-color, --light-text-color), $text-color-100);
 	}
 
 	&-Location {
-		display: inline;
-		font-size: cssvar(--timelabels-text-size, 12px);
-		font-weight: cssvar(--timelabels-text-weight, 400);
-		color: cssvar((--timelabels-text-color, --dimmed-text-color), $text-color-800);
-		}
+		@include reset-title;
+	}
 
+	&-Location {
+		font-size: inherit;
+		color: cssvar((--timelabels-text-color, --dimmed-text-color), $text-color-300);
+	}
 	
 	.CoverImage {
 		@include size(55px);

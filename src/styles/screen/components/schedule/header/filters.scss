@@ -13,7 +13,7 @@
 }
 
 .FilterLink {
-	font-size: cssvar(--filter-label-size, 13px);
+	font-size: cssvar((--filter-label-size, --default-font-size), $default-font-size);
 	font-weight: cssvar(--filter-label-weight, 400);
 	color: cssvar((--filter-label-color, --dimmed-text-color), $text-color-800);
 	background-color: cssvar(--filter-background-color, $background-color-200);

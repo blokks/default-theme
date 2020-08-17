@@ -6,8 +6,8 @@
 
 		@supports (display: grid) {
 			display: grid;
-			row-gap: 20px;
-			column-gap: 20px;
+			row-gap: cssvar(--header-spacing, 20px);
+			column-gap: cssvar(--header-spacing, 20px);
 			grid-template-columns: 1fr min-content min-content;
 			grid-template-areas:
 				'date-selector user-options search'

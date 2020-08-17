@@ -11,7 +11,7 @@
 	}
 
 	.Search {
-		@include size(225px, 39px);
+		@include size(220px, 34px);
 		background-color: $background-color-200;
 	}
 
@@ -40,7 +40,7 @@
 	}
 
 	.FilterLink {
-		height: 29px;
+		height: 30px;
 		background-color: $background-color-200;
 	}
 
@@ -59,11 +59,7 @@
 
 @include layout('mobile') {
 	.Header-Skeleton {
-		.ExportOption {
-			display: none;
-		}
-
-		.PrintOption {
+		.UserOptions {
 			display: none;
 		}
 	}

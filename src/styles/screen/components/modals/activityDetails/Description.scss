@@ -5,6 +5,7 @@
     font-size: cssvar((--activitydetails-description-size, --default-font-size), $default-font-size);
     font-weight: cssvar(--activitydetails-description-weight, 400);
     color: cssvar((--activitydetails-description-color, --dimmed-text-color), $text-color-800);
+	line-height: 1.5;
 
     > * {
 		font-family: inherit;

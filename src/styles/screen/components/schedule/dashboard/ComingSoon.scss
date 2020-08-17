@@ -23,8 +23,4 @@
 		font-weight: cssvar(--dashboard-title-weight, 600);
 		color: cssvar((--dashboard-title-color, --light-text-color), $text-color-100);
 	}
-
-	.DashboardActivity .Timelabels-EndsAt {
-		display: none;
-	}
 }
